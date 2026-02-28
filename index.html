@@ -43,11 +43,21 @@
       box-shadow: 0 1px 0 rgba(0,0,0,.07);
     }
     .nav-brand {
-      font-size: 11px; font-weight: 700; letter-spacing: .18em;
-      text-transform: uppercase; color: var(--near-black);
+      display: flex; align-items: center; gap: 16px;
       text-decoration: none; transition: opacity .2s;
     }
-    .nav-brand:hover { opacity: .6; }
+    .nav-brand:hover { opacity: .7; }
+    .nav-brand img {
+      height: 26px; width: auto; display: block;
+    }
+    .nav-brand .nav-divider {
+      width: 1px; height: 18px; background: var(--light-gray); opacity: .6;
+    }
+    .nav-brand .nav-title {
+      font-size: 10px; font-weight: 600; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--mid-gray);
+    }
+    nav.scrolled .nav-brand .nav-divider { background: var(--mid-gray); }
     .nav-links { display: flex; gap: 28px; list-style: none; }
     .nav-links a {
       font-size: 12px; font-weight: 500; letter-spacing: .05em;
@@ -403,7 +413,15 @@
       padding: 36px 52px; background: #111110;
       display: flex; justify-content: space-between; align-items: center;
     }
-    .ft-brand { font-size: 11px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.35); }
+    .ft-brand {
+      display: flex; align-items: center; gap: 14px;
+    }
+    .ft-brand img { height: 20px; width: auto; opacity: .4; filter: brightness(10); }
+    .ft-brand span {
+      font-size: 11px; font-weight: 700; letter-spacing: .15em;
+      text-transform: uppercase; color: rgba(255,255,255,.35);
+    }
+    .ft-brand .ft-div { width: 1px; height: 14px; background: rgba(255,255,255,.12); }
     .ft-info  { font-size: 11px; color: rgba(255,255,255,.2); }
 
     /* ── DIVIDER ──────────────────────────────────────── */
@@ -478,6 +496,9 @@
       .bar-name { grid-column: 1/-1; }
       .closing { padding: 100px 24px; }
       footer { flex-direction: column; gap: 10px; text-align: center; }
+      .ft-brand { justify-content: center; }
+      .nav-brand .nav-title { display: none; }
+      .nav-brand .nav-divider { display: none; }
     }
   </style>
 </head>
@@ -487,7 +508,11 @@
      NAV
 ════════════════════════════════════════════ -->
 <nav id="nav">
-  <a href="#top" class="nav-brand">Wallet Strategy 2025–27</a>
+  <a href="#top" class="nav-brand">
+    <img src="images/RAA_Logo.png" alt="Randa Apparel & Accessories" />
+    <span class="nav-divider"></span>
+    <span class="nav-title">Wallet Strategy 2025–27</span>
+  </a>
   <ul class="nav-links">
     <li><a href="#payments">Payments</a></li>
     <li><a href="#carrying">Carrying Less</a></li>
@@ -1238,7 +1263,11 @@
      FOOTER
 ════════════════════════════════════════════ -->
 <footer>
-  <div class="ft-brand">Wallet Innovation &amp; Strategy 2025–2027</div>
+  <div class="ft-brand">
+    <img src="images/RAA_Logo.png" alt="Randa Apparel & Accessories" />
+    <span class="ft-div"></span>
+    <span>Wallet Strategy 2025–27</span>
+  </div>
   <a href="#top" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:color .2s;" onmouseover="this.style.color='#C8A96E'" onmouseout="this.style.color='rgba(255,255,255,.35)'">Back to Top ↑</a>
   <div class="ft-info">Internal Strategy Document · Confidential · February 2026</div>
 </footer>
