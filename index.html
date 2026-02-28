@@ -475,11 +475,12 @@
     .split-content.cream { background: var(--cream); }
     .split-content.white { background: var(--white); }
 
-    /* ── RESPONSIVE ───────────────────────────────────── */
+    /* ── RESPONSIVE — TABLET (≤ 900px) ────────────────── */
     @media (max-width: 900px) {
       nav { padding: 18px 24px; }
       .nav-links { display: none; }
-      .hero-body { padding: 0 24px 64px; }
+      /* KEY FIX: hero-body needs top padding so content never slides behind the fixed nav */
+      .hero-body { padding: 80px 24px 64px; }
       .hero-kpis { gap: 28px; flex-wrap: wrap; }
       .section-wrap { padding: 80px 24px; }
       .two-col, .split { grid-template-columns: 1fr; gap: 40px; }
@@ -499,6 +500,82 @@
       .ft-brand { justify-content: center; }
       .nav-brand .nav-title { display: none; }
       .nav-brand .nav-divider { display: none; }
+      /* Reduce split-content padding on tablet */
+      .split-content { padding: 52px 40px; }
+      /* Section decoration: prevent any horizontal overflow */
+      .section-number { font-size: 100px; right: 24px; }
+    }
+
+    /* ── RESPONSIVE — PHONE (≤ 480px) ─────────────────── */
+    @media (max-width: 480px) {
+      /* Nav: tighten it up on small screens */
+      nav { padding: 12px 16px; }
+      .nav-brand img { height: 22px; }
+
+      /* Hero: ensure logo never overlaps — generous top padding = nav height + buffer */
+      .hero-body { padding: 76px 16px 48px; }
+      /* Smaller headline so it doesn't push content behind the nav */
+      .hero-h1 { font-size: clamp(32px, 9vw, 52px); }
+      .hero-lead { font-size: 15px; line-height: 1.65; margin-bottom: 32px; }
+      /* 2-col KPI grid instead of a horizontal row */
+      .hero-kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding-top: 24px; }
+      .kpi-num { font-size: 34px; }
+      .kpi-sup { font-size: 18px; }
+      .scroll-cue { display: none; }
+
+      /* Section padding */
+      .section-wrap { padding: 60px 16px; }
+      .section-number { font-size: 72px; right: 16px; top: -10px; }
+
+      /* KPI bar: single column on phones */
+      .kpi-bar { grid-template-columns: 1fr; }
+      .kpi-cell { border-right: none !important; border-bottom: 1px solid var(--light-gray); }
+      .kpi-cell:last-child { border-bottom: none; }
+      .kpi-big { font-size: 42px; }
+      .kpi-big .u { font-size: 22px; }
+
+      /* Payment cards: remove the micro gap grid bg on phones */
+      .pay-grid { background: transparent; gap: 16px; }
+      .pay-card { padding: 32px 24px; }
+      .pay-big { font-size: 48px; }
+
+      /* Arch grid: single column on phones */
+      .four-col, .arch-grid { grid-template-columns: 1fr; }
+      .arch-img { height: 180px; }
+
+      /* Strategy large number: reduce so it doesn't break layout */
+      .strat-n { font-size: 64px; margin-bottom: -26px; }
+      .strat-card { padding: 32px 24px; }
+
+      /* Split content */
+      .split-content { padding: 40px 20px; }
+
+      /* Pull quote */
+      .pull-quote { margin-bottom: 48px; }
+
+      /* Closing */
+      .closing { padding: 72px 16px; }
+      .closing-kpis { gap: 32px; }
+
+      /* Footer */
+      footer { padding: 28px 16px; }
+      .ft-brand span { display: none; }
+      .ft-brand .ft-div { display: none; }
+
+      /* Bleed images: shorter on phones */
+      .bleed { height: 50vw; min-height: 220px; }
+
+      /* Callout padding */
+      .callout { padding: 20px 20px; }
+
+      /* Brand / SKU cards: tighten padding */
+      .brand-card { padding: 28px 22px; }
+      .sku-tier { padding: 32px 22px; }
+      .bp-card { padding: 22px 18px; }
+
+      /* Gift cards */
+      .gift-card { padding: 28px 22px; }
+      .g-stat { font-size: 40px; }
     }
   </style>
 </head>
