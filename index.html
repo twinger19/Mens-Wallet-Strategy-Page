@@ -55,6 +55,7 @@
       opacity: .6; transition: opacity .2s;
     }
     .nav-links a:hover { opacity: 1; }
+    .nav-links a.active { opacity: 1; color: var(--gold-dark); }
 
     /* ── HERO ──────────────────────────────────────────── */
     .hero {
@@ -63,6 +64,7 @@
     }
     .hero-bg {
       position: absolute; inset: 0; overflow: hidden;
+      transform: scale(1.05); will-change: transform;
     }
     /* Image placeholder — swap src for the real photo */
     .hero-bg .img-slot {
@@ -286,15 +288,18 @@
     .feat p  { font-size: 14px; line-height: 1.65; color: rgba(255,255,255,.45); }
     .pill {
       font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
-      padding: 4px 11px; border-radius: 20px; white-space: nowrap; margin-top: 2px;
+      padding: 5px 14px; border-radius: 20px; white-space: nowrap; margin-top: 2px;
+      transition: transform .2s ease;
     }
+    .feat:hover .pill { transform: scale(1.05); }
     .pill.req  { background: rgba(200,169,110,.14); color: var(--gold); }
     .pill.exp  { background: rgba(59,91,115,.22); color: #7AB0CC; }
     .pill.emrg { background: rgba(45,74,62,.28); color: #5AAE82; }
 
     /* ── MATERIALS / COLOR ────────────────────────────── */
     .color-swatch-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; border-radius: 4px; overflow: hidden; margin-top: 32px; }
-    .swatch { height: 120px; position: relative; }
+    .swatch { height: 120px; position: relative; transition: transform .3s ease; cursor: default; }
+    .swatch:hover { transform: scaleY(1.08); z-index: 2; }
     .swatch-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 12px; background: linear-gradient(to top,rgba(0,0,0,.5),transparent); }
     .swatch-name { font-size: 11px; font-weight: 700; color: #fff; display: block; letter-spacing: .04em; }
     .swatch-pct  { font-size: 20px; font-weight: 700; color: #fff; }
@@ -403,6 +408,35 @@
 
     /* ── DIVIDER ──────────────────────────────────────── */
     .divider { height: 1px; background: var(--light-gray); margin: 0 52px; }
+    .gold-rule {
+      height: 3px; width: 60px; background: var(--gold); border-radius: 2px;
+      margin-bottom: 28px;
+    }
+    .gold-rule.center { margin-left: auto; margin-right: auto; }
+
+    /* ── CARD HOVER EFFECTS ────────────────────────────── */
+    .pay-card { transition: transform .3s ease, background .3s ease; }
+    .pay-card:hover { transform: translateY(-4px); background: #282624; }
+    .brand-card { transition: transform .3s ease, box-shadow .3s ease; }
+    .brand-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.08); }
+    .gift-card { transition: transform .3s ease, box-shadow .3s ease; }
+    .gift-card:hover { transform: translateY(-3px); box-shadow: 0 10px 36px rgba(0,0,0,.06); }
+    .bp-card { transition: transform .3s ease, box-shadow .3s ease; }
+    .bp-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,.07); }
+    .arch-card { transition: transform .3s ease, box-shadow .3s ease; }
+    .arch-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(0,0,0,.1); }
+    .strat-card { transition: transform .3s ease, background .3s ease; }
+    .strat-card:hover { transform: translateY(-3px); background: #222220; }
+    .kpi-cell { transition: background .3s ease; }
+    .kpi-cell:hover { background: var(--cream); }
+
+    /* ── SECTION TRANSITIONS ─────────────────────────── */
+    .section-number {
+      font-family: var(--serif); font-size: 140px; font-weight: 600;
+      line-height: 1; color: rgba(200,169,110,.06); position: absolute;
+      top: -20px; right: 52px; pointer-events: none; user-select: none;
+    }
+    .section-wrap { position: relative; overflow: hidden; }
 
     /* ── ANIMATIONS ───────────────────────────────────── */
     .au { opacity: 0; transform: translateY(30px); transition: opacity .75s ease, transform .75s cubic-bezier(.16,1,.3,1); }
@@ -475,7 +509,7 @@
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-body au">
-    <p class="eyebrow">Men's Wallet Innovation &amp; Strategy — 2025–2027</p>
+    <p class="eyebrow">Randa Apparel &amp; Accessories · Men's Wallet Innovation &amp; Strategy — 2025–2027</p>
     <h1 class="hero-h1">The wallet isn't dying.<br><em>It's evolving.</em></h1>
     <p class="hero-lead">Payment habits have fundamentally shifted. DTC disruptors have reset consumer expectations. Luxury houses are moving faster than ever. Here's what that means for our product line — and the six moves we need to make.</p>
     <div class="hero-kpis">
@@ -514,6 +548,7 @@
 <section class="section-wrap bg-white">
   <div class="two-col">
     <div class="au">
+      <div class="gold-rule"></div>
       <span class="tag gold">The Big Picture</span>
       <h2 class="sh">The American wallet is in its most significant transformation in a generation.</h2>
     </div>
@@ -559,6 +594,7 @@
 ════════════════════════════════════════════ -->
 <section class="section-wrap bg-dark" id="payments">
   <div class="au" style="max-width:640px; margin-bottom:72px;">
+    <div class="gold-rule"></div>
     <span class="tag gold-lt">Section 01 — The Payment Revolution</span>
     <h2 class="sh" style="color:#fff;">How we pay changed everything about what we carry.</h2>
     <p class="body on-dark">Three seismic shifts in payment behavior are directly rewriting the design brief for the physical wallet.</p>
@@ -603,6 +639,7 @@
 <section class="section-wrap bg-white" id="carrying">
   <div class="two-col">
     <div class="au">
+      <div class="gold-rule"></div>
       <span class="tag gold">Section 02 — Carrying Less, Expecting More</span>
       <h2 class="sh">The ideal wallet got smaller. The consumer got smarter.</h2>
       <p class="body">The average U.S. consumer holds <strong>3.7 active credit cards</strong> — a 10% decline from 4.1 a decade ago. Gen Z averages under 2 active cards. Apple Wallet now stores 12+ cards plus transit passes and digital IDs.</p>
@@ -669,6 +706,7 @@
 ════════════════════════════════════════════ -->
 <section class="section-wrap bg-cream" id="competition">
   <div class="au" style="max-width:680px;margin-bottom:0;">
+    <div class="gold-rule"></div>
     <span class="tag gold">Section 03 — The Luxury-to-Mass Pipeline</span>
     <h2 class="sh">Luxury sets the design agenda. DTC sets the feature baseline. We feel both.</h2>
     <p class="body">The competitive landscape has been reshaped from both ends. Luxury houses establish design codes that trickle into mass-market within 9–18 months. Meanwhile, DTC disruptors have redefined what consumers consider acceptable at every price point — even $30.</p>
@@ -706,6 +744,7 @@
 <section class="section-wrap bg-dark" style="padding-top:96px;padding-bottom:96px;">
   <div class="two-col" style="margin-bottom:64px;align-items:end;">
     <div class="au">
+      <div class="gold-rule"></div>
       <span class="tag gold-lt">The New Baseline</span>
       <h2 class="sh" style="color:#fff;">Five features DTC brands pushed into mass-market expectation.</h2>
     </div>
@@ -771,6 +810,7 @@
 ════════════════════════════════════════════ -->
 <section class="section-wrap bg-white" id="materials">
   <div class="au" style="max-width:680px;">
+    <div class="gold-rule"></div>
     <span class="tag gold">Section 04 — Materials &amp; Color</span>
     <h2 class="sh">Leather holds the center. Color is the next frontier.</h2>
     <p class="body">Leather remains dominant at <strong>73% material share</strong>, with over 800M leather wallets sold globally per year. At $25–$55, genuine leather is the minimum expectation — bonded leather is in decline. Within that mandate, there is significant opportunity in both texture and color to differentiate on a retail wall dominated by flat, featureless surfaces.</p>
@@ -853,6 +893,7 @@
 ════════════════════════════════════════════ -->
 <section class="section-wrap bg-cream" id="gift">
   <div class="au" style="text-align:center;margin-bottom:0;">
+    <div class="gold-rule center"></div>
     <span class="tag gold" style="display:block;text-align:center;margin-bottom:16px;">Section 05 — The Gift Economy</span>
     <h2 class="sh" style="max-width:700px;margin:0 auto 28px;">The most important customer isn't the man wearing the wallet.</h2>
   </div>
@@ -895,6 +936,7 @@
 ════════════════════════════════════════════ -->
 <section class="section-wrap bg-dark" id="sku">
   <div class="au" style="max-width:680px;margin-bottom:0;">
+    <div class="gold-rule"></div>
     <span class="tag gold-lt">Section 06 — SKU Architecture</span>
     <h2 class="sh" style="color:#fff;">A three-tier assortment built for the $25–$55 department store shelf.</h2>
     <p class="body on-dark">Research indicates an optimized assortment of <strong>12–16 SKUs</strong> across three price tiers, with the Better tier generating approximately 55–60% of unit volume. Every tier requires RFID blocking and a slim profile from Spring 2026 onward.</p>
@@ -997,6 +1039,7 @@
 ════════════════════════════════════════════ -->
 <section class="section-wrap bg-cream">
   <div class="au">
+    <div class="gold-rule"></div>
     <span class="tag gold">Section 07 — The Five Design Archetypes</span>
     <h2 class="sh" style="max-width:600px;">Five product archetypes for Fall 2026 and Spring 2027.</h2>
     <p class="body" style="max-width:660px;">These formats are gaining share across the category. Our assortment should include a deliberate mix, calibrated to each brand's DNA and retailer requirements.</p>
@@ -1103,6 +1146,7 @@
 ════════════════════════════════════════════ -->
 <section class="section-wrap bg-dark" id="imperatives">
   <div class="au" style="max-width:660px;margin-bottom:0;">
+    <div class="gold-rule"></div>
     <span class="tag gold-lt">Section 08 — Strategic Imperatives</span>
     <h2 class="sh" style="color:#fff;">Six moves that bridge where we are to where the market is going.</h2>
     <p class="body on-dark">Prioritized by urgency and impact for the $25–$55 department store segment. The "Now" moves protect existing business. The "Next" moves create competitive separation.</p>
@@ -1162,26 +1206,30 @@
      CLOSING
 ════════════════════════════════════════════ -->
 <section class="closing">
+  <div class="gold-rule center" style="position:relative;"></div>
   <p class="eyebrow au" style="position:relative;">The Opportunity in Front of Us</p>
   <h2 class="closing-h au d1">The wallet isn't<br>going anywhere.<br><em>But the status quo is.</em></h2>
-  <p class="closing-p au d2">The growth is in slim. The table stakes are RFID. The real customer is the gift buyer. And the $25–$55 department store space is the primary competitive battleground. The brands that evolve their product line around these truths will win the next cycle — the ones that don't will cede ground to DTC disruptors who already have.</p>
+  <p class="closing-p au d2">The growth is in slim. The table stakes are RFID. The real customer is the gift buyer. The $25–$55 department store shelf is the primary competitive battleground. The brands that evolve around these truths will own the next cycle — the ones that don't will cede shelf space to DTC disruptors who already have.</p>
   <div class="closing-kpis au d3">
     <div class="ck">
       <div class="ck-num">$770M</div>
-      <div class="ck-lbl">Minimalist wallet market<br>North America alone</div>
+      <div class="ck-lbl">Minimalist wallet market<br>North America</div>
     </div>
     <div class="ck">
       <div class="ck-num">6–8%</div>
-      <div class="ck-lbl">Annual growth vs.<br>1.14% overall category</div>
+      <div class="ck-lbl">Segment CAGR vs.<br>1.14% overall</div>
     </div>
     <div class="ck">
       <div class="ck-num">40–60%</div>
-      <div class="ck-lbl">Purchases are gift-driven —<br>the box matters as much as the wallet</div>
+      <div class="ck-lbl">Gift-driven purchases —<br>she buys, he carries</div>
     </div>
     <div class="ck">
-      <div class="ck-num">Now</div>
-      <div class="ck-lbl">The time to act is<br>before the cycle turns</div>
+      <div class="ck-num">6</div>
+      <div class="ck-lbl">Strategic moves to<br>own the next cycle</div>
     </div>
+  </div>
+  <div class="au d4" style="position:relative;margin-top:72px;">
+    <p style="font-size:14px;color:rgba(255,255,255,.3);letter-spacing:.06em;">Prepared by the Wallet Innovation Team · Randa Apparel & Accessories · February 2026</p>
   </div>
 </section>
 
@@ -1191,6 +1239,7 @@
 ════════════════════════════════════════════ -->
 <footer>
   <div class="ft-brand">Wallet Innovation &amp; Strategy 2025–2027</div>
+  <a href="#top" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:color .2s;" onmouseover="this.style.color='#C8A96E'" onmouseout="this.style.color='rgba(255,255,255,.35)'">Back to Top ↑</a>
   <div class="ft-info">Internal Strategy Document · Confidential · February 2026</div>
 </footer>
 
@@ -1199,11 +1248,78 @@
      JAVASCRIPT
 ════════════════════════════════════════════ -->
 <script>
-  // ── NAV scroll state
+  // ── NAV scroll state + active section highlighting
   const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sections = document.querySelectorAll('section[id]');
+
+  function updateNav() {
     nav.classList.toggle('scrolled', window.scrollY > 60);
-  });
+
+    // Active section highlighting
+    let current = '';
+    sections.forEach(s => {
+      const top = s.offsetTop - 120;
+      if (window.scrollY >= top) current = s.getAttribute('id');
+    });
+    navLinks.forEach(a => {
+      a.classList.remove('active');
+      if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+    });
+  }
+  window.addEventListener('scroll', updateNav);
+  updateNav();
+
+  // ── Subtle hero parallax
+  const heroBg = document.querySelector('.hero-bg');
+  if (heroBg) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY < window.innerHeight) {
+        heroBg.style.transform = 'translateY(' + (window.scrollY * 0.25) + 'px) scale(1.05)';
+      }
+    });
+  }
+
+  // ── Animated number counters
+  function animateCounter(el, target, suffix, duration) {
+    const isDecimal = String(target).includes('.');
+    const start = 0;
+    const startTime = performance.now();
+    function tick(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = start + (target - start) * eased;
+      el.textContent = isDecimal ? current.toFixed(1) : Math.round(current);
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  // Count-up for hero KPIs
+  const heroKpis = document.querySelectorAll('.kpi-num');
+  const heroObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const el = e.target;
+        const text = el.textContent.trim();
+        // Parse number from beginning of text
+        const match = text.match(/^([\d.]+)/);
+        if (match) {
+          const num = parseFloat(match[1]);
+          const rest = text.slice(match[0].length);
+          const span = el.querySelector('.kpi-sup');
+          const supHTML = span ? span.outerHTML : '';
+          animateCounter({ set textContent(v) {
+            el.innerHTML = v + supHTML;
+          }}, num, '', 1800);
+        }
+        heroObs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  heroKpis.forEach(k => heroObs.observe(k));
 
   // ── Scroll-triggered fade-up animations
   const animEls = document.querySelectorAll('.au');
@@ -1229,6 +1345,15 @@
       const t = document.querySelector(a.getAttribute('href'));
       if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
+  });
+
+  // ── Scroll progress bar
+  const progressBar = document.createElement('div');
+  progressBar.style.cssText = 'position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-dark));z-index:300;transition:width .1s linear;width:0;';
+  document.body.appendChild(progressBar);
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.width = (window.scrollY / h * 100) + '%';
   });
 </script>
 </body>
