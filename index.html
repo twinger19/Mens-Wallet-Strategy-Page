@@ -421,6 +421,96 @@
       .split-content { padding: 60px 24px; }
       .arch-wide { grid-template-columns: 1fr !important; }
     }
+
+    /* ── PAGE TABS ────────────────────────────────────── */
+    .page-tabs {
+      display: flex; align-items: center; gap: 3px;
+      background: rgba(255,255,255,.12); border-radius: 20px; padding: 3px;
+      transition: background .35s ease;
+    }
+    nav.scrolled .page-tabs { background: rgba(0,0,0,.08); }
+    .page-tab {
+      font-size: 11px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase;
+      padding: 6px 18px; border-radius: 16px; cursor: pointer;
+      color: rgba(255,255,255,.5); transition: all .25s ease; user-select: none; white-space: nowrap;
+    }
+    nav.scrolled .page-tab { color: var(--mid-gray); }
+    .page-tab:hover { color: #fff; }
+    nav.scrolled .page-tab:hover { color: var(--near-black); }
+    .page-tab.active { background: rgba(255,255,255,.2); color: #fff; }
+    nav.scrolled .page-tab.active { background: var(--near-black); color: #fff; }
+
+    /* ── FILE BADGE — shows image filename on placeholder ── */
+    .file-badge {
+      position: absolute; bottom: 0; left: 0; right: 0; z-index: 10;
+      background: rgba(0,0,0,.62); backdrop-filter: blur(4px);
+      padding: 10px 18px; font-family: monospace; font-size: 11px; font-weight: 500;
+      letter-spacing: .06em; color: rgba(255,255,255,.68); text-transform: lowercase;
+      border-top: 1px solid rgba(255,255,255,.08); pointer-events: none;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .file-badge::before { content: '📁'; font-size: 13px; }
+
+    /* ── COLUMBIA — TIER CARDS ─────────────────────────── */
+    .tier-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: rgba(255,255,255,.04); margin-top: 56px; }
+    .tier-card { padding: 48px 36px; }
+    .tier-card.t1 { background: #1A2818; }
+    .tier-card.t2 { background: #181E2C; }
+    .tier-card.t3 { background: #131418; }
+    .tier-badge-col {
+      display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: .18em;
+      text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 20px;
+    }
+    .tier-badge-col.t1 { background: rgba(45,120,62,.3); color: #7FBD9A; }
+    .tier-badge-col.t2 { background: rgba(28,78,138,.3); color: #7AADD4; }
+    .tier-badge-col.t3 { background: rgba(200,169,110,.16); color: var(--gold); }
+    .tier-channel { font-size: 11px; color: rgba(255,255,255,.28); margin-bottom: 12px; letter-spacing: .04em; line-height: 1.5; }
+    .tier-price-col { font-family: var(--serif); font-size: 52px; font-weight: 600; color: #fff; line-height: 1; margin-bottom: 4px; }
+    .tier-price-col .u { font-size: 28px; }
+    .tier-name-col { font-size: 14px; color: rgba(255,255,255,.38); margin-bottom: 24px; }
+    .tier-feats { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .tier-feats li { font-size: 14px; color: rgba(255,255,255,.5); padding-left: 18px; position: relative; line-height: 1.5; }
+    .tier-feats li::before { content: '—'; position: absolute; left: 0; color: var(--gold); opacity: .55; }
+    .tier-feats li strong { color: rgba(255,255,255,.84); }
+
+    /* ── COLUMBIA — PILLAR CARDS ───────────────────────── */
+    .pillar-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 56px; }
+    .pillar-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); border-radius: 4px; padding: 40px 32px; }
+    .pillar-num { font-family: var(--serif); font-size: 72px; font-weight: 600; line-height: 1; color: rgba(200,169,110,.1); margin-bottom: -24px; }
+    .pillar-title { font-family: var(--serif); font-size: 22px; font-weight: 600; color: #fff; margin-bottom: 14px; position: relative; }
+    .pillar-desc { font-size: 15px; line-height: 1.72; color: rgba(255,255,255,.48); }
+    .pillar-desc strong { color: rgba(255,255,255,.88); }
+
+    /* ── COLUMBIA — TECH TABLE ─────────────────────────── */
+    .tech-table { width: 100%; border-collapse: collapse; margin-top: 40px; }
+    .tech-table th { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(200,169,110,.18); }
+    .tech-table td { font-size: 14px; color: rgba(255,255,255,.5); padding: 16px 16px; border-bottom: 1px solid rgba(255,255,255,.05); line-height: 1.5; vertical-align: top; }
+    .tech-table td strong { color: rgba(255,255,255,.84); }
+    .tech-table tr:hover td { background: rgba(255,255,255,.02); color: rgba(255,255,255,.72); }
+
+    /* ── COLUMBIA — FEATURE CARDS ──────────────────────── */
+    .col-feat-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; margin-top: 40px; }
+    .col-feat-card { background: var(--white); border-radius: 4px; padding: 32px 26px; border-top: 3px solid var(--gold); transition: transform .3s, box-shadow .3s; }
+    .col-feat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.07); }
+    .col-feat-icon { font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 14px; font-family: var(--sans); }
+    .col-feat-card h3 { font-family: var(--serif); font-size: 20px; font-weight: 600; margin-bottom: 10px; }
+    .col-feat-card p { font-size: 15px; line-height: 1.68; color: var(--mid-gray); }
+    .col-feat-card p strong { color: var(--near-black); }
+
+    /* ── COLUMBIA — RETAIL CHANNEL CARDS ──────────────── */
+    .retail-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 48px; }
+    .retail-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); border-radius: 4px; padding: 32px 26px; }
+    .retail-channel { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .retail-name { font-family: var(--serif); font-size: 22px; font-weight: 600; color: #fff; margin-bottom: 14px; }
+    .retail-desc { font-size: 14px; line-height: 1.68; color: rgba(255,255,255,.48); }
+    .retail-desc strong { color: rgba(255,255,255,.82); }
+
+    /* ── COLUMBIA RESPONSIVE ───────────────────────────── */
+    @media (max-width: 900px) {
+      .tier-grid, .pillar-grid, .retail-grid { grid-template-columns: 1fr; }
+      .col-feat-grid { grid-template-columns: 1fr; }
+      .page-tabs { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -429,12 +519,18 @@
      NAV
 ════════════════════════════════════════════ -->
 <nav id="nav">
-  <a href="#top" class="nav-brand">
+  <a href="#top" class="nav-brand" id="nav-home-link">
     <img src="images/RAA_Logo.png" alt="Randa Apparel & Accessories" />
     <span class="nav-divider"></span>
     <span class="nav-title">Wallet Strategy 2025–27</span>
   </a>
-  <ul class="nav-links">
+
+  <div class="page-tabs">
+    <div class="page-tab active" id="tab-main" onclick="switchPage('main')">Market Overview</div>
+    <div class="page-tab" id="tab-columbia" onclick="switchPage('columbia')">Columbia</div>
+  </div>
+
+  <ul class="nav-links" id="main-nav-links">
     <li><a href="#story">The Story</a></li>
     <li><a href="#payments">Payments</a></li>
     <li><a href="#color">Color</a></li>
@@ -442,8 +538,17 @@
     <li><a href="#archetypes">Archetypes</a></li>
     <li><a href="#imperatives">Imperatives</a></li>
   </ul>
+  <ul class="nav-links" id="col-nav-links" style="display:none;">
+    <li><a href="#col-story">Opportunity</a></li>
+    <li><a href="#col-tiers">Products</a></li>
+    <li><a href="#col-subbrands">PFG · PHG</a></li>
+    <li><a href="#col-metalwall">Metal Wall</a></li>
+    <li><a href="#col-features">Features</a></li>
+    <li><a href="#col-retail">Retail</a></li>
+  </ul>
 </nav>
 
+<div id="main-page">
 
 <!-- ════════════════════════════════════════════
      HERO
@@ -992,6 +1097,711 @@
 </footer>
 
 
+</div><!-- /main-page -->
+
+
+<!-- ════════════════════════════════════════════
+     COLUMBIA PAGE
+════════════════════════════════════════════ -->
+<div id="columbia-page" style="display:none;">
+
+<!-- ── COLUMBIA HERO ──────────────────────────────────── -->
+<section class="hero" id="col-top">
+  <div class="hero-bg">
+    <div class="img-slot" style="background:linear-gradient(160deg,#0B1810 0%,#162A1C 30%,#243D2E 60%,#1A2E3E 100%);position:relative;">
+      <img src="images/columbia-hero.jpg" alt="Columbia outdoor trail lifestyle" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" />
+    </div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-body au">
+    <p class="eyebrow">Columbia Sportswear · Wallet Innovation Strategy 2025–2027</p>
+    <h1 class="hero-h1">No other brand<br>has the gear.<br><em>Time to carry it.</em></h1>
+    <p class="hero-lead">Columbia has built a proprietary technology portfolio — OutDry™, HeatSeal™, Omni-Shield™, and more — that no leather wallet brand can touch. The strategy below explores how those technologies and their design concepts, across Core Columbia, PFG, and PHG, can transform a $44 commodity bifold into a true performance accessory.</p>
+    <div class="hero-kpis">
+      <div>
+        <span class="kpi-num">$44</span>
+        <span class="kpi-label">Current retail — undifferentiated<br>from Dockers &amp; Levi's</span>
+      </div>
+      <div>
+        <span class="kpi-num">3</span>
+        <span class="kpi-label">Sub-brand lines —<br>Core, PFG &amp; PHG</span>
+      </div>
+      <div>
+        <span class="kpi-num">$95</span>
+        <span class="kpi-label">Premium tier ceiling —<br>unclaimed territory</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue">
+    <span>Explore</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+
+<!-- ── COLUMBIA KPI BAR ────────────────────────────────── -->
+<div class="kpi-bar">
+  <div class="kpi-cell au">
+    <span class="kpi-big">$44</span>
+    <div class="kpi-desc">Current Kohl's price — competing on price, not performance</div>
+  </div>
+  <div class="kpi-cell au d1">
+    <span class="kpi-big">40<span class="u">%</span></span>
+    <div class="kpi-desc">Wallet thickness reduction possible with pull-tab architecture alone</div>
+  </div>
+  <div class="kpi-cell au d2">
+    <span class="kpi-big">100<span class="u">%</span></span>
+    <div class="kpi-desc">Waterproof rating concept using OutDry™ Extreme-inspired construction — no leather brand can claim this</div>
+  </div>
+  <div class="kpi-cell au d3">
+    <span class="kpi-big">3<span class="u">+</span></span>
+    <div class="kpi-desc">Sub-brand opportunities — Core Columbia, PFG, and PHG each with a distinct wallet story</div>
+  </div>
+</div>
+
+
+<!-- ── THE COLUMBIA OPPORTUNITY ───────────────────────── -->
+<section class="section-wrap bg-white" id="col-story">
+  <div class="two-col">
+    <div class="au">
+      <div class="gold-rule"></div>
+      <span class="tag gold">The Columbia Opportunity</span>
+      <h2 class="sh">The most technically equipped brand in the aisle is competing on price.</h2>
+    </div>
+    <div class="au d2">
+      <p class="body">Walk into any Kohl's or JCPenney and Columbia's wallet hangs alongside Dockers, Levi's, and Stafford — all $44, all leather bifolds. From across the aisle, they're interchangeable. The Columbia logo is the only differentiator. <strong>That's a brand being underused.</strong></p>
+      <p class="body">Meanwhile, Bellroy sells a $90 slim wallet on the strength of internal architecture alone. Alpaka Gear charges $65 for X-Pac laminate construction. Both are design and material stories — exactly the kind Columbia tells every season in outerwear, but has never told in accessories.</p>
+      <div class="callout">
+        <p><strong>No other brand at Kohl's or JCPenney can say their wallet is built from the same design DNA as a Columbia rain jacket.</strong> The technology concepts below — whether deployed under the Titanium lock-up, the PFG badge, or Core Columbia branding — represent a differentiation story no leather bifold can answer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── SPLIT: CURRENT STATE ───────────────────────────── -->
+<div class="split">
+  <div class="split-img">
+    <div class="img-slot" style="background:linear-gradient(135deg,#1A1714 0%,#352B22 55%,#6B5840 100%);">
+      <img src="images/columbia-current-shelf.jpg" alt="Current Columbia wallets on retail shelf" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" />
+    </div>
+  </div>
+  <div class="split-content dark au">
+    <div class="gold-rule"></div>
+    <span class="tag gold-lt">Where We Are Today</span>
+    <h2 class="sh" style="color:#fff;">Black leather. Brown leather. $44. Repeat.</h2>
+    <p class="body on-dark">Columbia's current lineup is a standard bifold and trifold in Black, Brown, and Khaki. <strong>RFID blocking is already there</strong> — that's a genuine foundation. But traditional stitching, conservative palette, and extra-capacity-as-the-only-story mean these wallets compete purely on price against every other brand on the wall.</p>
+    <p class="body on-dark">At JCPenney, a magnetic money clip gets close to the front-pocket trend — but without the technical finish. At Tractor Supply, a $19.99 PU version anchors the entry. <strong>None of it leverages the performance design language, technology concepts, or sub-brand identities</strong> that Columbia has spent decades building across Core, PFG, and PHG.</p>
+  </div>
+</div>
+
+
+<!-- ── THE DESIGN MUSES ───────────────────────────────── -->
+<section class="section-wrap bg-cream" id="col-muses">
+  <div class="au" style="max-width:700px;margin-bottom:0;">
+    <div class="gold-rule"></div>
+    <span class="tag gold">The Design Muses</span>
+    <h2 class="sh">Two disruptors show the path. Columbia's own tech is the differentiator.</h2>
+    <p class="body">Bellroy and Alpaka Gear built premium businesses on two distinct ideas — internal architecture and material performance. Columbia's opportunity is to synthesize both, amplified by proprietary technologies no DTC brand can access.</p>
+  </div>
+  <div class="three-col" style="margin-top:56px;">
+    <div class="brand-card dtc au d1">
+      <div class="brand-tier">Architecture Muse</div>
+      <div class="brand-name">Bellroy</div>
+      <div class="brand-price">$65–$200 · $300M brand valuation</div>
+      <p class="brand-body">Built an empire on <strong>internal architecture</strong>. Pull-tab hidden slots eliminate the staircase effect, reducing thickness up to <strong>40%</strong> with the same card capacity. Pre-molded leather, hidden bill sections, and LO/HI height variants create a product that feels engineered — not assembled.</p>
+      <div class="lesson">Columbia takeaway: Pull-tab construction + hidden compartments. No extra material cost — pure design intelligence that can be applied at Kohl's pricing.</div>
+    </div>
+    <div class="brand-card dtc au d2">
+      <div class="brand-tier">Materials Muse</div>
+      <div class="brand-name">Alpaka Gear</div>
+      <div class="brand-price">$55–$120 · EDC technical specialist</div>
+      <p class="brand-body">X-Pac® VX21 laminates (100% waterproof, zero wet-out), magnetic closures for one-handed use, angled card slots for quick-draw access, and hi-vis orange interiors for <strong>low-light card retrieval</strong>. These are gear decisions masquerading as wallet decisions.</p>
+      <div class="lesson">Columbia takeaway: Waterproof laminates, magnetic closures, hi-vis interiors — all achievable with Columbia's own tech stack at competitive retail pricing.</div>
+    </div>
+    <div class="brand-card lux au d3">
+      <div class="brand-tier">Our Foundation</div>
+      <div class="brand-name">Columbia Today</div>
+      <div class="brand-price">$19.99–$44 · Kohl's, JCPenney, Columbia.com</div>
+      <p class="brand-body">Already ships <strong>RFID blocking, genuine leather, extra capacity</strong>, and strong brand equity. The magnetic money clip at JCPenney proves front-pocket carry is on the radar. The distribution and the name are already there — the design language and material story are not.</p>
+      <div class="lesson">Opportunity: layer Bellroy's architecture and Alpaka's material logic onto an RFID-ready, broadly distributed platform that already carries the Columbia name.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── FULL BLEED: MATERIALS ──────────────────────────── -->
+<div class="bleed">
+  <div class="img-slot" style="background:linear-gradient(160deg,#0D1E28 0%,#1A3545 40%,#2A5060 80%);">
+    <img src="images/columbia-materials-outdry.jpg" alt="OutDry membrane and technical fabric materials" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" />
+  </div>
+</div>
+
+
+<!-- ── THE THREE PILLARS ───────────────────────────────── -->
+<section class="section-wrap bg-dark" id="col-pillars">
+  <div class="au" style="max-width:660px;margin-bottom:0;">
+    <div class="gold-rule"></div>
+    <span class="tag gold-lt">The Design Strategy</span>
+    <h2 class="sh" style="color:#fff;">Three pillars. One product language no competitor can copy.</h2>
+    <p class="body on-dark">The strategy isn't to imitate Bellroy or Alpaka. It's to use Columbia's own proprietary technologies to build something that belongs in the same category — and carries a story neither DTC brand can tell.</p>
+  </div>
+  <div class="pillar-grid">
+    <div class="pillar-card au d1">
+      <div class="pillar-num">01</div>
+      <h3 class="pillar-title">Slim Through Architecture</h3>
+      <p class="pillar-desc">Pull-tab mechanisms and overlapping compartments eliminate the staircase of tiered leather pockets. <strong>Same card capacity — 40% less thickness.</strong> HeatSeal™ stitchless bonding removes seam allowances; every millimeter reclaimed. A pre-molded polymer core keeps structure without bulk — breaking in like leather without breaking down over time.</p>
+    </div>
+    <div class="pillar-card au d2">
+      <div class="pillar-num">02</div>
+      <h3 class="pillar-title">Performance Through Laminates</h3>
+      <p class="pillar-desc">OutDry™ Extreme on the exterior — 100% waterproof, stain-resistant, easy to clean. No wet-out. Omni-Shield™ on the mass-market tier — yarn-level water and stain repellency on canvas or recycled polyester. <strong>Stitch holes are the primary moisture entry point — eliminate them, eliminate the problem.</strong> "The wallet that stays dry, inside and out."</p>
+    </div>
+    <div class="pillar-card au d3">
+      <div class="pillar-num">03</div>
+      <h3 class="pillar-title">Brand Identity Through Color</h3>
+      <p class="pillar-desc">Move from Black and Brown toward the Titanium palette — Ti Grey Steel, Everblue, and Poppy Red accents that signal Columbia DNA from across the aisle. Hi-vis orange interiors add a brand-surprise moment when the wallet opens. PFG brings Skylight blue and Cool Grey to the marine audience. <strong>The color tells the story before the consumer reads a word.</strong></p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── THREE-TIER PRODUCT STRATEGY ────────────────────── -->
+<section class="section-wrap bg-dark" id="col-tiers" style="padding-top:0;">
+  <div class="au" style="max-width:660px;margin-bottom:0;">
+    <div class="gold-rule"></div>
+    <span class="tag gold-lt">The Product Architecture</span>
+    <h2 class="sh" style="color:#fff;">Three tiers. Each built for a different consumer, a different channel, and a different story.</h2>
+  </div>
+  <div class="tier-grid">
+    <div class="tier-card t1 au d1">
+      <div class="tier-channel">Kohl's · JCPenney · Mass Market</div>
+      <div class="tier-badge-col t1">Tier 1 · Now</div>
+      <div class="tier-price-col">$44</div>
+      <div class="tier-name-col">The Everyday Trail</div>
+      <ul class="tier-feats">
+        <li><strong>LWG-certified leather or premium PU</strong> exterior</li>
+        <li><strong>Omni-Shield™ lining</strong> — water &amp; stain repellent</li>
+        <li><strong>Pull-tab hidden slot</strong> — extra capacity, zero extra bulk</li>
+        <li><strong>RFID blocking mesh</strong> — already in place, keep it</li>
+        <li><strong>Collegiate Navy or Canoe Green</strong> alongside black</li>
+        <li><strong>Poppy Red pull-tab</strong> — the brand signature detail</li>
+        <li><strong>600D recycled polyester</strong> structural elements</li>
+      </ul>
+    </div>
+    <div class="tier-card t2 au d2">
+      <div class="tier-channel">Columbia Stores · Columbia.com · Specialty</div>
+      <div class="tier-badge-col t2">Tier 2 · Next Season</div>
+      <div class="tier-price-col">$55<span class="u">–65</span></div>
+      <div class="tier-name-col">The Performance Series</div>
+      <ul class="tier-feats">
+        <li><strong>Axoflux® 400D or 3-ply nylon</strong> exterior</li>
+        <li><strong>Magnetic closure</strong> — one-handed, self-aligning, glove-friendly</li>
+        <li><strong>Angled quick-draw card slots</strong></li>
+        <li><strong>YKK AquaGuard zippers</strong> on zip-around variant</li>
+        <li><strong>Hi-vis orange interior</strong> for low-light retrieval</li>
+        <li><strong>Ti Grey Steel or Everblue</strong> exterior colorway</li>
+        <li><strong>AirTag slip pocket</strong> — Smart Utility positioning</li>
+      </ul>
+    </div>
+    <div class="tier-card t3 au d3">
+      <div class="tier-channel">Columbia.com · Premium Specialty · Limited Edition</div>
+      <div class="tier-badge-col t3">Tier 3 · Halo</div>
+      <div class="tier-price-col">$75<span class="u">–95</span></div>
+      <div class="tier-name-col">Performance Elite <span style="font-size:11px;opacity:.5;font-weight:400;">(Titanium concept)</span></div>
+      <ul class="tier-feats">
+        <li><strong>OutDry™-inspired waterproof membrane</strong> — 100% waterproof, PFC-free concept</li>
+        <li><strong>HeatSeal™-concept stitchless construction</strong> — fully bonded, submersible seams</li>
+        <li><strong>FutureForm™ polymer core</strong> — permanent structure, breaks in not down</li>
+        <li><strong>UHMWPE Dyneema® reinforcement</strong> at high-wear edges</li>
+        <li><strong>Magnetic trapdoor card access</strong></li>
+        <li><strong>Skylight Blue or Black + Platinum accents</strong></li>
+        <li><strong>Made from recycled OutDry™ Eco materials</strong> — full sustainability story</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── TIER 1 SPLIT: EVERYDAY TRAIL ───────────────────── -->
+<div class="split">
+  <div class="split-content cream au">
+    <div class="gold-rule"></div>
+    <span class="tag gold">Tier 1 · The Everyday Trail · $44</span>
+    <h2 class="sh">The department store wallet — finally worth the Columbia name.</h2>
+    <p class="body">At Kohl's and JCPenney, the game is won at shelf. The Everyday Trail holds the $44 price point but dramatically shifts the story. A pull-tab hidden slot delivers Bellroy-calibrated capacity in a slimmer profile. Omni-Shield™ on the lining means the first coffee spill, trail puddle, or rainstorm doesn't end the wallet's useful life.</p>
+    <p class="body">The color shift is surgical: <strong>Collegiate Navy</strong> alongside black, with a Poppy Red pull-tab — a flash of brand identity that stands out on a wall of brown leather. The Columbia name earns its place when the product behind it actually performs like Columbia gear.</p>
+    <div class="callout">
+      <p>Kohl's consumers already search for <strong>"Extra Capacity"</strong> and <strong>"RFID Protection"</strong> — both already present. The new brief adds slim profile, a color story, and packaging that communicates outdoor performance. No price change required.</p>
+    </div>
+  </div>
+  <div class="split-img">
+    <div class="img-slot" style="background:linear-gradient(135deg,#1A2E1A 0%,#2D4A25 55%,#3D6040 100%);">
+      <img src="images/columbia-tier1-everyday-trail.jpg" alt="Columbia Everyday Trail wallet Tier 1" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" />
+    </div>
+  </div>
+</div>
+
+
+<!-- ── TIER 2 SPLIT: PERFORMANCE SERIES ───────────────── -->
+<div class="split">
+  <div class="split-img">
+    <div class="img-slot" style="background:linear-gradient(135deg,#0D1E28 0%,#1A3545 55%,#2A5568 100%);">
+      <img src="images/columbia-tier2-performance.jpg" alt="Columbia Performance Series wallet Tier 2" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" />
+    </div>
+  </div>
+  <div class="split-content dark au">
+    <div class="gold-rule"></div>
+    <span class="tag gold-lt">Tier 2 · Performance Series · $55–65</span>
+    <h2 class="sh" style="color:#fff;">For the active outdoor consumer who expects their gear to perform.</h2>
+    <p class="body on-dark">The Performance Series is Columbia's first wallet built for the trail and the office equally. Axoflux® 400D or a 3-ply technical nylon exterior — the same material logic as a performance pack. A magnetic closure allows <strong>one-handed, glove-friendly operation</strong> in conditions where traditional snaps fail. Angled card slots make quick-draw retrieval instinctive.</p>
+    <p class="body on-dark">The <strong>hi-vis orange interior</strong> is the signature detail: Alpaka-proven for card retrieval in low light, it adds an unmistakable brand-surprise moment every time the wallet opens. An AirTag slip pocket justifies "Smart Utility" positioning — and earns Columbia a 15–20% premium over the department store tier.</p>
+  </div>
+</div>
+
+
+<!-- ── TIER 3 SPLIT: TITANIUM ELITE ───────────────────── -->
+<div class="split">
+  <div class="split-content dark au" style="background:#111214;">
+    <div class="gold-rule"></div>
+    <span class="tag gold-lt">Tier 3 · Performance Elite · $75–95</span>
+    <h2 class="sh" style="color:#fff;">The halo product. Built like a Columbia performance jacket. Priced like gear.</h2>
+    <p class="body on-dark">The Performance Elite is what happens when a wallet is engineered with the same rigor as a Columbia rain shell. An <strong>OutDry™-inspired waterproof membrane concept</strong> on the exterior — placed on the outside of the face fabric for maximum waterproof performance, unlike traditional membranes. Semi-matte finish, stain-resistant, easy to clean. No wet-out, ever.</p>
+    <p class="body on-dark"><strong>HeatSeal™-concept stitchless bonding</strong> eliminates the primary moisture ingress point — stitch holes. UHMWPE Dyneema® reinforcement at card-slot edges provides 15× the tensile strength of steel per weight. A FutureForm polymer core means this wallet holds its shape for years, not seasons — breaking in like leather without breaking down.</p>
+    <div class="callout" style="background:rgba(200,169,110,.06);border-color:var(--gold);">
+      <p style="color:rgba(255,255,255,.72);">If Titanium licensing is confirmed: the marketing story writes itself — <strong style="color:var(--gold);">"Engineered from waste, built for the summit."</strong> If not, equivalent performance materials tell the same story under Core Columbia branding. Either way, no leather bifold competes at this level.</p>
+    </div>
+  </div>
+  <div class="split-img">
+    <div class="img-slot" style="background:linear-gradient(160deg,#0D0F14 0%,#151B26 55%,#1E2840 100%);">
+      <img src="images/columbia-tier3-titanium.jpg" alt="Columbia Titanium Elite wallet Tier 3" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" />
+    </div>
+  </div>
+</div>
+
+
+<!-- ── MATERIALS TECHNOLOGY TABLE ─────────────────────── -->
+<section class="section-wrap bg-dark" id="col-materials">
+  <div class="au" style="max-width:680px;margin-bottom:0;">
+    <div class="gold-rule"></div>
+    <span class="tag gold-lt">Material Science</span>
+    <h2 class="sh" style="color:#fff;">The technology concepts that make the story real — and the competition irrelevant.</h2>
+    <p class="body on-dark">Columbia already manufactures with these technologies at scale in outerwear. The concepts below explore how that portfolio could extend into the wallet line — pending confirmation of licensing for wallet applications. Where branded tech lock-ups aren't approved, the same functional performance is achievable using equivalent non-proprietary materials.</p>
+    <div style="background:rgba(200,169,110,.08);border:1px solid rgba(200,169,110,.25);border-radius:4px;padding:16px 20px;margin-top:24px;margin-bottom:0;">
+      <p style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Licensing Note</p>
+      <p style="font-size:13px;line-height:1.65;color:rgba(255,255,255,.6);">Technologies marked with ™ reference Columbia's proprietary innovations as <strong style="color:rgba(255,255,255,.85);">directional concepts</strong>. Final product briefs should confirm approved use for wallet applications within each sub-brand (Core Columbia, PFG, PHG). Functional equivalents are noted where applicable.</p>
+    </div>
+  </div>
+  <table class="tech-table">
+    <thead>
+      <tr>
+        <th>Technology</th>
+        <th>What It Does</th>
+        <th>Wallet Application</th>
+        <th>Tier</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>OutDry™ Extreme Eco</strong></td>
+        <td>Membrane on exterior — 100% waterproof, no wet-out, stain-resistant semi-matte finish, PFC-free &amp; recycled</td>
+        <td>Titanium Elite exterior shell — "The wallet that stays dry, inside and out"</td>
+        <td><span style="color:var(--gold);font-weight:700;">Tier 3</span></td>
+      </tr>
+      <tr>
+        <td><strong>HeatSeal™</strong></td>
+        <td>Thermobonded stitchless seams — eliminates stitch-hole moisture ingress, enables submersible construction</td>
+        <td>Titanium Elite construction — slimmer profile, fully bonded seams</td>
+        <td><span style="color:var(--gold);font-weight:700;">Tier 3</span></td>
+      </tr>
+      <tr>
+        <td><strong>Omni-Shield™</strong></td>
+        <td>Yarn-level water &amp; stain repellency on canvas and recycled polyester</td>
+        <td>Everyday Trail interior lining — rain and coffee protection at mass-market pricing</td>
+        <td><span style="color:#7FBD9A;font-weight:700;">Tier 1</span></td>
+      </tr>
+      <tr>
+        <td><strong>Axoflux® / X-Pac Inspired Nylon</strong></td>
+        <td>400D recycled fiber — fray-resistant, structural rigidity, matte technical finish</td>
+        <td>Performance Series exterior — gear aesthetic at $55–65 retail</td>
+        <td><span style="color:#7AADD4;font-weight:700;">Tier 2</span></td>
+      </tr>
+      <tr>
+        <td><strong>UHMWPE (Dyneema®)</strong></td>
+        <td>Ultra-high-molecular-weight polyethylene — 15× stronger than steel per weight, hydrophobic</td>
+        <td>Titanium Elite card-slot edge reinforcement — prevents stretching over years of use</td>
+        <td><span style="color:var(--gold);font-weight:700;">Tier 3</span></td>
+      </tr>
+      <tr>
+        <td><strong>Pull-Tab Architecture</strong></td>
+        <td>Nylon ribbon enables dense card stacking without tiered leather pocket dividers</td>
+        <td>Everyday Trail — 40% slimmer profile without losing extra capacity</td>
+        <td><span style="color:#7FBD9A;font-weight:700;">Tier 1–2</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- ── COLOR STRATEGY ──────────────────────────────────── -->
+<section class="section-wrap bg-white" id="col-color">
+  <div class="au" style="text-align:center;max-width:740px;margin:0 auto 64px;">
+    <div class="gold-rule center"></div>
+    <span class="tag gold">Color Strategy</span>
+    <h2 class="sh">Move from the commodity wall to the Columbia wall.</h2>
+    <p class="body" style="text-align:center;">Black and brown say "leather wallet." Titanium Grey and Everblue say "Columbia gear." The color shift is the fastest, most visible signal that something has changed — legible from five feet away on a department store peg.</p>
+  </div>
+  <div class="two-col">
+    <div class="au">
+      <h3 class="ssh">The Titanium Palette <span style="font-size:11px;font-weight:400;color:var(--mid-gray);font-family:var(--sans);letter-spacing:0;">(concept — licensing TBD)</span></h3>
+      <p class="body">Columbia's Titanium apparel collection uses technical neutrals and electric accents — greys, blues, and high-energy pops that suggest speed, cold-weather performance, and technological superiority. If Titanium licensing is approved for accessories, this palette transfers directly. If not, the same color story applies under Core Columbia branding.</p>
+      <div class="color-swatch-row" style="grid-template-columns:repeat(4,1fr);">
+        <div class="swatch" style="background:#3A3E48;">
+          <div class="swatch-info"><span class="swatch-name">Ti Grey Steel</span><span class="swatch-pct">Base</span></div>
+        </div>
+        <div class="swatch" style="background:#1A4A7A;">
+          <div class="swatch-info"><span class="swatch-name">Everblue</span><span class="swatch-pct">Core</span></div>
+        </div>
+        <div class="swatch" style="background:#1F3E28;">
+          <div class="swatch-info"><span class="swatch-name">Collegiate Navy</span><span class="swatch-pct">Tier 1</span></div>
+        </div>
+        <div class="swatch" style="background:#C8392A;">
+          <div class="swatch-info"><span class="swatch-name">Poppy Red</span><span class="swatch-pct">Accent</span></div>
+        </div>
+      </div>
+      <p class="body" style="margin-top:24px;">The <strong>Poppy Red pull-tab</strong> is the hero detail — a flash of brand identity visible every time the wallet is opened, consistent with hi-vis accent logic used across Titanium outerwear zippers and logo tabs.</p>
+    </div>
+    <div class="au d2">
+      <h3 class="ssh">PFG Palette + Hi-Vis Interior</h3>
+      <p class="body">For the Performance Fishing Gear channel — highly popular at Kohl's — a sea-inspired palette shifts the story toward marine performance. Skylight blue, Sailfish white, and Cool Grey reflect heat and signal clean, purposeful function.</p>
+      <div class="color-swatch-row" style="grid-template-columns:repeat(4,1fr);">
+        <div class="swatch" style="background:#4A9EC4;">
+          <div class="swatch-info"><span class="swatch-name">Skylight</span><span class="swatch-pct">Primary</span></div>
+        </div>
+        <div class="swatch" style="background:#D8D4CC;">
+          <div class="swatch-info"><span class="swatch-name" style="color:rgba(0,0,0,.6);">Sailfish White</span><span class="swatch-pct" style="color:rgba(0,0,0,.6);">Clean</span></div>
+        </div>
+        <div class="swatch" style="background:#7A8A94;">
+          <div class="swatch-info"><span class="swatch-name">Cool Grey</span><span class="swatch-pct">Modern</span></div>
+        </div>
+        <div class="swatch" style="background:#E87020;">
+          <div class="swatch-info"><span class="swatch-name">Hi-Vis Orange</span><span class="swatch-pct">Interior</span></div>
+        </div>
+      </div>
+      <div class="callout">
+        <p>The <strong>hi-vis orange interior</strong> is the design steal from Alpaka Gear — proven for card retrieval in low light. More importantly, it's a brand-surprise moment: the wallet looks technical on the outside, and reveals intention when it opens. Every use is a brand impression.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── PFG + PHG SUB-BRAND EXTENSION ─────────────────── -->
+<section class="section-wrap bg-dark" id="col-subbrands">
+  <div class="au" style="max-width:700px;margin-bottom:56px;">
+    <div class="gold-rule"></div>
+    <span class="tag gold-lt">Sub-Brand Opportunity</span>
+    <h2 class="sh" style="color:#fff;">PFG and PHG are natural fits. We already do belts — wallets are the obvious next step.</h2>
+    <p class="body on-dark">Randa already produces belts under both PFG (Performance Fishing Gear) and PHG (Performance Hunting Gear) — and both sub-brands carry built-in consumer loyalty that maps directly to a wallet purchase. The outdoor consumer who trusts Columbia PFG for their fishing belt is exactly the customer for a PFG wallet on the same rack.</p>
+  </div>
+  <div class="three-col">
+    <div class="brand-card lux au d1" style="border:1px solid rgba(74,158,196,.2);background:rgba(74,158,196,.05);">
+      <div class="brand-tier" style="color:#4A9EC4;">Core Columbia</div>
+      <div class="brand-name" style="font-size:20px;">Mainline</div>
+      <div class="brand-price" style="color:rgba(255,255,255,.45);">$44–95 · Kohl's, JCPenney, Columbia.com</div>
+      <p class="brand-body">The broadest audience — men and women who buy Columbia apparel and expect the same quality in accessories. The three-tier strategy (Everyday Trail → Performance Elite) lives here. All color and feature concepts apply without sub-brand licensing constraints.</p>
+      <div class="lesson" style="border-color:rgba(74,158,196,.2);">Primary channel. No licensing required. Highest volume opportunity. Titanium design concepts apply here under Core Columbia branding if Titanium lock-up isn't approved.</div>
+    </div>
+    <div class="brand-card dtc au d2" style="border:1px solid rgba(232,114,32,.2);background:rgba(232,114,32,.04);">
+      <div class="brand-tier" style="color:#E87220;">PFG · Already in Belts</div>
+      <div class="brand-name" style="font-size:20px;">Performance Fishing Gear</div>
+      <div class="brand-price" style="color:rgba(255,255,255,.45);">$44–65 · Kohl's, Academy, Columbia.com</div>
+      <p class="brand-body">The PFG consumer already trusts Randa for their belt — a wallet is the natural companion purchase. Skylight blue, Sailfish white, and hi-vis orange interior signal marine performance. An AirTag pocket and magnetic closure are especially relevant for boat use. <strong>Strong Father's Day gifting angle.</strong></p>
+      <div class="lesson" style="border-color:rgba(232,114,32,.2);">Existing Randa relationship. Proven consumer fit. The fishing enthusiast upgrades belt + wallet together — average transaction opportunity.</div>
+    </div>
+    <div class="brand-card dtc au d3" style="border:1px solid rgba(99,140,80,.2);background:rgba(99,140,80,.04);">
+      <div class="brand-tier" style="color:#7FAD60;">PHG · Already in Belts</div>
+      <div class="brand-name" style="font-size:20px;">Performance Hunting Gear</div>
+      <div class="brand-price" style="color:rgba(255,255,255,.45);">$44–65 · Academy, Bass Pro, Columbia.com</div>
+      <p class="brand-body">The PHG hunter consumer carries gear with a purpose — a wallet needs to be as functional as everything else in the field bag. RFID blocking (already present), silent magnetic closures (no zipper noise), earth-tone palette, and a hi-vis orange interior for gloved retrieval. <strong>A natural complement to the PHG belt line Randa already produces.</strong></p>
+      <div class="lesson" style="border-color:rgba(99,140,80,.2);">Existing Randa relationship. Field-specific functional brief ready to build. Opportunity to own the PHG accessories category Randa already serves in belts.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── FULL BLEED: LIFESTYLE ──────────────────────────── -->
+<div class="bleed">
+  <div class="img-slot" style="background:linear-gradient(160deg,#0C1A0F 0%,#182E18 40%,#264030 80%);">
+    <img src="images/columbia-lifestyle-trail.jpg" alt="Columbia outdoor lifestyle trail carry" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" />
+  </div>
+</div>
+
+
+<!-- ── FEATURE ENGINEERING ───────────────────────────── -->
+<section class="section-wrap bg-cream" id="col-features">
+  <div class="two-col">
+    <div class="au">
+      <div class="gold-rule"></div>
+      <span class="tag gold">Feature Engineering</span>
+      <h2 class="sh">Every detail has a functional reason. Every reason has a story.</h2>
+      <p class="body">The features that separate Columbia from every leather bifold on the shelf aren't expensive — they're intentional. Pull-tabs, magnetic closures, angled slots, and AirTag pockets cost relatively little to implement. They cost everything to overlook. These are the details that turn a $44 wallet into a $44 Columbia wallet.</p>
+      <div style="position:relative;height:300px;border-radius:4px;overflow:hidden;margin-top:32px;">
+        <div class="img-slot" style="background:linear-gradient(135deg,#1A1A18 0%,#2A2A28 55%,#3A3830 100%);position:absolute;inset:0;">
+          <img src="images/columbia-feature-details.jpg" alt="Columbia wallet feature engineering details" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" />
+        </div>
+      </div>
+    </div>
+    <div class="au d2">
+      <div class="col-feat-grid" style="margin-top:0;">
+        <div class="col-feat-card">
+          <div class="col-feat-icon">Pull-Tab Slot</div>
+          <h3>Hidden Capacity</h3>
+          <p>A thin nylon ribbon enables dense card stacking in a single pocket — <strong>40% thinner</strong> than tiered leather pockets with the same card count. The Bellroy breakthrough, manufacturable at mass-market scale.</p>
+        </div>
+        <div class="col-feat-card">
+          <div class="col-feat-icon">Magnetic Closure</div>
+          <h3>One-Handed Seal</h3>
+          <p>N52 neodymium magnets replace snaps and zippers. <strong>Self-aligning, glove-friendly, silent.</strong> Less mechanical complexity means longer lifespan in outdoor conditions. The Alpaka-proven differentiator.</p>
+        </div>
+        <div class="col-feat-card">
+          <div class="col-feat-icon">Angled Card Slots</div>
+          <h3>Quick-Draw Access</h3>
+          <p>A subtle geometric angle on primary card slots gives the thumb greater grip surface. <strong>Critical for cold hands or gloves</strong> — proven by Alpaka for cyclists, hikers, and active outdoor use.</p>
+        </div>
+        <div class="col-feat-card">
+          <div class="col-feat-icon">AirTag Pocket</div>
+          <h3>Smart Utility</h3>
+          <p>A dedicated 35mm slip pocket standard on Bellroy's Hide &amp; Seek. <strong>Justifies "Smart Utility" positioning</strong> and 15–20% premium in digital channels — a story no leather brand on the shelf can tell.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── PACKAGING STRATEGY ─────────────────────────────── -->
+<div class="split" id="col-packaging">
+  <div class="split-img">
+    <div class="img-slot" style="background:linear-gradient(135deg,#1A1714 0%,#2C2318 55%,#4A3820 100%);">
+      <img src="images/columbia-packaging-gift.jpg" alt="Columbia wallet gift packaging with tech branding" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" />
+    </div>
+  </div>
+  <div class="split-content white au">
+    <div class="gold-rule"></div>
+    <span class="tag gold">Packaging as Product</span>
+    <h2 class="sh">40–60% of wallets are gifts. The box is half the purchase decision.</h2>
+    <p class="body">At $44 on a Kohl's shelf, packaging is the first product the gift buyer encounters. Columbia has a visual identity that most accessories brands would spend millions to acquire — a recognizable mountain/sun logo that signals outdoor quality before the box is opened. That equity needs to earn its place in the packaging design.</p>
+    <p class="body">The packaging brief is specific: <strong>lead with technology, not fashion.</strong> OutDry™ and Omni-Shield™ callouts on front-facing panels. A windowed gift box that displays the wallet while communicating the performance story. At Father's Day, this packaging becomes a shelf-stopper alongside every generic brown leather box around it.</p>
+    <div class="callout">
+      <p><strong>Three packaging tiers:</strong> Windowed tech box at $44+ with OutDry™/Omni-Shield™ callouts. Premium gift box with tech card at $55+. <strong>Limited-edition metal tin</strong> at $75+ for the Titanium Elite — a display piece that extends the brand narrative beyond purchase and beyond the carry.</p>
+    </div>
+    <div style="position:relative;height:180px;border-radius:4px;overflow:hidden;margin-top:28px;">
+      <div class="img-slot" style="background:linear-gradient(135deg,#1C1C1A 0%,#2A2820 100%);position:absolute;inset:0;">
+        <img src="images/columbia-packaging-hangtag.jpg" alt="Columbia wallet technical hangtag design" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── THE RETAIL EXPERIENCE ──────────────────────────── -->
+<section class="section-wrap bg-dark" id="col-retail">
+  <div class="au" style="max-width:700px;margin-bottom:56px;">
+    <div class="gold-rule"></div>
+    <span class="tag gold-lt">The In-Store Experience</span>
+    <h2 class="sh" style="color:#fff;">A better product in the same display is a half-measure. The shelf needs a strategy too.</h2>
+    <p class="body on-dark">Columbia's wallet line needs a retail presentation that separates it from the generic leather wall and communicates "outdoor gear" rather than "department store accessory." The product and the display must tell the same story.</p>
+  </div>
+  <div class="retail-grid">
+    <div class="retail-card au d1">
+      <div class="retail-channel">Kohl's · JCPenney</div>
+      <div class="retail-name">Own the Wall</div>
+      <div class="retail-desc">
+        <strong>Columbia blue header card</strong> above the peg — one color, unmissable. Tech-callout stickers on packaging: "OutDry™ Protection," "RFID Blocked," "Slim Architecture." Navy and Green colorways create immediate visual separation from the all-black/brown competition surrounding them.<br><br>
+        <strong>Gift set display at Father's Day:</strong> Pre-bundled wallet + key fob in a tin at the endcap. Average transaction value 40–60% higher. No incremental shelf space required — pure margin expansion through bundling.
+      </div>
+      <span class="strat-tag now" style="margin-top:20px;">Immediate Priority</span>
+    </div>
+    <div class="retail-card au d2">
+      <div class="retail-channel">Columbia Stores · Columbia.com</div>
+      <div class="retail-name">Gear Positioning</div>
+      <div class="retail-desc">
+        <strong>Position adjacent to Columbia performance apparel</strong> — not in a generic accessories section. The wallet is part of the same kit. A small tech-material display card explains the performance story in the language Columbia uses for jackets — because that's the design intent.<br><br>
+        <strong>Performance Series and Performance Elite</strong> belong in a dedicated "Technical Accessories" fixture with gear aesthetic packaging. Create a "Complete the Kit" cross-sell next to performance outerwear — the wallet and the jacket are the same story. If Titanium licensing is approved, this section becomes the Titanium wall.
+      </div>
+      <span class="strat-tag next" style="margin-top:20px;">Next Season</span>
+    </div>
+    <div class="retail-card au d3">
+      <div class="retail-channel">Specialty · Academy · Outdoor Retail</div>
+      <div class="retail-name">Earn the Outdoor Shelf</div>
+      <div class="retail-desc">
+        Tier 2 Performance Series, Tier 3 Performance Elite, and the Metal Wall belong in <strong>outdoor specialty retail</strong> — not just department stores. Magnetic closures, X-Pac-inspired fabric, and waterproof construction concepts are the credentials that earn placement next to technical accessories from Arc'teryx and Patagonia.<br><br>
+        The <strong>AirTag pocket and waterproof construction concept</strong> open that specialty conversation. No leather wallet on the specialty shelf can match them — and the price point at $55–95 is exactly where that channel shops.
+      </div>
+      <span class="strat-tag next" style="margin-top:20px;">Next Season</span>
+    </div>
+  </div>
+  <div style="position:relative;height:50vh;min-height:320px;border-radius:4px;overflow:hidden;margin-top:56px;">
+    <div class="img-slot" style="background:linear-gradient(135deg,#0D1218 0%,#1A2030 100%);position:absolute;inset:0;">
+      <img src="images/columbia-retail-display.jpg" alt="Columbia wallet in-store display concept" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" />
+    </div>
+  </div>
+</section>
+
+
+<!-- ── THE METAL WALL ─────────────────────────────────── -->
+<section class="section-wrap" id="col-metalwall" style="background:#0C0F14;padding-top:88px;padding-bottom:88px;">
+  <div class="two-col">
+    <div class="au">
+      <div class="gold-rule"></div>
+      <span class="tag" style="background:rgba(180,180,200,.1);color:#A0AAC0;border:1px solid rgba(180,180,200,.15);">Columbia Direct Request</span>
+      <h2 class="sh" style="color:#fff;margin-top:16px;">The Metal Wall.<br><em>Columbia's Ridge moment.</em></h2>
+      <p class="body on-dark">Columbia has asked us to develop a metal card wallet — a direct response to the Ridge wallet category that has carved out a significant premium-accessories niche at $95–150. Ridge sells aluminum or titanium side rails with an elastic band and a cash strap. It's a wallet for the consumer who doesn't want leather, doesn't want fabric, and wants something that feels like gear — not fashion.</p>
+      <p class="body on-dark">That consumer is Columbia's customer. The outdoor enthusiast who carries a Ridge wallet today and a Columbia jacket every season has never been given a Columbia wallet that speaks their language. <strong>The Metal Wall changes that.</strong></p>
+      <div class="callout" style="background:rgba(160,170,192,.06);border-color:rgba(160,170,192,.2);">
+        <p style="color:rgba(255,255,255,.75);">The Metal Wall isn't competing on the department store wall. It lives at <strong style="color:#A0AAC0;">Columbia.com, REI, and outdoor specialty</strong> — alongside technical gear, not alongside Dockers bifolds. This is the product that earns Columbia a conversation in the same sentence as Ridge, Ekster, and Dango.</p>
+      </div>
+    </div>
+    <div class="au d2">
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:36px 32px;">
+        <p style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(160,170,192,.6);margin-bottom:24px;">Product Concept Brief</p>
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <div style="border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:20px;">
+            <p style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#A0AAC0;margin-bottom:6px;">Construction</p>
+            <p style="font-size:14px;color:rgba(255,255,255,.75);line-height:1.6;">Milled aluminum or machined stainless side plates with Columbia logo engraving. Strong elastic band or spring-clip mechanism. Holds 1–12 cards in a horizontal stack — total profile under 10mm loaded. Optional cash strap.</p>
+          </div>
+          <div style="border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:20px;">
+            <p style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#A0AAC0;margin-bottom:6px;">Colorways</p>
+            <p style="font-size:14px;color:rgba(255,255,255,.75);line-height:1.6;">Brushed aluminum (Base). Matte black anodized. Titanium finish (if Titanium licensing approved — the most compelling sub-brand story for this product). PFG-blue anodized with orange elastic. PHG earth-tone with camo-pattern elastic band.</p>
+          </div>
+          <div style="border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:20px;">
+            <p style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#A0AAC0;margin-bottom:6px;">Retail &amp; Pricing</p>
+            <p style="font-size:14px;color:rgba(255,255,255,.75);line-height:1.6;"><strong style="color:#fff;">$65–95</strong> core range. Columbia.com, REI, specialty outdoor. Gift-box ready — the Metal Wall in a rigid magnetic-close box is one of the strongest gift setups in the category. Columbia stores as a "halo display" product adjacent to premium outerwear.</p>
+          </div>
+          <div>
+            <p style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#A0AAC0;margin-bottom:6px;">The Story</p>
+            <p style="font-size:14px;color:rgba(255,255,255,.75);line-height:1.6;">"Built like a carabiner. Lighter than your old wallet. Tougher than the trail." RFID blocking is standard. The Columbia wordmark is the only branding it needs. This product says everything the leather bifold cannot.</p>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;">
+        <span style="font-size:11px;font-weight:600;padding:6px 14px;border-radius:20px;background:rgba(160,170,192,.1);color:#A0AAC0;border:1px solid rgba(160,170,192,.15);">Milled Aluminum</span>
+        <span style="font-size:11px;font-weight:600;padding:6px 14px;border-radius:20px;background:rgba(160,170,192,.1);color:#A0AAC0;border:1px solid rgba(160,170,192,.15);">Ridge-Style Format</span>
+        <span style="font-size:11px;font-weight:600;padding:6px 14px;border-radius:20px;background:rgba(160,170,192,.1);color:#A0AAC0;border:1px solid rgba(160,170,192,.15);">RFID Blocking</span>
+        <span style="font-size:11px;font-weight:600;padding:6px 14px;border-radius:20px;background:rgba(160,170,192,.1);color:#A0AAC0;border:1px solid rgba(160,170,192,.15);">$65–95</span>
+        <span style="font-size:11px;font-weight:600;padding:6px 14px;border-radius:20px;background:rgba(232,114,32,.1);color:#E87220;border:1px solid rgba(232,114,32,.15);">PFG Variant</span>
+        <span style="font-size:11px;font-weight:600;padding:6px 14px;border-radius:20px;background:rgba(99,140,80,.1);color:#7FAD60;border:1px solid rgba(99,140,80,.15);">PHG Variant</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── STRATEGIC IMPERATIVES ──────────────────────────── -->
+<section class="section-wrap bg-dark" id="col-imperatives" style="padding-top:0;">
+  <div class="au" style="max-width:680px;margin-bottom:0;">
+    <div class="gold-rule"></div>
+    <span class="tag gold-lt">The Eight Moves</span>
+    <h2 class="sh" style="color:#fff;">Eight specific actions that turn the Columbia wallet line from a commodity into a competitive platform.</h2>
+    <p class="body on-dark">The "Now" moves protect and improve the existing business. The "Next Season" moves create competitive separation no leather brand can follow — across Core Columbia, PFG, PHG, and the Metal Wall.</p>
+  </div>
+  <div class="strat-grid">
+    <div class="strat-card au d1">
+      <div class="strat-n">01</div>
+      <h3 class="strat-title">Adopt Pull-Tab Architecture Across Tier 1</h3>
+      <p class="strat-desc">Replace tiered leather pockets with pull-tab hidden slot construction. <strong>40% slimmer profile, same extra capacity</strong>. This single architectural change makes the Everyday Trail competitive with Bellroy's core value proposition — at a Kohl's price point.</p>
+      <span class="strat-tag now">Now</span>
+    </div>
+    <div class="strat-card au d2">
+      <div class="strat-n">02</div>
+      <h3 class="strat-title">Shift Color Story Away from Black &amp; Brown</h3>
+      <p class="strat-desc">Introduce <strong>Collegiate Navy and Canoe Green</strong> alongside black at Tier 1. Columbia-palette greys and blues at Tier 2–3. Poppy Red pull-tabs at all tiers as the brand signature detail. First-mover advantage on a wall currently saturated with black and brown — under Core Columbia, PFG, or Titanium (pending licensing).</p>
+      <span class="strat-tag now">Now</span>
+    </div>
+    <div class="strat-card au d3">
+      <div class="strat-n">03</div>
+      <h3 class="strat-title">Redesign Packaging Around the Performance Story</h3>
+      <p class="strat-desc">Windowed tech boxes with OutDry™ and Omni-Shield™ callouts at $44+. Premium gift box at $55+. <strong>Titanium Elite metal tin at $75+.</strong> The packaging communicates "gear," not "accessory" — decisive for the gift buyer at Father's Day and the holidays.</p>
+      <span class="strat-tag now">Now</span>
+    </div>
+    <div class="strat-card au d4">
+      <div class="strat-n">04</div>
+      <h3 class="strat-title">Launch Performance Series in Columbia Channels</h3>
+      <p class="strat-desc">Axoflux-inspired technical fabric, magnetic closure, angled card slots, hi-vis orange interior, AirTag pocket. <strong>$55–65 at Columbia.com and brand stores.</strong> This product earns Columbia placement in specialty outdoor retail — and permanently separates the brand from its department store competition.</p>
+      <span class="strat-tag now">Now</span>
+    </div>
+    <div class="strat-card au d5">
+      <div class="strat-n">05</div>
+      <h3 class="strat-title">Build the Performance Elite Halo Product</h3>
+      <p class="strat-desc">Waterproof membrane concept + stitchless bonding + UHMWPE Dyneema® reinforcement. $75–95, limited run, brand-direct. <strong>This product doesn't need volume — it needs existence.</strong> "Columbia makes a $90 performance wallet" permanently changes how consumers perceive the $44 one on the same shelf. If Titanium licensing is approved, this becomes the Titanium Elite — the most powerful version of the story.</p>
+      <span class="strat-tag next">Next Season</span>
+    </div>
+    <div class="strat-card au d6">
+      <div class="strat-n">06</div>
+      <h3 class="strat-title">Integrate Wallet Into the Performance Kit Story</h3>
+      <p class="strat-desc">In Columbia stores and online, position the wallet adjacent to performance apparel. Create "Complete the Kit" cross-sell in the Titanium, PFG, and PHG aisles. <strong>The wallet is not a wallet. It's the final piece of the outdoor carry system.</strong> No leather brand — Dockers, Levi's, Stafford — competes in that conversation.</p>
+      <span class="strat-tag next">Next Season</span>
+    </div>
+    <div class="strat-card au d7">
+      <div class="strat-n">07</div>
+      <h3 class="strat-title">Extend PFG &amp; PHG Into Wallets — Randa Already Has the Relationship</h3>
+      <p class="strat-desc">PFG and PHG wallets are the natural companion to the belts Randa already produces in both lines. The consumer, the channel, and the buying relationship are already in place. <strong>A PFG wallet at Kohl's and Academy alongside the PFG belt is a same-trip purchase</strong> — no new retail footprint required. PHG follows the same logic at Bass Pro and Academy.</p>
+      <span class="strat-tag now">Now</span>
+    </div>
+    <div class="strat-card au d8">
+      <div class="strat-n">08</div>
+      <h3 class="strat-title">Launch the Metal Wall — Columbia's Ridge Moment</h3>
+      <p class="strat-desc">Columbia has specifically requested a Ridge-style metal card wallet. Milled aluminum side plates, elastic or spring-clip mechanism, 1–12 cards, under 10mm loaded. $65–95 at Columbia.com, REI, and specialty outdoor. <strong>Available in Core Columbia, PFG-blue, and PHG earth-tone variants.</strong> If Titanium licensing is approved, a titanium-finish Metal Wall becomes the category's most compelling premium SKU.</p>
+      <span class="strat-tag next">Next Season</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── COLUMBIA CLOSING ────────────────────────────────── -->
+<section class="closing">
+  <div class="gold-rule center" style="position:relative;"></div>
+  <p class="eyebrow au" style="position:relative;">The Columbia Mandate</p>
+  <h2 class="closing-h au d1">The gear is<br>already built.<br><em>Now carry it.</em></h2>
+  <p class="closing-p au d2">Columbia doesn't need to invent anything new. The design concepts exist, the brand exists, and the retail footprint is already there — across Core Columbia, PFG, and PHG. The mandate is simple: build a wallet line worthy of the Columbia name across all three sub-brands, tell the performance story at shelf, and claim the territory between $44 leather and $95 DTC before someone else does it first.</p>
+  <div class="closing-kpis au d3">
+    <div class="ck">
+      <div class="ck-num">3</div>
+      <div class="ck-lbl">Sub-brand lines —<br>Core Columbia, PFG &amp; PHG</div>
+    </div>
+    <div class="ck">
+      <div class="ck-num">$95</div>
+      <div class="ck-lbl">Premium tier ceiling —<br>unclaimed territory</div>
+    </div>
+    <div class="ck">
+      <div class="ck-num">40%</div>
+      <div class="ck-lbl">Thickness reduction possible<br>with pull-tab architecture</div>
+    </div>
+    <div class="ck">
+      <div class="ck-num">Metal</div>
+      <div class="ck-lbl">Columbia's Ridge moment —<br>requested and ready to design</div>
+    </div>
+  </div>
+  <div class="au d4" style="position:relative;margin-top:72px;">
+    <p style="font-size:14px;color:rgba(255,255,255,.3);letter-spacing:.06em;">Columbia Wallet Design Strategy · Prepared for Randa Apparel &amp; Accessories · 2025–2027</p>
+  </div>
+</section>
+
+
+<!-- ── COLUMBIA FOOTER ─────────────────────────────────── -->
+<footer>
+  <div class="ft-brand">
+    <img src="images/RAA_Logo.png" alt="Randa Apparel & Accessories" />
+    <span class="ft-div"></span>
+  </div>
+  <button onclick="switchPage('main')" style="font-size:11px;color:rgba(255,255,255,.35);background:none;border:none;cursor:pointer;letter-spacing:.1em;text-transform:uppercase;transition:color .2s;" onmouseover="this.style.color='#C8A96E'" onmouseout="this.style.color='rgba(255,255,255,.35)'">← Market Overview</button>
+  <div class="ft-info">Internal Strategy Document · Confidential · 2025</div>
+</footer>
+
+</div><!-- /columbia-page -->
+
+
 <!-- ════════════════════════════════════════════
      JAVASCRIPT
 ════════════════════════════════════════════ -->
@@ -1048,6 +1858,68 @@
   window.addEventListener('scroll', () => {
     pb.style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100) + '%';
   });
+
+  // ── Page switching (Market Overview ↔ Columbia) ─────
+  let colFadeObserver = null;
+
+  function switchPage(page) {
+    const mainPage  = document.getElementById('main-page');
+    const colPage   = document.getElementById('columbia-page');
+    const mainNav   = document.getElementById('main-nav-links');
+    const colNav    = document.getElementById('col-nav-links');
+    const tabMain   = document.getElementById('tab-main');
+    const tabCol    = document.getElementById('tab-columbia');
+    const homeLink  = document.getElementById('nav-home-link');
+
+    if (page === 'columbia') {
+      mainPage.style.display  = 'none';
+      colPage.style.display   = 'block';
+      mainNav.style.display   = 'none';
+      colNav.style.display    = 'flex';
+      tabMain.classList.remove('active');
+      tabCol.classList.add('active');
+      homeLink.href = '#col-top';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Re-run fade-up animations for Columbia page elements
+      document.querySelectorAll('#columbia-page .au').forEach(el => el.classList.remove('in'));
+      if (colFadeObserver) colFadeObserver.disconnect();
+      setTimeout(() => {
+        colFadeObserver = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('in'); colFadeObserver.unobserve(e.target); }
+          });
+        }, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('#columbia-page .au').forEach(el => colFadeObserver.observe(el));
+      }, 120);
+
+      // Update nav scroll active links for Columbia sections
+      const colSections = document.querySelectorAll('#columbia-page section[id], #columbia-page div.split[id]');
+      function updateColNav() {
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+        let current = '';
+        colSections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.getAttribute('id'); });
+        document.querySelectorAll('#col-nav-links a').forEach(a => {
+          a.classList.remove('active');
+          if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+        });
+      }
+      window.addEventListener('scroll', updateColNav);
+
+    } else {
+      colPage.style.display   = 'none';
+      mainPage.style.display  = 'block';
+      colNav.style.display    = 'none';
+      mainNav.style.display   = 'flex';
+      tabMain.classList.add('active');
+      tabCol.classList.remove('active');
+      homeLink.href = '#top';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  // Make switchPage global so onclick attributes in footer can reach it
+  window.switchPage = switchPage;
 </script>
 </body>
 </html>
