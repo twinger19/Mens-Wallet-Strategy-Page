@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <title>The Future of the Fold — Wallet Innovation & Strategy 2025–2027</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -398,18 +401,64 @@
     .d5 { transition-delay: .40s; }
     .d6 { transition-delay: .48s; }
 
+    /* ── MOBILE HAMBURGER MENU ────────────────────────── */
+    .mobile-menu-btn {
+      display: none; background: none; border: none; cursor: pointer;
+      width: 28px; height: 20px; position: relative; padding: 0; z-index: 210;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .mobile-menu-btn span {
+      display: block; width: 100%; height: 2px; background: rgba(255,255,255,.8);
+      border-radius: 1px; position: absolute; left: 0; transition: all .3s ease;
+    }
+    .mobile-menu-btn span:nth-child(1) { top: 0; }
+    .mobile-menu-btn span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+    .mobile-menu-btn span:nth-child(3) { bottom: 0; }
+    nav.scrolled .mobile-menu-btn span { background: var(--near-black); }
+    .mobile-menu-btn.open span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+    .mobile-menu-btn.open span:nth-child(2) { opacity: 0; }
+    .mobile-menu-btn.open span:nth-child(3) { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
+    .mobile-menu-btn.open span { background: rgba(255,255,255,.85); }
+
+    .mobile-menu {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(12,10,8,.97);
+      backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+      z-index: 199; padding: 90px 32px 40px;
+      opacity: 0; visibility: hidden; transform: translateY(-12px);
+      transition: opacity .3s ease, visibility .3s ease, transform .3s ease;
+      overflow-y: auto; -webkit-overflow-scrolling: touch;
+    }
+    .mobile-menu.open { opacity: 1; visibility: visible; transform: translateY(0); }
+
+    .mobile-menu-label {
+      font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+      color: rgba(255,255,255,.25); margin-bottom: 16px;
+    }
+    .mobile-page-switch { display: flex; gap: 8px; margin-bottom: 36px; }
+    .mobile-page-btn {
+      flex: 1; padding: 14px 10px; border: 1px solid rgba(255,255,255,.1);
+      background: none; color: rgba(255,255,255,.45); font-size: 12px;
+      font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+      border-radius: 8px; cursor: pointer; transition: all .25s;
+      font-family: var(--sans);
+    }
+    .mobile-page-btn.active {
+      background: rgba(200,169,110,.12); border-color: rgba(200,169,110,.35); color: var(--gold);
+    }
+    .mobile-nav-links { list-style: none; }
+    .mobile-nav-links li { border-bottom: 1px solid rgba(255,255,255,.06); }
+    .mobile-nav-links a {
+      display: block; padding: 16px 0; color: rgba(255,255,255,.55);
+      font-size: 15px; font-weight: 400; text-decoration: none; transition: color .2s;
+    }
+    .mobile-nav-links a:active { color: var(--gold); }
+
     /* ── RESPONSIVE ───────────────────────────────────── */
     @media (max-width: 900px) {
-      /* Nav: tighter padding; always-visible backdrop prevents logo floating over page content */
-      nav { padding: 14px 20px; }
-      nav:not(.scrolled) {
-        background: rgba(12,10,8,.78);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-      }
-      /* Show page-tabs on mobile in compact form so Columbia section is reachable */
-      .page-tabs { display: flex !important; }
-      .page-tab { font-size: 9px; padding: 5px 9px; letter-spacing: .06em; }
+      nav { padding: 16px 20px; }
+      .mobile-menu-btn { display: block; }
+      .page-tabs { display: none !important; }
       .nav-links { display: none; }
       .nav-brand .nav-title, .nav-brand .nav-divider { display: none; }
 
@@ -568,7 +617,30 @@
     <li><a href="#col-features">Features</a></li>
     <li><a href="#col-retail">Retail</a></li>
   </ul>
+
+  <!-- Hamburger button (mobile only) -->
+  <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu" onclick="toggleMobileMenu()">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- ── MOBILE MENU OVERLAY ───────────────────────── -->
+<div class="mobile-menu" id="mobileMenu">
+  <p class="mobile-menu-label">Navigate</p>
+  <div class="mobile-page-switch">
+    <button class="mobile-page-btn active" id="mob-tab-main" onclick="switchPage('main');closeMobileMenu()">Market Overview</button>
+    <button class="mobile-page-btn" id="mob-tab-columbia" onclick="switchPage('columbia');closeMobileMenu()">Columbia</button>
+  </div>
+  <p class="mobile-menu-label">Sections</p>
+  <ul class="mobile-nav-links" id="mobile-section-links">
+    <li><a href="#story" onclick="closeMobileMenu()">The Story</a></li>
+    <li><a href="#payments" onclick="closeMobileMenu()">Payments</a></li>
+    <li><a href="#color" onclick="closeMobileMenu()">Color</a></li>
+    <li><a href="#gift" onclick="closeMobileMenu()">Gift Economy</a></li>
+    <li><a href="#archetypes" onclick="closeMobileMenu()">Archetypes</a></li>
+    <li><a href="#imperatives" onclick="closeMobileMenu()">Imperatives</a></li>
+  </ul>
+</div>
 
 <div id="main-page">
 
@@ -1883,6 +1955,55 @@
     pb.style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100) + '%';
   });
 
+  // ── Mobile hamburger menu ───────────────────────────
+  var mobileMenuOpen = false;
+  var mobileMenuEl = document.getElementById('mobileMenu');
+  var mobileMenuBtn = document.getElementById('mobileMenuBtn');
+
+  function toggleMobileMenu() {
+    mobileMenuOpen = !mobileMenuOpen;
+    mobileMenuEl.classList.toggle('open', mobileMenuOpen);
+    mobileMenuBtn.classList.toggle('open', mobileMenuOpen);
+    document.body.style.overflow = mobileMenuOpen ? 'hidden' : '';
+  }
+  function closeMobileMenu() {
+    mobileMenuOpen = false;
+    mobileMenuEl.classList.remove('open');
+    mobileMenuBtn.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  window.toggleMobileMenu = toggleMobileMenu;
+  window.closeMobileMenu = closeMobileMenu;
+
+  // Section links for each page
+  var mainSectionLinks = [
+    { href: '#story', label: 'The Story' },
+    { href: '#payments', label: 'Payments' },
+    { href: '#color', label: 'Color' },
+    { href: '#gift', label: 'Gift Economy' },
+    { href: '#archetypes', label: 'Archetypes' },
+    { href: '#imperatives', label: 'Imperatives' }
+  ];
+  var colSectionLinks = [
+    { href: '#col-story', label: 'Opportunity' },
+    { href: '#col-tiers', label: 'Products' },
+    { href: '#col-subbrands', label: 'PFG & PHG' },
+    { href: '#col-metalwall', label: 'Metal Wall' },
+    { href: '#col-features', label: 'Features' },
+    { href: '#col-retail', label: 'Retail' }
+  ];
+
+  function updateMobileSectionLinks(page) {
+    var linksEl = document.getElementById('mobile-section-links');
+    var links = page === 'columbia' ? colSectionLinks : mainSectionLinks;
+    linksEl.innerHTML = links.map(function(l) {
+      return '<li><a href="' + l.href + '" onclick="closeMobileMenu()">' + l.label + '</a></li>';
+    }).join('');
+    // Update mobile page-switch buttons
+    document.getElementById('mob-tab-main').classList.toggle('active', page !== 'columbia');
+    document.getElementById('mob-tab-columbia').classList.toggle('active', page === 'columbia');
+  }
+
   // ── Page switching (Market Overview ↔ Columbia) ─────
   let colFadeObserver = null;
 
@@ -1940,10 +2061,27 @@
       homeLink.href = '#top';
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
+    // Sync mobile menu section links to the active page
+    updateMobileSectionLinks(page);
   }
 
-  // Make switchPage global so onclick attributes in footer can reach it
+  // Make functions global so onclick attributes can reach them
   window.switchPage = switchPage;
+
+  // ── CACHE BUSTING ─────────────────────────────────────
+  // Bump this version string each time you push updates.
+  // It appends ?v=xxx to every image URL so the browser
+  // fetches fresh copies instead of serving stale cache.
+  var SITE_VERSION = 'v2026030101';
+  (function bustCache() {
+    document.querySelectorAll('img[src]').forEach(function(img) {
+      var src = img.getAttribute('src');
+      if (src && src.indexOf('?') === -1 && src.indexOf('data:') !== 0) {
+        img.src = src + '?' + SITE_VERSION;
+      }
+    });
+  })();
 </script>
 </body>
 </html>
