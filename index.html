@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Future of the Fold — Wallet Innovation & Strategy 2027 & Beyond</title>
+  <title>The Future of the Fold — Wallet Innovation & Strategy 2025–2027</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -47,17 +47,12 @@
       text-decoration: none; transition: opacity .2s;
     }
     .nav-brand:hover { opacity: .7; }
-    .nav-brand img {
-      height: 26px; width: auto; display: block;
-    }
-    .nav-brand .nav-divider {
-      width: 1px; height: 18px; background: var(--light-gray); opacity: .6;
-    }
+    .nav-brand img { height: 26px; width: auto; display: block; }
+    .nav-brand .nav-divider { width: 1px; height: 18px; background: var(--light-gray); opacity: .6; }
     .nav-brand .nav-title {
       font-size: 10px; font-weight: 600; letter-spacing: .14em;
       text-transform: uppercase; color: var(--mid-gray);
     }
-    nav.scrolled .nav-brand .nav-divider { background: var(--mid-gray); }
     .nav-links { display: flex; gap: 28px; list-style: none; }
     .nav-links a {
       font-size: 12px; font-weight: 500; letter-spacing: .05em;
@@ -76,11 +71,11 @@
       position: absolute; inset: 0; overflow: hidden;
       transform: scale(1.05); will-change: transform;
     }
-    /* Image placeholder — swap src for the real photo */
+    .hero-bg img, .hero-bg .img-slot {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
     .hero-bg .img-slot {
-      width: 100%; height: 100%;
       background: linear-gradient(135deg, #1A1714 0%, #352B22 35%, #5E4535 65%, #9B7850 88%, #C8A96E 100%);
-      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
     }
     .hero-overlay {
       position: absolute; inset: 0;
@@ -91,7 +86,7 @@
       padding: 0 52px 88px; max-width: 960px;
     }
     .eyebrow {
-      font-size: 11px; font-weight: 700; letter-spacing: .2em;
+      font-size: 12px; font-weight: 700; letter-spacing: .2em;
       text-transform: uppercase; color: var(--gold); margin-bottom: 22px;
     }
     .hero-h1 {
@@ -100,8 +95,8 @@
     }
     .hero-h1 em { font-style: italic; color: var(--gold); }
     .hero-lead {
-      font-size: 18px; font-weight: 300; line-height: 1.7;
-      color: rgba(255,255,255,.7); max-width: 540px; margin-bottom: 52px;
+      font-size: 20px; font-weight: 300; line-height: 1.7;
+      color: rgba(255,255,255,.75); max-width: 560px; margin-bottom: 52px;
     }
     .hero-kpis {
       display: flex; gap: 52px;
@@ -112,15 +107,12 @@
       font-weight: 600; color: var(--gold); line-height: 1;
     }
     .kpi-sup { font-size: 22px; }
-    .kpi-label {
-      display: block; font-size: 12px; color: rgba(255,255,255,.55); margin-top: 6px; line-height: 1.5;
-    }
-    .kpi-sub { font-size: 10px; color: rgba(255,255,255,.3); margin-top: 3px; display: block; }
+    .kpi-label { display: block; font-size: 14px; color: rgba(255,255,255,.6); margin-top: 6px; line-height: 1.5; }
     .scroll-cue {
       position: absolute; bottom: 34px; right: 52px; z-index: 2;
       display: flex; align-items: center; gap: 10px;
     }
-    .scroll-cue span { font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.35); }
+    .scroll-cue span { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.35); }
     .scroll-line { width: 44px; height: 1px; background: rgba(255,255,255,.2); overflow: hidden; position: relative; }
     .scroll-line::after {
       content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
@@ -129,40 +121,70 @@
     @keyframes scanline { 0%{left:-100%} 50%{left:0} 100%{left:100%} }
 
     /* ── SHARED LAYOUT ─────────────────────────────────── */
-    .section-wrap { padding: 112px 52px; }
+    .section-wrap { padding: 120px 52px; position: relative; overflow: hidden; }
     .section-wrap.bg-white  { background: var(--white); }
     .section-wrap.bg-cream  { background: var(--cream); }
     .section-wrap.bg-dark   { background: var(--near-black); color: #fff; }
-    .section-wrap.bg-dark2  { background: #18181600; background-color: #181816; color: #fff; }
 
     .tag {
-      display: inline-block; font-size: 10px; font-weight: 700;
+      display: inline-block; font-size: 12px; font-weight: 700;
       letter-spacing: .2em; text-transform: uppercase; margin-bottom: 18px;
     }
     .tag.gold  { color: var(--gold-dark); }
     .tag.gold-lt { color: var(--gold); }
-    .tag.green { color: #4A8C6E; }
-    .tag.blue  { color: #6A9BB8; }
+
+    .gold-rule { height: 3px; width: 60px; background: var(--gold); border-radius: 2px; margin-bottom: 28px; }
+    .gold-rule.center { margin-left: auto; margin-right: auto; }
 
     h2.sh {
-      font-family: var(--serif); font-size: clamp(30px,4vw,50px);
-      font-weight: 600; line-height: 1.18; margin-bottom: 22px;
+      font-family: var(--serif); font-size: clamp(32px,4.2vw,52px);
+      font-weight: 600; line-height: 1.18; margin-bottom: 24px;
     }
     h3.ssh {
-      font-family: var(--serif); font-size: 22px;
-      font-weight: 600; line-height: 1.3; margin-bottom: 12px;
+      font-family: var(--serif); font-size: 26px;
+      font-weight: 600; line-height: 1.3; margin-bottom: 14px;
     }
-    p.body { font-size: 16px; line-height: 1.78; color: var(--mid-gray); margin-bottom: 18px; }
+    p.body { font-size: 18px; line-height: 1.78; color: var(--mid-gray); margin-bottom: 20px; }
     p.body strong { color: var(--near-black); font-weight: 600; }
-    p.body.on-dark { color: rgba(255,255,255,.58); }
-    p.body.on-dark strong { color: rgba(255,255,255,.9); }
+    p.body.on-dark { color: rgba(255,255,255,.6); }
+    p.body.on-dark strong { color: rgba(255,255,255,.92); }
 
     .callout {
-      padding: 26px 30px; border-left: 3px solid var(--gold);
-      background: rgba(200,169,110,.07); margin-top: 24px; border-radius: 0 4px 4px 0;
+      padding: 28px 32px; border-left: 3px solid var(--gold);
+      background: rgba(200,169,110,.07); margin-top: 28px; border-radius: 0 4px 4px 0;
     }
-    .callout p { font-size: 15px; line-height: 1.7; color: var(--near-black); margin: 0; }
+    .callout p { font-size: 17px; line-height: 1.7; color: var(--near-black); margin: 0; }
     .callout p strong { color: var(--gold-dark); }
+
+    /* ── TOOLTIP (acronyms) ──────────────────────────── */
+    .tip {
+      position: relative; cursor: help;
+      border-bottom: 1px dotted currentColor;
+    }
+    .tip::after {
+      content: attr(data-tip);
+      position: absolute; bottom: calc(100% + 8px); left: 50%;
+      transform: translateX(-50%); white-space: nowrap;
+      background: var(--near-black); color: #fff;
+      font-family: var(--sans); font-size: 13px; font-weight: 400;
+      letter-spacing: 0; text-transform: none; font-style: normal;
+      padding: 8px 14px; border-radius: 4px;
+      opacity: 0; pointer-events: none; transition: opacity .2s;
+      z-index: 50;
+    }
+    .tip::before {
+      content: '';
+      position: absolute; bottom: calc(100% + 2px); left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent; border-top-color: var(--near-black);
+      opacity: 0; pointer-events: none; transition: opacity .2s;
+      z-index: 50;
+    }
+    .tip:hover::after, .tip:hover::before { opacity: 1; }
+
+    /* ── GRIDS ────────────────────────────────────────── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .three-col { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
 
     /* ── IMAGE SLOT COMPONENT ─────────────────────────── */
     .img-slot {
@@ -175,19 +197,19 @@
     .img-slot.forest { background: linear-gradient(135deg,#111A15 0%,#1F3828 55%,#3A5F46 100%); }
     .img-slot.stone  { background: linear-gradient(135deg,#1A1918 0%,#383530 55%,#6B6560 100%); }
     .img-slot.blush  { background: linear-gradient(135deg,#221818 0%,#5C3128 55%,#9B6050 100%); }
-    .slot-filename {
-      font-size: 10px; font-weight: 700; letter-spacing: .2em;
-      text-transform: uppercase; color: rgba(255,255,255,.45); font-family: var(--sans);
-    }
-    .slot-desc {
-      font-size: 12px; color: rgba(255,255,255,.22); font-family: var(--sans);
-      max-width: 340px; line-height: 1.5;
-    }
 
-    /* ── INTRO 2-COL ──────────────────────────────────── */
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-    .three-col { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
-    .four-col { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
+    /* ── FULL-BLEED IMAGE ────────────────────────────── */
+    .bleed { width: 100%; height: 72vh; min-height: 460px; overflow: hidden; position: relative; }
+    .bleed .img-slot { position: absolute; inset: 0; }
+
+    /* ── SPLIT (image + text) ────────────────────────── */
+    .split { display: grid; grid-template-columns: 1fr 1fr; min-height: 580px; }
+    .split-img { position: relative; overflow: hidden; min-height: 400px; }
+    .split-img .img-slot { position: absolute; inset: 0; }
+    .split-content { padding: 80px 64px; display: flex; flex-direction: column; justify-content: center; }
+    .split-content.dark { background: var(--near-black); color: #fff; }
+    .split-content.cream { background: var(--cream); }
+    .split-content.white { background: var(--white); }
 
     /* ── KPI BAR ──────────────────────────────────────── */
     .kpi-bar {
@@ -195,199 +217,145 @@
       border-top: 1px solid var(--light-gray); background: var(--white);
     }
     .kpi-cell {
-      padding: 44px 36px; border-right: 1px solid var(--light-gray);
+      padding: 48px 40px; border-right: 1px solid var(--light-gray);
+      transition: background .3s;
     }
     .kpi-cell:last-child { border-right: none; }
+    .kpi-cell:hover { background: var(--cream); }
     .kpi-big {
       font-family: var(--serif); font-size: 54px; font-weight: 600;
       line-height: 1; display: block; color: var(--near-black);
     }
     .kpi-big .u { font-size: 28px; }
-    .kpi-desc { font-size: 14px; color: var(--mid-gray); margin-top: 10px; line-height: 1.5; }
-    .badge {
-      display: inline-block; margin-top: 8px; font-size: 11px; font-weight: 600;
-      letter-spacing: .04em; padding: 2px 0;
-    }
-    .badge.dn { color: var(--red); }
-    .badge.up { color: var(--green); }
-
-    /* ── PAYMENT CARDS ────────────────────────────────── */
-    .pay-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: rgba(255,255,255,.04); }
-    .pay-card { background: #232220; padding: 48px 36px; }
-    .pay-icon {
-      width: 42px; height: 42px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px; margin-bottom: 24px;
-    }
-    .pay-icon.gold   { background: var(--gold); }
-    .pay-icon.blue   { background: var(--blue); }
-    .pay-icon.green  { background: var(--green); }
-    .pay-big {
-      font-family: var(--serif); font-size: 60px; font-weight: 600;
-      line-height: 1; margin-bottom: 6px; color: #fff;
-    }
-    .pay-big .u { font-size: 30px; }
-    .pay-lbl { font-size: 13px; color: rgba(255,255,255,.45); margin-bottom: 20px; line-height: 1.5; }
-    .pay-card p { font-size: 14px; line-height: 1.68; color: rgba(255,255,255,.38); }
-    .pay-card p strong { color: rgba(255,255,255,.82); }
-    .pay-card p + p { margin-top: 12px; }
-
-    /* ── FULL-BLEED IMAGES ────────────────────────────── */
-    .bleed { width: 100%; height: 72vh; min-height: 460px; overflow: hidden; position: relative; }
-    .bleed .img-slot { position: absolute; inset: 0; }
-
-    /* ── TREND BARS ───────────────────────────────────── */
-    .bar-list { display: flex; flex-direction: column; gap: 26px; }
-    .bar-row { display: grid; grid-template-columns: 200px 1fr 90px; align-items: center; gap: 18px; }
-    .bar-name { font-size: 13px; font-weight: 500; color: var(--near-black); }
-    .bar-track { height: 5px; background: var(--light-gray); border-radius: 3px; overflow: hidden; }
-    .bar-fill {
-      height: 100%; border-radius: 3px;
-      transform: scaleX(0); transform-origin: left;
-      transition: transform 1.2s cubic-bezier(.16,1,.3,1);
-    }
-    .bar-fill.go { transform: scaleX(1); }
-    .bar-fill.gold  { background: var(--gold); }
-    .bar-fill.green { background: #2D7A5C; }
-    .bar-fill.blue  { background: var(--blue); }
-    .bar-fill.gray  { background: var(--mid-gray); }
-    .bar-fill.red   { background: var(--red); }
-    .bar-val { font-size: 13px; font-weight: 600; text-align: right; }
+    .kpi-desc { font-size: 16px; color: var(--mid-gray); margin-top: 12px; line-height: 1.5; }
 
     /* ── CARD SLOT VIZ ────────────────────────────────── */
-    .slot-row { display: flex; gap: 6px; flex-wrap: wrap; }
+    .slot-row { display: flex; gap: 7px; flex-wrap: wrap; }
     .cs {
-      width: 30px; height: 44px; border-radius: 3px;
+      width: 36px; height: 52px; border-radius: 4px;
       border: 2px solid var(--light-gray);
     }
     .cs.active { background: var(--near-black); border-color: var(--near-black); }
     .cs.gold   { background: var(--gold); border-color: var(--gold); }
-    .cs.faded  { background: var(--mid-gray); border-color: var(--mid-gray); opacity: .38; }
+    .cs.faded  { background: var(--mid-gray); border-color: var(--mid-gray); opacity: .35; }
 
     /* ── BRAND CARDS ──────────────────────────────────── */
     .brand-card {
-      background: var(--white); padding: 36px 32px; border-radius: 4px;
+      background: var(--white); padding: 40px 36px; border-radius: 4px;
       position: relative; overflow: hidden;
+      transition: transform .3s ease, box-shadow .3s ease;
     }
+    .brand-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.08); }
     .brand-card::before {
       content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
     }
     .brand-card.lux::before  { background: var(--gold); }
     .brand-card.dtc::before  { background: var(--blue); }
-    .brand-card.opp::before  { background: var(--green); }
-    .brand-tier { font-size: 9px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 14px; padding-left: 10px; }
-    .brand-name { font-family: var(--serif); font-size: 26px; font-weight: 600; margin-bottom: 6px; }
-    .brand-price { font-size: 12px; font-weight: 600; color: var(--gold-dark); margin-bottom: 18px; }
-    .brand-body { font-size: 14px; line-height: 1.68; color: var(--mid-gray); }
+    .brand-tier { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 14px; padding-left: 10px; }
+    .brand-name { font-family: var(--serif); font-size: 28px; font-weight: 600; margin-bottom: 6px; }
+    .brand-price { font-size: 14px; font-weight: 600; color: var(--gold-dark); margin-bottom: 20px; }
+    .brand-body { font-size: 16px; line-height: 1.68; color: var(--mid-gray); }
     .brand-body strong { color: var(--near-black); }
-    .brand-body + .brand-body { margin-top: 12px; }
     .lesson {
-      margin-top: 18px; padding: 14px 16px; background: var(--cream); border-radius: 3px;
-      font-size: 13px; font-weight: 500; color: var(--near-black); line-height: 1.55;
+      margin-top: 20px; padding: 16px 18px; background: var(--cream); border-radius: 4px;
+      font-size: 15px; font-weight: 500; color: var(--near-black); line-height: 1.55;
     }
 
-    /* ── FEATURE LIST ─────────────────────────────────── */
-    .feature-list { display: flex; flex-direction: column; }
-    .feat {
-      display: grid; grid-template-columns: 36px 1fr auto;
-      align-items: start; gap: 20px;
-      padding: 30px 0; border-bottom: 1px solid rgba(255,255,255,.07);
-    }
-    .feat-num { font-size: 11px; font-weight: 700; color: var(--gold); padding-top: 3px; }
-    .feat h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; color: #fff; }
-    .feat p  { font-size: 14px; line-height: 1.65; color: rgba(255,255,255,.45); }
-    .pill {
-      font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
-      padding: 5px 14px; border-radius: 20px; white-space: nowrap; margin-top: 2px;
-      transition: transform .2s ease;
-    }
-    .feat:hover .pill { transform: scale(1.05); }
-    .pill.req  { background: rgba(200,169,110,.14); color: var(--gold); }
-    .pill.exp  { background: rgba(59,91,115,.22); color: #7AB0CC; }
-    .pill.emrg { background: rgba(45,74,62,.28); color: #5AAE82; }
-
-    /* ── MATERIALS / COLOR ────────────────────────────── */
-    .color-swatch-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; border-radius: 4px; overflow: hidden; margin-top: 32px; }
-    .swatch { height: 120px; position: relative; transition: transform .3s ease; cursor: default; }
-    .swatch:hover { transform: scaleY(1.08); z-index: 2; }
-    .swatch-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 12px; background: linear-gradient(to top,rgba(0,0,0,.5),transparent); }
-    .swatch-name { font-size: 11px; font-weight: 700; color: #fff; display: block; letter-spacing: .04em; }
-    .swatch-pct  { font-size: 20px; font-weight: 700; color: #fff; }
+    /* ── COLOR SWATCHES ──────────────────────────────── */
+    .color-swatch-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; border-radius: 6px; overflow: hidden; margin-top: 36px; }
+    .swatch { height: 140px; position: relative; transition: transform .3s; cursor: default; }
+    .swatch:hover { transform: scaleY(1.06); z-index: 2; }
+    .swatch-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 14px; background: linear-gradient(to top,rgba(0,0,0,.55),transparent); }
+    .swatch-name { font-size: 13px; font-weight: 700; color: #fff; display: block; letter-spacing: .04em; }
+    .swatch-pct  { font-size: 22px; font-weight: 700; color: #fff; }
 
     /* ── GIFT SECTION ─────────────────────────────────── */
     .pull-quote {
-      font-family: var(--serif); font-size: clamp(26px,3.5vw,46px);
+      font-family: var(--serif); font-size: clamp(28px,3.5vw,48px);
       font-style: italic; font-weight: 400; line-height: 1.38;
       text-align: center; max-width: 820px; margin: 0 auto 80px;
     }
     .pull-quote em { font-style: normal; color: var(--gold-dark); }
     .gift-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 28px; }
-    .gift-card { background: var(--white); padding: 36px; border-radius: 4px; }
-    .g-stat {
-      font-family: var(--serif); font-size: 50px; font-weight: 600;
-      line-height: 1; margin-bottom: 6px; color: var(--near-black);
+    .gift-card {
+      background: var(--white); padding: 40px; border-radius: 4px;
+      transition: transform .3s, box-shadow .3s;
     }
-    .g-lbl { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 14px; }
-    .g-desc { font-size: 15px; line-height: 1.68; color: var(--mid-gray); }
+    .gift-card:hover { transform: translateY(-3px); box-shadow: 0 10px 36px rgba(0,0,0,.06); }
+    .g-stat {
+      font-family: var(--serif); font-size: 52px; font-weight: 600;
+      line-height: 1; margin-bottom: 8px; color: var(--near-black);
+    }
+    .g-lbl { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 16px; }
+    .g-desc { font-size: 16px; line-height: 1.68; color: var(--mid-gray); }
     .g-desc strong { color: var(--near-black); }
 
-    /* ── SKU ARCHITECTURE ─────────────────────────────── */
-    .sku-tiers { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: rgba(255,255,255,.04); margin-top: 56px; }
-    .sku-tier { background: #222220; padding: 40px 32px; }
-    .tier-badge {
-      display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: .16em;
-      text-transform: uppercase; padding: 4px 10px; border-radius: 20px; margin-bottom: 18px;
+    /* ── FEATURE LIST ─────────────────────────────────── */
+    .feature-list { display: flex; flex-direction: column; }
+    .feat {
+      display: grid; grid-template-columns: 44px 1fr auto;
+      align-items: start; gap: 22px;
+      padding: 34px 0; border-bottom: 1px solid rgba(255,255,255,.07);
     }
-    .tier-badge.good   { background: rgba(122,118,112,.2); color: #aaa; }
-    .tier-badge.better { background: rgba(200,169,110,.18); color: var(--gold); }
-    .tier-badge.best   { background: rgba(59,91,115,.22);   color: #7AB0CC; }
-    .tier-price { font-family: var(--serif); font-size: 36px; font-weight: 600; color: #fff; margin-bottom: 4px; }
-    .tier-name  { font-size: 13px; color: rgba(255,255,255,.4); margin-bottom: 20px; }
-    .tier-skus  { font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 4px; }
-    .tier-sku-label { font-size: 12px; color: rgba(255,255,255,.35); margin-bottom: 20px; }
-    .tier-items { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-    .tier-items li { font-size: 13px; color: rgba(255,255,255,.5); padding-left: 16px; position: relative; line-height: 1.5; }
-    .tier-items li::before { content: '–'; position: absolute; left: 0; color: var(--gold); }
-    .tier-items li strong { color: rgba(255,255,255,.8); }
-
-    /* ── BRAND POSITIONING ────────────────────────────── */
-    .brand-pos-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 56px; }
-    .bp-card { background: var(--white); padding: 28px 26px; border-radius: 4px; }
-    .bp-brand { font-family: var(--serif); font-size: 20px; font-weight: 600; margin-bottom: 4px; }
-    .bp-range { font-size: 12px; font-weight: 600; color: var(--gold-dark); margin-bottom: 14px; }
-    .bp-desc  { font-size: 13px; line-height: 1.62; color: var(--mid-gray); }
-    .bp-desc strong { color: var(--near-black); }
+    .feat-num { font-size: 13px; font-weight: 700; color: var(--gold); padding-top: 3px; }
+    .feat h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; color: #fff; }
+    .feat p  { font-size: 16px; line-height: 1.68; color: rgba(255,255,255,.5); }
+    .pill {
+      font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 20px; white-space: nowrap; margin-top: 2px;
+    }
+    .pill.req  { background: rgba(200,169,110,.14); color: var(--gold); }
+    .pill.exp  { background: rgba(59,91,115,.22); color: #7AB0CC; }
 
     /* ── ARCHETYPES ───────────────────────────────────── */
-    .arch-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; margin-top: 56px; }
-    .arch-card { background: var(--white); border-radius: 4px; overflow: hidden; }
-    .arch-img  { height: 220px; width: 100%; overflow: hidden; position: relative; }
-    .arch-img .img-slot { position: absolute; inset: 0; }
-    .arch-body { padding: 26px; }
-    .arch-lbl  { font-size: 9px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 7px; }
-    .arch-name { font-family: var(--serif); font-size: 19px; font-weight: 600; margin-bottom: 8px; }
-    .arch-desc { font-size: 13px; line-height: 1.6; color: var(--mid-gray); }
-    .arch-specs {
-      margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--light-gray);
-      font-size: 12px; color: var(--mid-gray);
+    .arch-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 56px; }
+    .arch-card {
+      background: var(--white); border-radius: 4px; overflow: hidden;
+      transition: transform .3s, box-shadow .3s;
     }
-    .arch-specs span { display: block; margin-bottom: 3px; }
+    .arch-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(0,0,0,.1); }
+    .arch-img { height: 240px; width: 100%; overflow: hidden; position: relative; }
+    .arch-img .img-slot { position: absolute; inset: 0; }
+    .arch-body { padding: 28px; }
+    .arch-lbl  { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 8px; }
+    .arch-name { font-family: var(--serif); font-size: 22px; font-weight: 600; margin-bottom: 10px; }
+    .arch-desc { font-size: 15px; line-height: 1.6; color: var(--mid-gray); }
+    .arch-specs {
+      margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--light-gray);
+      font-size: 14px; color: var(--mid-gray);
+    }
+    .arch-specs span { display: block; margin-bottom: 4px; }
     .arch-specs strong { color: var(--near-black); }
 
     /* ── STRATEGY CARDS ───────────────────────────────── */
     .strat-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; background: rgba(255,255,255,.04); margin-top: 56px; }
-    .strat-card { background: #1C1C1A; padding: 44px 38px; }
+    .strat-card {
+      background: #1C1C1A; padding: 48px 42px;
+      transition: transform .3s, background .3s;
+    }
+    .strat-card:hover { transform: translateY(-3px); background: #222220; }
     .strat-n { font-family: var(--serif); font-size: 88px; font-weight: 600; line-height: 1; color: rgba(255,255,255,.05); margin-bottom: -36px; }
-    .strat-title { font-family: var(--serif); font-size: 23px; font-weight: 600; color: #fff; margin-bottom: 14px; position: relative; }
-    .strat-desc { font-size: 15px; line-height: 1.72; color: rgba(255,255,255,.5); }
-    .strat-desc strong { color: rgba(255,255,255,.88); }
+    .strat-title { font-family: var(--serif); font-size: 24px; font-weight: 600; color: #fff; margin-bottom: 16px; position: relative; }
+    .strat-desc { font-size: 16px; line-height: 1.72; color: rgba(255,255,255,.55); }
+    .strat-desc strong { color: rgba(255,255,255,.9); }
     .strat-tag {
-      display: inline-block; margin-top: 18px; padding: 5px 13px; border-radius: 20px;
-      font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      display: inline-block; margin-top: 20px; padding: 6px 14px; border-radius: 20px;
+      font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
     }
     .strat-tag.now   { background: rgba(200,169,110,.14); color: var(--gold); }
     .strat-tag.next  { background: rgba(59,91,115,.2);    color: #7AB0CC; }
-    .strat-tag.later { background: rgba(45,74,62,.22);    color: #5AAE82; }
+
+    /* ── BRAND POSITIONING ────────────────────────────── */
+    .bp-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 48px; }
+    .bp-card {
+      background: var(--white); padding: 32px 28px; border-radius: 4px;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .bp-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,.07); }
+    .bp-brand { font-family: var(--serif); font-size: 22px; font-weight: 600; margin-bottom: 4px; }
+    .bp-range { font-size: 14px; font-weight: 600; color: var(--gold-dark); margin-bottom: 14px; }
+    .bp-desc  { font-size: 15px; line-height: 1.62; color: var(--mid-gray); }
+    .bp-desc strong { color: var(--near-black); }
 
     /* ── CLOSING ──────────────────────────────────────── */
     .closing {
@@ -402,59 +370,22 @@
     }
     .closing-h { font-family: var(--serif); font-size: clamp(44px,6.5vw,86px); font-weight: 600; line-height: 1.08; margin-bottom: 30px; position: relative; }
     .closing-h em { font-style: italic; color: var(--gold); }
-    .closing-p { font-size: 18px; line-height: 1.72; color: rgba(255,255,255,.55); max-width: 620px; margin: 0 auto 64px; position: relative; }
-    .closing-kpis { display: flex; justify-content: center; gap: 56px; flex-wrap: wrap; position: relative; }
+    .closing-p { font-size: 20px; line-height: 1.72; color: rgba(255,255,255,.6); max-width: 640px; margin: 0 auto 64px; position: relative; }
+    .closing-kpis { display: flex; justify-content: center; gap: 64px; flex-wrap: wrap; position: relative; }
     .ck { text-align: center; }
-    .ck-num { font-family: var(--serif); font-size: 44px; font-weight: 600; color: var(--gold); }
-    .ck-lbl { font-size: 12px; color: rgba(255,255,255,.35); margin-top: 6px; line-height: 1.5; }
+    .ck-num { font-family: var(--serif); font-size: 48px; font-weight: 600; color: var(--gold); }
+    .ck-lbl { font-size: 14px; color: rgba(255,255,255,.4); margin-top: 8px; line-height: 1.5; }
 
     /* ── FOOTER ───────────────────────────────────────── */
     footer {
       padding: 36px 52px; background: #111110;
       display: flex; justify-content: space-between; align-items: center;
     }
-    .ft-brand {
-      display: flex; align-items: center; gap: 14px;
-    }
+    .ft-brand { display: flex; align-items: center; gap: 14px; }
     .ft-brand img { height: 20px; width: auto; opacity: .4; filter: brightness(10); }
-    .ft-brand span {
-      font-size: 11px; font-weight: 700; letter-spacing: .15em;
-      text-transform: uppercase; color: rgba(255,255,255,.35);
-    }
+    .ft-brand span { font-size: 11px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.35); }
     .ft-brand .ft-div { width: 1px; height: 14px; background: rgba(255,255,255,.12); }
     .ft-info  { font-size: 11px; color: rgba(255,255,255,.2); }
-
-    /* ── DIVIDER ──────────────────────────────────────── */
-    .divider { height: 1px; background: var(--light-gray); margin: 0 52px; }
-    .gold-rule {
-      height: 3px; width: 60px; background: var(--gold); border-radius: 2px;
-      margin-bottom: 28px;
-    }
-    .gold-rule.center { margin-left: auto; margin-right: auto; }
-
-    /* ── CARD HOVER EFFECTS ────────────────────────────── */
-    .pay-card { transition: transform .3s ease, background .3s ease; }
-    .pay-card:hover { transform: translateY(-4px); background: #282624; }
-    .brand-card { transition: transform .3s ease, box-shadow .3s ease; }
-    .brand-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.08); }
-    .gift-card { transition: transform .3s ease, box-shadow .3s ease; }
-    .gift-card:hover { transform: translateY(-3px); box-shadow: 0 10px 36px rgba(0,0,0,.06); }
-    .bp-card { transition: transform .3s ease, box-shadow .3s ease; }
-    .bp-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,.07); }
-    .arch-card { transition: transform .3s ease, box-shadow .3s ease; }
-    .arch-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(0,0,0,.1); }
-    .strat-card { transition: transform .3s ease, background .3s ease; }
-    .strat-card:hover { transform: translateY(-3px); background: #222220; }
-    .kpi-cell { transition: background .3s ease; }
-    .kpi-cell:hover { background: var(--cream); }
-
-    /* ── SECTION TRANSITIONS ─────────────────────────── */
-    .section-number {
-      font-family: var(--serif); font-size: 140px; font-weight: 600;
-      line-height: 1; color: rgba(200,169,110,.06); position: absolute;
-      top: -20px; right: 52px; pointer-events: none; user-select: none;
-    }
-    .section-wrap { position: relative; overflow: hidden; }
 
     /* ── ANIMATIONS ───────────────────────────────────── */
     .au { opacity: 0; transform: translateY(30px); transition: opacity .75s ease, transform .75s cubic-bezier(.16,1,.3,1); }
@@ -466,26 +397,17 @@
     .d5 { transition-delay: .40s; }
     .d6 { transition-delay: .48s; }
 
-    /* ── SPLIT LAYOUT ─────────────────────────────────── */
-    .split { display: grid; grid-template-columns: 1fr 1fr; min-height: 580px; }
-    .split-img { position: relative; overflow: hidden; min-height: 400px; }
-    .split-img .img-slot { position: absolute; inset: 0; }
-    .split-content { padding: 80px 60px; display: flex; flex-direction: column; justify-content: center; }
-    .split-content.dark { background: var(--near-black); }
-    .split-content.cream { background: var(--cream); }
-    .split-content.white { background: var(--white); }
-
-    /* ── RESPONSIVE — TABLET (≤ 900px) ────────────────── */
+    /* ── RESPONSIVE ───────────────────────────────────── */
     @media (max-width: 900px) {
       nav { padding: 18px 24px; }
       .nav-links { display: none; }
-      /* KEY FIX: hero-body needs top padding so content never slides behind the fixed nav */
-      .hero-body { padding: 80px 24px 64px; }
+      .nav-brand .nav-title, .nav-brand .nav-divider { display: none; }
+      .hero-body { padding: 0 24px 64px; }
       .hero-kpis { gap: 28px; flex-wrap: wrap; }
       .section-wrap { padding: 80px 24px; }
       .two-col, .split { grid-template-columns: 1fr; gap: 40px; }
-      .three-col, .pay-grid, .sku-tiers, .brand-pos-grid { grid-template-columns: 1fr; }
-      .four-col, .arch-grid { grid-template-columns: repeat(2,1fr); }
+      .three-col, .bp-grid { grid-template-columns: 1fr; }
+      .arch-grid { grid-template-columns: 1fr; }
       .kpi-bar { grid-template-columns: 1fr 1fr; }
       .kpi-cell { border-right: none; border-bottom: 1px solid var(--light-gray); }
       .kpi-cell:nth-child(odd) { border-right: 1px solid var(--light-gray); }
@@ -493,93 +415,11 @@
       .strat-grid { grid-template-columns: 1fr; }
       .color-swatch-row { grid-template-columns: repeat(2,1fr); }
       .gift-grid { grid-template-columns: 1fr; }
-      .bar-row { grid-template-columns: 1fr 60px; }
-      .bar-name { grid-column: 1/-1; }
       .closing { padding: 100px 24px; }
       footer { flex-direction: column; gap: 10px; text-align: center; }
       .ft-brand { justify-content: center; }
-      .nav-brand .nav-title { display: none; }
-      .nav-brand .nav-divider { display: none; }
-      /* Reduce split-content padding on tablet */
-      .split-content { padding: 52px 40px; }
-      /* Section decoration: prevent any horizontal overflow */
-      .section-number { font-size: 100px; right: 24px; }
-    }
-
-    /* ── RESPONSIVE — PHONE (≤ 480px) ─────────────────── */
-    @media (max-width: 480px) {
-      /* Nav: tighten it up on small screens */
-      nav { padding: 12px 16px; }
-      .nav-brand img { height: 22px; }
-
-      /* Hero: ensure logo never overlaps — generous top padding = nav height + buffer */
-      .hero-body { padding: 76px 16px 48px; }
-      /* Smaller headline so it doesn't push content behind the nav */
-      .hero-h1 { font-size: clamp(32px, 9vw, 52px); }
-      .hero-lead { font-size: 15px; line-height: 1.65; margin-bottom: 32px; }
-      /* 2-col KPI grid instead of a horizontal row */
-      .hero-kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding-top: 24px; }
-      .kpi-num { font-size: 34px; }
-      .kpi-sup { font-size: 18px; }
-      .scroll-cue { display: none; }
-
-      /* Section padding */
-      .section-wrap { padding: 60px 16px; }
-      .section-number { font-size: 72px; right: 16px; top: -10px; }
-
-      /* KPI bar: single column on phones */
-      .kpi-bar { grid-template-columns: 1fr; }
-      .kpi-cell { border-right: none !important; border-bottom: 1px solid var(--light-gray); }
-      .kpi-cell:last-child { border-bottom: none; }
-      .kpi-big { font-size: 42px; }
-      .kpi-big .u { font-size: 22px; }
-
-      /* Payment cards: remove the micro gap grid bg on phones */
-      .pay-grid { background: transparent; }
-      .pay-card { gap: 2px; }
-      .pay-card { background: var(--dark); }
-      .pay-big { font-size: 44px; }
-      .pay-big .u { font-size: 22px; }
-
-      /* Feature list: adjust on phones */
-      .feat { padding: 24px 0; }
-      .feat-num { font-size: 10px; }
-      .feat h3 { font-size: 15px; }
-      .feat p { font-size: 13px; }
-
-      /* Color swatch: 2 columns on phone */
-      .color-swatch-row { grid-template-columns: 1fr; }
-
-      /* Gift grid: full width on phones */
-      .gift-grid { grid-template-columns: 1fr; }
-
-      /* Arch grid: 2 columns on phones */
-      .arch-grid { grid-template-columns: 1fr; }
-
-      /* Strat grid: 1 column on phones */
-      .strat-grid { grid-template-columns: 1fr; }
-
-      /* Closing: reduce padding on phone */
-      .closing { padding: 80px 16px; }
-      .closing-h { font-size: clamp(32px, 8vw, 56px); margin-bottom: 20px; }
-      .closing-p { font-size: 14px; margin-bottom: 40px; }
-      .closing-kpis { gap: 24px; }
-      .ck-num { font-size: 32px; }
-      .ck-lbl { font-size: 11px; }
-
-      /* Footer: stack on phones */
-      footer { flex-direction: column; padding: 24px 16px; }
-      .ft-info { font-size: 10px; }
-
-      /* Bar row: adjust for phones */
-      .bar-row { grid-template-columns: 1fr; gap: 12px; }
-      .bar-val { text-align: left; }
-
-      /* Two-col: full width on phones */
-      .two-col { gap: 40px; }
-
-      /* Split layout: full width on phones */
-      .split-content { padding: 40px 16px; }
+      .split-content { padding: 60px 24px; }
+      .arch-wide { grid-template-columns: 1fr !important; }
     }
   </style>
 </head>
@@ -592,16 +432,14 @@
   <a href="#top" class="nav-brand">
     <img src="images/RAA_Logo.png" alt="Randa Apparel & Accessories" />
     <span class="nav-divider"></span>
-    <span class="nav-title">Wallet Strategy 2027–Beyond</span>
+    <span class="nav-title">Wallet Strategy 2025–27</span>
   </a>
   <ul class="nav-links">
+    <li><a href="#story">The Story</a></li>
     <li><a href="#payments">Payments</a></li>
-    <li><a href="#carrying">Carrying</a></li>
-    <li><a href="#tiers">Retail Tiers</a></li>
-    <li><a href="#competition">Competition</a></li>
-    <li><a href="#materials">Materials</a></li>
-    <li><a href="#packaging">Packaging</a></li>
-    <li><a href="#retail">Retail vs Amazon</a></li>
+    <li><a href="#color">Color</a></li>
+    <li><a href="#gift">Gift Economy</a></li>
+    <li><a href="#archetypes">Archetypes</a></li>
     <li><a href="#imperatives">Imperatives</a></li>
   </ul>
 </nav>
@@ -612,33 +450,25 @@
 ════════════════════════════════════════════ -->
 <section class="hero" id="top">
   <div class="hero-bg">
-    <img src="images/hero-main.jpg" alt="Premium slim leather wallet on a dark surface" style="width:100%;height:100%;object-fit:cover;display:block;" />
+    <img src="images/hero-main.jpg" alt="Premium slim leather wallet" style="width:100%;height:100%;object-fit:cover;display:block;" />
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-body au">
-    <p class="eyebrow">Randa Apparel &amp; Accessories · Men's Wallet Creative Direction Playbook — 2027 &amp; Beyond</p>
-    <h1 class="hero-h1">The wallet isn't dying.<br><em>It's being redefined.</em></h1>
-    <p class="hero-lead">Spring 2027 product development across mass, mid-tier, and department store channels demands a new design brief. Payment behavior transformed, DTC disruptors reset expectations, and the modern male consumer carries less but expects more. Here's what that means for every collection we develop.</p>
+    <p class="eyebrow">Randa Apparel &amp; Accessories — 2025–2027</p>
+    <h1 class="hero-h1">The wallet isn't dying.<br><em>It's evolving.</em></h1>
+    <p class="hero-lead">Payments have gone digital, DTC brands have reset expectations, and luxury houses are moving faster than ever. Here's what it means for our product line — and how we win.</p>
     <div class="hero-kpis">
       <div>
-        <span class="kpi-num">14<span class="kpi-sup">%</span></span>
-        <span class="kpi-label">Cash share of all U.S. payments</span>
-        <span class="kpi-sub">Down from 31% in 2016</span>
+        <span class="kpi-num">65<span class="kpi-sup">%</span></span>
+        <span class="kpi-label">U.S. adults now use digital wallets</span>
       </div>
       <div>
-        <span class="kpi-num">48</span>
-        <span class="kpi-label">Payments per month</span>
-        <span class="kpi-sub">Highest ever recorded — only 7 are cash</span>
+        <span class="kpi-num">6–8<span class="kpi-sup">%</span></span>
+        <span class="kpi-label">Slim wallet growth rate per year</span>
       </div>
       <div>
-        <span class="kpi-num">7<span class="kpi-sup">%</span></span>
-        <span class="kpi-label">Slim wallet CAGR</span>
-        <span class="kpi-sub">$1.5B market in 2025</span>
-      </div>
-      <div>
-        <span class="kpi-num">$1.5<span class="kpi-sup">B</span></span>
-        <span class="kpi-label">Slim wallet market 2025</span>
-        <span class="kpi-sub">35% of urban male sales</span>
+        <span class="kpi-num">$770<span class="kpi-sup">M</span></span>
+        <span class="kpi-label">Minimalist wallet market in N. America</span>
       </div>
     </div>
   </div>
@@ -650,21 +480,20 @@
 
 
 <!-- ════════════════════════════════════════════
-     INTRO / THESIS
+     THE BIG PICTURE
 ════════════════════════════════════════════ -->
-<section class="section-wrap bg-white">
+<section class="section-wrap bg-white" id="story">
   <div class="two-col">
     <div class="au">
       <div class="gold-rule"></div>
-      <span class="tag gold">The Context</span>
-      <h2 class="sh">The wallet isn't going anywhere. But its role is shifting.</h2>
+      <span class="tag gold">The Big Picture</span>
+      <h2 class="sh">The American wallet is in its biggest transformation in a generation.</h2>
     </div>
     <div class="au d2">
-      <p class="body">64% of mobile wallet users still expect to carry a physical wallet five years from now. The shift isn't elimination — it's transformation. The wallet is evolving from a 10+ card utility to a 3–5 card essentials carrier.</p>
-      <p class="body">For Spring 2027, every collection requires three anchors: a <strong>4–6 card slim bifold as hero</strong>, a <strong>standalone card case</strong>, and a <strong>MagSafe-compatible option</strong>. These aren't add-ons; they are the new baseline.</p>
-      <p class="body">The brands that win will bridge familiarity with modernity: retaining the trusted bifold form while delivering on every expectation DTC brands have seeded into the market — better materials, thinner profiles, color expansion, and gift-worthy packaging at accessible price points.</p>
+      <p class="body">These shifts aren't eliminating the wallet — they're reshaping what it needs to be. The brands that win will bridge familiarity with modernity: keeping the trusted bifold form while delivering on everything <span class="tip" data-tip="Direct-to-Consumer brands like Bellroy, Ridge, and Ekster">DTC</span> brands have taught consumers to expect.</p>
+      <p class="body">For brands competing in the <strong>$25–$55 department store space</strong> — Levi's, Calvin Klein, Tommy Hilfiger, Cole Haan, Columbia, Tommy Bahama — the path forward is clear: evolve the product without alienating the gift-giving customer who drives half of all sales.</p>
       <div class="callout">
-        <p>The minimalist wallet segment grows at <strong>7% CAGR</strong> against 1% for the overall category. Slim wallets represent <strong>35% of male wallet sales in urban markets</strong>. The growth is in slim. Not in status quo.</p>
+        <p>The minimalist wallet segment grows at <span class="tip" data-tip="Compound Annual Growth Rate — the average yearly growth rate over a period">6–8% CAGR</span> while the overall category barely moves at 1%. Slim wallets already represent <strong>35% of male wallet sales in urban markets</strong>. The growth is in slim.</p>
       </div>
     </div>
   </div>
@@ -674,123 +503,72 @@
 <!-- KPI BAR -->
 <div class="kpi-bar">
   <div class="kpi-cell au">
-    <span class="kpi-big">3–5</span>
-    <div class="kpi-desc">Ideal active cards carried today (down from 4–8)</div>
-    <span class="badge up">↑ Slim is the new default</span>
+    <span class="kpi-big">3.7</span>
+    <div class="kpi-desc">Average cards carried today — down from 4.1 a decade ago</div>
   </div>
   <div class="kpi-cell au d1">
-    <span class="kpi-big">64<span class="u">%</span></span>
-    <div class="kpi-desc">Mobile wallet users who still expect to carry physical wallets in 5 years</div>
-    <span class="badge up">Wallet = Trusted Essential</span>
+    <span class="kpi-big">4–8</span>
+    <div class="kpi-desc">The new ideal slot count — down from 8–12</div>
   </div>
   <div class="kpi-cell au d2">
     <span class="kpi-big">75<span class="u">M</span></span>
-    <div class="kpi-desc">RFID-enabled wallets sold globally in 2024</div>
-    <span class="badge up">↑ 20% YoY search growth</span>
+    <div class="kpi-desc"><span class="tip" data-tip="Radio-Frequency Identification — technology that blocks wireless card skimming">RFID</span> wallets sold globally in 2024</div>
   </div>
   <div class="kpi-cell au d3">
     <span class="kpi-big">88<span class="u">%</span></span>
-    <div class="kpi-desc">Men's wallet SKUs at mass retail priced $25–$55</div>
-    <span class="badge">The primary battleground</span>
+    <div class="kpi-desc">Mass retail wallet <span class="tip" data-tip="Stock Keeping Units — individual product variations">SKUs</span> priced $25–$50</div>
   </div>
 </div>
 
 
 <!-- ════════════════════════════════════════════
-     01 — PAYMENT REVOLUTION
+     PAYMENT SHIFT — SPLIT LAYOUT
 ════════════════════════════════════════════ -->
-<section class="section-wrap bg-dark" id="payments">
-  <div class="au" style="max-width:640px; margin-bottom:72px;">
+<div class="split" id="payments">
+  <div class="split-img">
+    <div class="img-slot cool">
+      <img src="images/phone-vs-wallet.jpg" alt="Phone tap-to-pay next to a slim wallet" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" />
+    </div>
+  </div>
+  <div class="split-content dark au">
     <div class="gold-rule"></div>
-    <span class="tag gold-lt">Section 01 — The Payment Revolution</span>
-    <h2 class="sh" style="color:#fff;">How we pay rewrote the design brief for what we carry.</h2>
-    <p class="body on-dark">Three seismic shifts in payment behavior are directly rewriting the physical wallet.</p>
-  </div>
-  <div class="pay-grid">
-    <div class="pay-card au">
-      <div class="pay-icon gold">💵</div>
-      <div class="pay-big">14<span class="u">%</span></div>
-      <div class="pay-lbl">Cash share of all U.S. payments — 2024</div>
-      <p><strong>Americans average 48 payments per month.</strong> Only 7 are cash — unchanged since 2020. Credit cards drive 35% of payments, debit 30%. Cash is concentrated in small-ticket transactions under $25: tips, impulse buys, vending machines.</p>
-      <p>Among 18–24-year-olds, cash represents just 10% of payments versus 19% for those over 55. The bill compartment remains necessary but secondary — fewer bills, smaller denominations, far less bulk.</p>
-    </div>
-    <div class="pay-card au d2">
-      <div class="pay-icon blue">📱</div>
-      <div class="pay-big">23<span class="u">%</span></div>
-      <div class="pay-lbl">Mobile phone payments (up from 8% in 2018)</div>
-      <p><strong>Among 18–24, phones handle 45% of all purchases.</strong> Apple Pay commands 54% of in-store mobile wallet adoption with 65M U.S. users. Google Pay: 49M users. By 2030: 29% at point-of-sale, 52% online.</p>
-      <p>The behavioral implication: 20% of digital wallet users regularly leave home without a physical wallet. 25% of Gen Z say they won't carry one in five years. <strong>The phone competes with the wallet for pocket space — and is winning on convenience.</strong></p>
-    </div>
-    <div class="pay-card au d4">
-      <div class="pay-icon green">📶</div>
-      <div class="pay-big">13</div>
-      <div class="pay-lbl">U.S. states supporting mobile driver's licenses</div>
-      <p><strong>Mobile digital IDs are accelerating.</strong> 250+ TSA checkpoints accept mobile driver's licenses now. Apple's passport-based digital IDs extend coverage. 143M Americans projected to have mobile DLs by 2030.</p>
-      <p>This redraw the wallet use case: from 12+ card carrier to 1–3 essential card holder. The "travel wallet" narrative becomes real — and wallets must support both slim everyday carry AND digital credential access.</p>
-    </div>
-  </div>
-</section>
-
-
-<!-- FULL-BLEED: Phone vs Wallet -->
-<div class="bleed">
-  <div class="img-slot cool">
-    <img src="images/phone-vs-wallet.jpg" alt="Phone tap-to-pay vs slim leather wallet" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" />
+    <span class="tag gold-lt">The Payment Revolution</span>
+    <h2 class="sh" style="color:#fff;">How we pay changed everything about what we carry.</h2>
+    <p class="body on-dark">Cash is down to <strong>14% of all U.S. payments</strong> — from 31% in 2016. Among 18–24 year olds, it's just 10%. Digital wallets have crossed the mainstream threshold with 65% adoption. And <strong>20% of digital wallet users regularly leave home without a physical wallet at all.</strong></p>
+    <p class="body on-dark">The physical wallet now <strong>competes with the phone for pocket space</strong> — and the phone is winning on convenience. The wallets that survive need to be thinner, smarter, and more intentional than ever.</p>
   </div>
 </div>
 
 
 <!-- ════════════════════════════════════════════
-     02 — CARRYING LESS
+     CARRYING LESS
 ════════════════════════════════════════════ -->
-<section class="section-wrap bg-white" id="carrying">
+<section class="section-wrap bg-cream">
   <div class="two-col">
     <div class="au">
       <div class="gold-rule"></div>
-      <span class="tag gold">Section 02 — Carrying Less, Expecting More</span>
+      <span class="tag gold">Carrying Less, Expecting More</span>
       <h2 class="sh">The ideal wallet got smaller. The consumer got smarter.</h2>
-      <p class="body">The average U.S. consumer holds <strong>3–5 active payment cards</strong> today — down from 4.1 a decade ago. Gen Z averages under 2 physical cards. Apple Wallet now stores 12+ cards plus transit passes and digital IDs seamlessly.</p>
-      <p class="body">The result: fewer physical card slots needed, but still requiring capacity for a driver's license, one to three payment cards, and perhaps a building badge. The ideal has <strong>shifted from 8–12 slots to 4–6 slots</strong> plus a slim cash compartment — precisely the architecture driving the minimalist wallet boom.</p>
-      <div class="callout">
-        <p>The minimalist segment exceeds <strong>$1.5B in 2025</strong> and grows at 7% annually. Slim wallets represent 35% of male wallet sales in urban markets. <strong>This is the new mainstream.</strong></p>
-      </div>
+      <p class="body">The average consumer holds <strong>3.7 active cards</strong> — down 10% from a decade ago. Gen Z averages under 2. Apple Wallet now stores 12+ cards, transit passes, and digital IDs. The ideal slot count has shifted from 8–12 to <strong>4–8 slots</strong> plus a slim cash compartment.</p>
     </div>
     <div class="au d2">
-      <!-- Card Slot Visualization -->
-      <div style="display:flex;flex-direction:column;gap:36px;">
+      <div style="display:flex;flex-direction:column;gap:40px;">
         <div>
-          <div style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mid-gray);margin-bottom:12px;">Old Standard — 8–12 slots</div>
+          <div style="font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mid-gray);margin-bottom:14px;">Yesterday's wallet — 8–12 slots</div>
           <div class="slot-row">
             <div class="cs faded"></div><div class="cs faded"></div><div class="cs faded"></div><div class="cs faded"></div>
             <div class="cs faded"></div><div class="cs faded"></div><div class="cs faded"></div><div class="cs faded"></div>
             <div class="cs"></div><div class="cs"></div><div class="cs"></div><div class="cs"></div>
           </div>
-          <p style="font-size:12px;color:var(--mid-gray);margin-top:10px;">Carried: 3–5 cards. Half empty. Bulky back-pocket profile. Outdated.</p>
+          <p style="font-size:15px;color:var(--mid-gray);margin-top:12px;line-height:1.6;">Nearly half the wallet sitting empty. Bulky back-pocket profile.</p>
         </div>
         <div>
-          <div style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mid-gray);margin-bottom:12px;">New Sweet Spot — 4–6 slots</div>
+          <div style="font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mid-gray);margin-bottom:14px;">Today's sweet spot — 4–8 slots</div>
           <div class="slot-row">
             <div class="cs gold"></div><div class="cs gold"></div><div class="cs gold"></div><div class="cs gold"></div>
-            <div class="cs active"></div><div class="cs active"></div>
+            <div class="cs active"></div><div class="cs active"></div><div class="cs"></div><div class="cs"></div>
           </div>
-          <p style="font-size:12px;color:var(--mid-gray);margin-top:10px;">Carries: 3–5 cards. Slim profile. Front-pocket ready. RFID protected. <strong>This is the brief.</strong></p>
-        </div>
-      </div>
-
-      <!-- Mini bar chart -->
-      <div style="margin-top:36px;padding:22px;background:var(--cream);border-radius:4px;">
-        <p style="font-size:12px;font-weight:700;color:var(--near-black);margin-bottom:16px;letter-spacing:.04em;">MINIMALIST MARKET MOMENTUM</p>
-        <div class="bar-list">
-          <div class="bar-row">
-            <div class="bar-name">Slim wallet CAGR</div>
-            <div class="bar-track"><div class="bar-fill bar-fill.gold go" style="width:70%;"></div></div>
-            <div class="bar-val">7%</div>
-          </div>
-          <div class="bar-row">
-            <div class="bar-name">Category average CAGR</div>
-            <div class="bar-track"><div class="bar-fill bar-fill.gray go" style="width:10%;"></div></div>
-            <div class="bar-val">1%</div>
-          </div>
+          <p style="font-size:15px;color:var(--mid-gray);margin-top:12px;line-height:1.6;">Slim profile. Front-pocket ready. <span class="tip" data-tip="Radio-Frequency Identification — blocks wireless card skimming">RFID</span> protected. This is the brief.</p>
         </div>
       </div>
     </div>
@@ -798,583 +576,371 @@
 </section>
 
 
-<!-- ════════════════════════════════════════════
-     03 — THREE RETAIL TIERS
-════════════════════════════════════════════ -->
-<section class="section-wrap bg-cream" id="tiers">
-  <div class="au" style="max-width:640px; margin-bottom:56px;">
-    <div class="gold-rule"></div>
-    <span class="tag gold">Section 03 — Three Distinct Markets</span>
-    <h2 class="sh">Each tier has different drivers, champions, and white space.</h2>
-    <p class="body">The wallet market is not monolithic. Mass, mid-tier, and department stores operate with different unit economics, customer expectations, and merchandising priorities.</p>
+<!-- FULL-BLEED: Materials Texture -->
+<div class="bleed">
+  <div class="img-slot warm">
+    <img src="images/materials-texture.jpg" alt="Premium leather textures and materials" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" />
   </div>
-
-  <div class="sku-tiers">
-    <div class="sku-tier au">
-      <span class="tier-badge good">Mass Market</span>
-      <div class="tier-price">$7–$35</div>
-      <p style="font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;">Walmart, Target, costco</p>
-      <ul class="tier-items">
-        <li><strong>Walmart benchmark:</strong> Dickies at $7 proves the floor</li>
-        <li><strong>Target sweet spot:</strong> Goodfellow 11K+ units/month at $18–$20</li>
-        <li><strong>Private label:</strong> 60–70% of wallet SKUs</li>
-        <li><strong>Color palette:</strong> Black & brown 85%+. No room for trend.</li>
-        <li><strong>Opportunity:</strong> $20–$30 sweet spot underserved. RFID now commoditized.</li>
-      </ul>
-    </div>
-    <div class="sku-tier au d2">
-      <span class="tier-badge better">Mid-Tier</span>
-      <div class="tier-price">$20–$50</div>
-      <p style="font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;">Kohl's, JCPenney, Meijer</p>
-      <ul class="tier-items">
-        <li><strong>Sweet spot:</strong> $25–$40. Highest margin zone.</li>
-        <li><strong>Category leaders:</strong> Dockers (20+ SKUs), Levi's (16–17), Columbia (14–16)</li>
-        <li><strong>Emerging:</strong> Buxton (17–18), Eddie Bauer (14–21)</li>
-        <li><strong>Gift motivation:</strong> Strongest tier for gifting. Age 35–65.</li>
-        <li><strong>Driver:</strong> Kohl's Cash loyalty program (20% of attach)</li>
-      </ul>
-    </div>
-    <div class="sku-tier au d4">
-      <span class="tier-badge best">Department Store</span>
-      <div class="tier-price">$35–$300+</div>
-      <p style="font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;">Nordstrom, Macy's, Dillard's</p>
-      <ul class="tier-items">
-        <li><strong>Volume sweet spot:</strong> $50–$90. Highest attachment to apparel.</li>
-        <li><strong>Category leaders:</strong> Calvin Klein (171–311 reviews, 20–41% promo), Polo RL ($89–$148), TUMI ($95–$295)</li>
-        <li><strong>Mid-market:</strong> Fossil ($60–$85) holds shelf stability</li>
-        <li><strong>Customization:</strong> 42% pay 15% premium for personalization. Nordstrom monogramming ~$10 add-on.</li>
-        <li><strong>Gift packaging:</strong> Critical. Gift sets (wallet+belt) #1 cross-sell.</li>
-      </ul>
-    </div>
-  </div>
-</section>
+</div>
 
 
 <!-- ════════════════════════════════════════════
-     04 — DTC COMPETITION
+     THE COLOR OPPORTUNITY
 ════════════════════════════════════════════ -->
-<section class="section-wrap bg-white" id="competition">
-  <div class="au" style="max-width:680px;margin-bottom:0;">
-    <div class="gold-rule"></div>
-    <span class="tag gold">Section 04 — The DTC Disruptors Setting the Standard</span>
-    <h2 class="sh">Five brands have reset consumer expectations. What they're doing right.</h2>
-  </div>
-
-  <div class="three-col" style="margin-top:56px;">
-    <div class="brand-card dtc au d1">
-      <div class="brand-tier">DTC Pioneer</div>
-      <div class="brand-name">Ridge</div>
-      <div class="brand-price">$80–$160</div>
-      <div class="brand-body"><strong>$300M+ cumulative sales. No outside investors.</strong> 5,000+ YouTube creators, 544M views, $60M+ attributable revenue. Spends more on YouTube than Meta. MKBHD as Chief Creative Partner.</div>
-      <div class="brand-body">37% reduced CAC through influencer strategy. Expanded into rings (8-figure Y1), bags, phone cases, knives. Acquired EverydayCarry.com.</div>
-      <div class="lesson">Blueprint: Creator-first marketing. Category expansion. Vertical integration.</div>
-    </div>
-    <div class="brand-card dtc au d2">
-      <div class="brand-tier">Sustainability Leader</div>
-      <div class="brand-name">Bellroy</div>
-      <div class="brand-price">$59–$100+</div>
-      <div class="brand-body"><strong>LWG Gold-rated ECCO tanneries.</strong> Materials innovation: MIRUM (plastic-free vegan leather) and INNOVERA (80%+ bio-based). Zero-plastic kraft envelope packaging is industry gold standard.</div>
-      <div class="brand-body">Story-driven. Transparency on sourcing. Premium positioning without luxury pricing.</div>
-      <div class="lesson">Blueprint: Materials transparency. Packaging as communication. Storytelling scale.</div>
-    </div>
-    <div class="brand-card dtc au d3">
-      <div class="brand-tier">Innovation Hybrid</div>
-      <div class="brand-name">Ekster</div>
-      <div class="brand-price">$89–$119</div>
-      <div class="brand-body"><strong>$50M+ annual revenue.</strong> Patented card ejection mechanism. Solar-powered Chipolo tracker card: 2 months battery from 3 hours of sunlight. Launched MagSafe Cardprotector Sept 2025 for €49.</div>
-      <div class="brand-body">Hardware meets leather. Seamless tech integration without gimmickry.</div>
-      <div class="lesson">Blueprint: Patent-driven IP. Hardware-level thinking. Category adjacency.</div>
-    </div>
-  </div>
-
-  <div class="three-col" style="margin-top:24px;">
-    <div class="brand-card dtc au d2">
-      <div class="brand-tier">Classic DTC</div>
-      <div class="brand-name">Secrid</div>
-      <div class="brand-price">$35–$100+</div>
-      <div class="brand-body"><strong>Dutch inventor of the aluminum cardprotector.</strong> Launched MagSafe Cardprotector Sept 2025 for €49. Command 20%+ of the European RFID segment.</div>
-      <div class="brand-body">Single-category focus. Relentless product iteration. Strong positioning in gift market (often paired with apparel).</div>
-      <div class="lesson">Blueprint: Single-category depth. Patent moat. Gift-economy alignment.</div>
-    </div>
-  </div>
-
-  <!-- Five Gaps Callout -->
-  <div style="margin-top:56px;padding:36px;background:rgba(200,169,110,.08);border:1px solid rgba(200,169,110,.15);border-radius:4px;max-width:100%;">
-    <p style="font-size:13px;font-weight:700;color:var(--near-black);letter-spacing:.04em;text-transform:uppercase;margin-bottom:20px;">What Traditional Brands are Missing</p>
-    <div class="three-col">
-      <div>
-        <h3 class="ssh" style="font-size:16px;">Warranties</h3>
-        <p style="font-size:13px;line-height:1.6;color:var(--mid-gray);"><strong>DTC:</strong> 2–10 years (many lifetime). <strong>Heritage:</strong> 1 year standard. Trust multiplier.</p>
-      </div>
-      <div>
-        <h3 class="ssh" style="font-size:16px;">Packaging</h3>
-        <p style="font-size:13px;line-height:1.6;color:var(--mid-gray);"><strong>DTC:</strong> Gift-ready, unboxing experience, QR codes. <strong>Heritage:</strong> Box + tissue. No secondary engagement.</p>
-      </div>
-      <div>
-        <h3 class="ssh" style="font-size:16px;">Storytelling</h3>
-        <p style="font-size:13px;line-height:1.6;color:var(--mid-gray);"><strong>DTC:</strong> Direct customer narrative. <strong>Heritage:</strong> Institutional voice. Personal connection lost.</p>
-      </div>
-    </div>
-    <div class="three-col" style="margin-top:20px;">
-      <div>
-        <h3 class="ssh" style="font-size:16px;">Tech Integration</h3>
-        <p style="font-size:13px;line-height:1.6;color:var(--mid-gray);">Seamless MagSafe, AirTag mounting, digital ID support. Standard, not premium add-on.</p>
-      </div>
-      <div>
-        <h3 class="ssh" style="font-size:16px;">Direct Relationship</h3>
-        <p style="font-size:13px;line-height:1.6;color:var(--mid-gray);">Email capture, customer data, loyalty loop. Retail = middleman. DTC = direct.</p>
-      </div>
-      <div>
-        <h3 class="ssh" style="font-size:16px;">Customization</h3>
-        <p style="font-size:13px;line-height:1.6;color:var(--mid-gray);">Engraving, monogram, color options. 19% YoY growth. 42% pay 15% premium.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ════════════════════════════════════════════
-     05 — MATERIALS & LEATHER HIERARCHY
-════════════════════════════════════════════ -->
-<section class="section-wrap bg-dark" id="materials">
-  <div class="au" style="max-width:680px;margin-bottom:0;">
-    <div class="gold-rule"></div>
-    <span class="tag gold-lt">Section 05 — Materials: The Quiet Luxury Shift</span>
-    <h2 class="sh" style="color:#fff;">Full-grain is back. Here's what's winning with younger consumers.</h2>
-  </div>
-
-  <!-- Quiet Luxury Context -->
-  <div style="margin-top:56px;padding:40px;background:rgba(255,255,255,.04);border-radius:4px;">
-    <p style="font-size:13px;color:rgba(255,255,255,.6);margin-bottom:16px;line-height:1.7;">Bain's 2024 Luxury report: "Quiet Luxury" is structural recalibration. 70%+ younger luxury buyers cite <strong>craftsmanship</strong> as top driver — not logos. Bottega Veneta €1.7B 2024 revenue with no exterior branding. Hermès leather secrets. Saddleback Leather's 100-year guarantee.</p>
-    <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.7;">The implication for wallets: <strong>Material quality > brand visibility</strong>. Debossed logos. Matte finishes. Visible tannery sourcing. Heritage leather certification.</p>
-  </div>
-
-  <!-- Leather Hierarchy -->
-  <div style="margin-top:56px;">
-    <p style="font-size:13px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.04em;text-transform:uppercase;margin-bottom:24px;">Leather Tier Positioning</p>
-    <div class="three-col">
-      <div style="padding:28px;background:#181816;border-radius:4px;">
-        <h3 class="ssh" style="color:#fff;font-size:18px;">Full-Grain</h3>
-        <p style="font-size:12px;color:var(--gold);font-weight:600;margin-bottom:12px;">$75–$200+</p>
-        <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;">Saddleback Leather, Bellroy, Popov. Zero processing. Every mark tells a story. Best aging profile. Justifies 10-year warranties.</p>
-      </div>
-      <div style="padding:28px;background:#181816;border-radius:4px;">
-        <h3 class="ssh" style="color:#fff;font-size:18px;">Top-Grain</h3>
-        <p style="font-size:12px;color:var(--gold);font-weight:600;margin-bottom:12px;">$35–$100</p>
-        <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;">Fossil, Tommy Hilfiger, Coach. Sanded/finished surface. Consistent appearance. Good durability. Mainstream sweet spot.</p>
-      </div>
-      <div style="padding:28px;background:#181816;border-radius:4px;">
-        <h3 class="ssh" style="color:#fff;font-size:18px;">Genuine/Bonded</h3>
-        <p style="font-size:12px;color:var(--gold);font-weight:600;margin-bottom:12px;">$10–$35</p>
-        <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;">Mass market. Genuine = scraps + binder. Bonded = PU coating. 2–3 year lifespan. Avoid bonded entirely for brand positioning.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Alternative Materials -->
-  <div style="margin-top:56px;padding:40px;background:rgba(255,255,255,.04);border-radius:4px;">
-    <p style="font-size:13px;font-weight:700;color:rgba(255,255,255,.8);letter-spacing:.04em;text-transform:uppercase;margin-bottom:20px;">Alternative Materials & Bio-Leather Roadmap</p>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;">
-      <div>
-        <h3 class="ssh" style="color:#fff;font-size:16px;">Apple Leather (AppleSkin)</h3>
-        <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;">Most retail-ready today. Ekster uses at $89–$119. Proprietary process. Still uses PU binder. Positioning: innovation + sustainability.</p>
-      </div>
-      <div>
-        <h3 class="ssh" style="color:#fff;font-size:16px;">Cactus Leather (Desserto)</h3>
-        <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;">$60–$150+ wallets. Mexican-source. Softer feel than apple leather. Emerging in mid-tier and DTC. Still PU binder; not fully plastic-free.</p>
-      </div>
-    </div>
-
-    <div style="padding:20px;background:rgba(200,169,110,.08);border-left:3px solid var(--gold);border-radius:0 3px 3px 0;">
-      <p style="font-size:13px;color:rgba(255,255,255,.7);line-height:1.7;"><strong>Mycelium Leather Timeline:</strong> $12M market (2024) → $336M by 2033. Cost dropped from $127/sqm (2015) to $23 (2020) vs conventional leather at $18–$22. <strong>Commercial scale: 2028–2030.</strong> By 2031, parity pricing with traditional leather. First movers (Hermès, Stella McCartney) gain brand credit.</p>
-    </div>
-  </div>
-
-  <!-- LWG Certification -->
-  <div style="margin-top:56px;padding:28px;background:#181816;border-radius:4px;border-left:3px solid var(--gold);">
-    <h3 class="ssh" style="color:#fff;font-size:18px;margin-bottom:12px;">LWG Certification: The New Table Stakes</h3>
-    <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;">Leather Working Group: 2,200+ suppliers, 60+ countries, 30% of global production. Nike, PUMA, Adidas, LVMH require it. Gold certification = 10%+ price premium justified. A 2027 category requirement.</p>
-  </div>
-
-  <!-- Sustainability Positioning -->
-  <div style="margin-top:32px;padding:28px;background:#181816;border-radius:4px;">
-    <p style="font-size:11px;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:.04em;text-transform:uppercase;margin-bottom:16px;">The Sustainability Paradox</p>
-    <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;">PwC: 9.7% average sustainability premium consumers claim to pay. Reality: only 17% actually act on it. <strong>Position materials innovation as adding value, not charging eco-premium.</strong> Full-grain leather lasts 10+ years vs 2–3 years for bonded = better sustainability through durability, not marketing.</p>
-  </div>
-</section>
-
-
-<!-- ════════════════════════════════════════════
-     06 — COLOR & DESIGN LANGUAGE
-════════════════════════════════════════════ -->
-<section class="section-wrap bg-white">
-  <div class="au" style="max-width:680px;margin-bottom:32px;">
-    <div class="gold-rule"></div>
-    <span class="tag gold">Section 06 — Color Direction: 2027 & Beyond</span>
-    <h2 class="sh">WGSN + Quiet Luxury = Assortment Strategy</h2>
-  </div>
-
-  <!-- WGSN Specifics -->
-  <div class="two-col" style="margin-bottom:56px;align-items:start;">
-    <div class="au">
-      <h3 class="ssh">2027 Key Colors</h3>
-      <p style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-bottom:16px;"><strong>Transformative Teal</strong> — 2026 Color of the Year (WGSN). Rich, structured hue. Works at all price tiers.</p>
-      <p style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-bottom:16px;"><strong>Cocoa Powder</strong> — Red-toned chocolate. Replaces traditional brown across luxury. Fossil to Hermès moving here.</p>
-      <p style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-bottom:16px;"><strong>Meadowland Green</strong> — Earthy, not Kelly. Quiet luxury signal.</p>
-      <p style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-bottom:16px;"><strong>Olive Stone</strong> — Warm neutral. Works at every price point.</p>
-      <p style="font-size:13px;color:var(--mid-gray);line-height:1.7;"><strong>Luminous Blue</strong> — 2027 Color of the Year projection (WGSN). Electric but structured.</p>
-    </div>
-    <div class="au d2">
-      <h3 class="ssh">Assortment Blueprint</h3>
-      <p style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-bottom:16px;"><strong>3–4 Permanent:</strong> Black, Brown/Cognac, Navy. Always in stock. No markdown risk.</p>
-      <p style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-bottom:16px;"><strong>1–2 Seasonal (per drop):</strong> Teal S24, Olive S25, Burgundy S26. Drives traffic. 12-week cutoff.</p>
-      <p style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-bottom:16px;"><strong>1 Limited Bold:</strong> Collab or limited run. Creates urgency. Instagram-worthy.</p>
-      <p style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-bottom:16px;"><strong>Texture Evolution:</strong> Saffiano dominant $75–$500, but craft purists push back. Pebbled grain gaining. Matte > glossy direction across all tiers.</p>
-    </div>
-  </div>
-
-  <!-- Color Swatches Example (4 columns) -->
-  <div style="margin-top:56px;">
-    <p style="font-size:11px;font-weight:700;color:var(--mid-gray);letter-spacing:.04em;text-transform:uppercase;margin-bottom:20px;">2027 Wallet Color Palette</p>
-    <div class="color-swatch-row">
-      <div class="swatch" style="background:#1C1C1A;">
-        <div class="swatch-info">
-          <span class="swatch-name">Black</span>
-          <span class="swatch-pct">40%</span>
-        </div>
-      </div>
-      <div class="swatch" style="background:#6B5A4D;">
-        <div class="swatch-info">
-          <span class="swatch-name">Cocoa Powder</span>
-          <span class="swatch-pct">25%</span>
-        </div>
-      </div>
-      <div class="swatch" style="background:#2D5A6B;">
-        <div class="swatch-info">
-          <span class="swatch-name">Transformative Teal</span>
-          <span class="swatch-pct">20%</span>
-        </div>
-      </div>
-      <div class="swatch" style="background:#4A6B54;">
-        <div class="swatch-info">
-          <span class="swatch-name">Olive Stone</span>
-          <span class="swatch-pct">15%</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ════════════════════════════════════════════
-     07 — PACKAGING: GIFTS & COMMERCE
-════════════════════════════════════════════ -->
-<section class="section-wrap bg-white" id="packaging">
-  <div class="au" style="max-width:680px;margin-bottom:56px;">
-    <div class="gold-rule"></div>
-    <span class="tag gold">Section 07 — Packaging: Unboxing as Brand Moment</span>
-    <h2 class="sh">40–60% of purchases are gifts. Packaging must work harder.</h2>
-  </div>
-
-  <div class="gift-grid">
-    <div class="gift-card au d1">
-      <div class="g-lbl">Mass Market</div>
-      <div class="g-stat" style="color:var(--gold-dark);">$0.50–$1.50</div>
-      <div class="g-desc">Clear clamshells or valet trays. Dickies at Walmart proves the concept: simple tray box adds perceived value at $7 price point without margin impact.</div>
-    </div>
-    <div class="gift-card au d2">
-      <div class="g-lbl">Mid-Tier</div>
-      <div class="g-stat" style="color:var(--gold-dark);">$1.50–$4.00</div>
-      <div class="g-desc">Branded gift boxes (Fossil collectible tins are gold standard here). Tissue, minimal branding. 4-color print. Fits shelf fixtures.</div>
-    </div>
-    <div class="gift-card au d3">
-      <div class="g-lbl">Department Store</div>
-      <div class="g-stat" style="color:var(--gold-dark);">$4.00–$15.00+</div>
-      <div class="g-desc">Rigid magnetic boxes, tissue, dust bags. Monogramming option ticket. Luxury unboxing cues. Monogram add-on margins 60%+.</div>
-    </div>
-    <div class="gift-card au d4">
-      <div class="g-lbl">DTC Benchmark</div>
-      <div class="g-stat" style="color:var(--gold-dark);">$1–$3</div>
-      <div class="g-desc">Bellroy's zero-plastic kraft envelope. Shareable unboxing. QR code inside links to brand story. Tissue-free. Recycled paper only. The new gold standard.</div>
-    </div>
-  </div>
-
-  <!-- Packaging Innovation -->
-  <div style="margin-top:56px;">
-    <p style="font-size:13px;font-weight:700;color:var(--near-black);letter-spacing:.04em;text-transform:uppercase;margin-bottom:28px;">Packaging Innovations That Drive Conversions</p>
-
-    <div class="three-col">
-      <div style="padding:28px;background:var(--cream);border-radius:4px;">
-        <h3 class="ssh" style="font-size:16px;">Functional Packaging</h3>
-        <p style="font-size:13px;color:var(--mid-gray);line-height:1.7;">Valet tray that converts to organizer. Dickies proves ROI. Collapsible boxes for e-commerce. Reduces return rates through "gift feel".</p>
-      </div>
-      <div style="padding:28px;background:var(--cream);border-radius:4px;">
-        <h3 class="ssh" style="font-size:16px;">Digital Engagement</h3>
-        <p style="font-size:13px;color:var(--mid-gray);line-height:1.7;">QR codes (free). NFC tags ($0.10–$0.20). Unlocks brand story, care guide, warranty. Highest unboxing engagement: 23% tap rate.</p>
-      </div>
-      <div style="padding:28px;background:var(--cream);border-radius:4px;">
-        <h3 class="ssh" style="font-size:16px;">Sustainability Mandates</h3>
-        <p style="font-size:13px;color:var(--mid-gray);line-height:1.7;">Walmart Project Gigaton: 100% recyclable packaging by 2030. Molded pulp market: $5.44B, 6.3% CAGR. Plan now.</p>
-      </div>
-    </div>
-
-    <!-- EU Digital Product Passport -->
-    <div style="margin-top:28px;padding:24px;background:rgba(45,74,62,.12);border-left:3px solid #5AAE82;border-radius:0 3px 3px 0;">
-      <p style="font-size:12px;color:var(--near-black);line-height:1.6;"><strong>EU Digital Product Passport Mandate:</strong> Coming 2026–2028 for luxury goods + leather. Requires material origin, care, durability data. Early compliance = competitive advantage in European retail. QR codes on packaging fulfill requirement.</p>
-    </div>
-  </div>
-</section>
-
-
-<!-- ════════════════════════════════════════════
-     08 — RETAIL VS AMAZON: PHYSICAL WINS
-════════════════════════════════════════════ -->
-<section class="section-wrap bg-cream" id="retail">
-  <div class="au" style="max-width:680px;margin-bottom:56px;">
-    <div class="gold-rule"></div>
-    <span class="tag gold">Section 08 — Physical Retail Advantages</span>
-    <h2 class="sh">Why touch, feel, and personalization = margin defense.</h2>
+<section class="section-wrap bg-white" id="color">
+  <div class="au" style="text-align:center;max-width:740px;margin:0 auto 56px;">
+    <div class="gold-rule center"></div>
+    <span class="tag gold">The Color Opportunity</span>
+    <h2 class="sh">In a sea of black and brown, color is the untapped advantage.</h2>
+    <p class="body" style="text-align:center;">Walk any department store wallet wall and you see the same story: row after row of black leather, punctuated by brown. Luxury brands like Bottega Veneta proved that color drives desire. At mass retail, the opportunity is wide open.</p>
   </div>
 
   <div class="two-col" style="align-items:start;">
     <div class="au">
-      <h3 class="ssh">The Split</h3>
-      <p style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-bottom:20px;"><strong>40–45% online, 55–60% in-store</strong> remains the category split. E-commerce growing but constrained by inability to feel leather grain, weight, finish.</p>
-
-      <h3 class="ssh" style="margin-top:28px;">Physical Retail Advantages</h3>
-      <ul style="list-style:none;margin-top:16px;">
-        <li style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-bottom:12px;"><strong>Touch & Feel:</strong> 76% prefer in-store for sensory validation. Leather quality, thickness, weight. Can't replicate online.</li>
-        <li style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-bottom:12px;"><strong>Instant Gratification:</strong> Gift-buying urgency. "Today" not "2 days". Birthday, Father's Day, anniversary gifts.</li>
-        <li style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-bottom:12px;"><strong>Personalization:</strong> In-store monogramming/embossing. Nordstrom model. 42% pay 15% premium. Online embossing only 3–5% take rate.</li>
-        <li style="font-size:13px;color:var(--mid-gray);line-height:1.7;"><strong>Counterfeit Mitigation:</strong> 15%+ counterfeit on Amazon/3P. Physical retail = authenticity signal.</li>
-      </ul>
+      <h3 class="ssh">The retail wall today</h3>
+      <p class="body">At Kohl's — the clearest window into mass-market demand — <strong>47% of wallet SKUs are black</strong> and 14% are brown. On Amazon, <strong>5.2% of slim wallet reviews cite "limited color options"</strong> as a negative. That's latent demand waiting for the first mover.</p>
+      <div class="color-swatch-row">
+        <div class="swatch" style="background:#1A1A1A;">
+          <div class="swatch-info"><span class="swatch-name">Black</span><span class="swatch-pct">60%</span></div>
+        </div>
+        <div class="swatch" style="background:#7A4F2A;">
+          <div class="swatch-info"><span class="swatch-name">Brown / Cognac</span><span class="swatch-pct">20%</span></div>
+        </div>
+        <div class="swatch" style="background:#1E2D4A;">
+          <div class="swatch-info"><span class="swatch-name">Navy Blue</span><span class="swatch-pct">10%</span></div>
+        </div>
+        <div class="swatch" style="background:#4A5E3A;">
+          <div class="swatch-info"><span class="swatch-name">Seasonal Accent</span><span class="swatch-pct">10%</span></div>
+        </div>
+      </div>
     </div>
     <div class="au d2">
-      <h3 class="ssh">Growth Drivers</h3>
-      <p style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-bottom:20px;"><strong>Customization Surge:</strong> 19% YoY growth. 42% willing to pay 15% premium. Most wallets only offer basic color selection — opportunity gap.</p>
-
-      <h3 class="ssh" style="margin-top:28px;">Cross-Merchandising Wins</h3>
-      <ul style="list-style:none;margin-top:16px;">
-        <li style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-bottom:12px;"><strong>Wallet + Belt:</strong> $24.5B combined market (2024). Highest attach rate. Train associates on bundles.</li>
-        <li style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-bottom:12px;"><strong>MagSafe in Electronics:</strong> SWISSGEAR at Target ($29.99) sold in phone case section. Cross-category placement lifts wallet visibility.</li>
-        <li style="font-size:13px;color:var(--mid-gray);line-height:1.7;"><strong>Travel Section Endcaps:</strong> Highest ROI merchandising tactic. Seasonal rotation (summer = travel; winter = gifting).</li>
-      </ul>
-
-      <h3 class="ssh" style="margin-top:28px;">Seasonal Rotation</h3>
-      <p style="font-size:13px;color:var(--mid-gray);line-height:1.7;">October = holiday (40% of annual gifts). February = Valentine's/anniversary. May = grads/Father's Day (second peak). Each endcap = 6-week setups. Largest retailers rotate 4–5 times per year.</p>
+      <h3 class="ssh">Where we should go</h3>
+      <p class="body"><strong>Navy is the strongest third-color candidate</strong> — a sophisticated extension of black, already validated in men's accessories. Back it with cognac aligned to Pantone 2025's Mocha Mousse and a seasonal rotation of olive, forest green, or burgundy calibrated to each brand's DNA.</p>
+      <div class="callout">
+        <p><strong>Texture is the other lever.</strong> Woven-effect embossing (Bottega trickle-down), Saffiano cross-hatch, and carbon-fiber weave add visual differentiation on a wall of flat, featureless surfaces — without meaningful cost increases.</p>
+      </div>
+      <p class="body" style="margin-top:20px;">Leather holds the center at <strong>73% material share</strong>. At $25–$55, genuine leather is the minimum. <span class="tip" data-tip="Leather Working Group — international certification for responsible leather manufacturing">LWG</span>-certified sourcing is becoming the industry standard and a powerful, credible sustainability story at scale.</p>
     </div>
   </div>
 </section>
 
 
 <!-- ════════════════════════════════════════════
-     09 — TECHNOLOGY: AIRTAG TO MODULAR SYSTEMS
-════════════════════════════════════════════ -->
-<section class="section-wrap bg-dark">
-  <div class="au" style="max-width:680px;margin-bottom:56px;">
-    <div class="gold-rule"></div>
-    <span class="tag gold-lt">Section 09 — Technology Integration Separates Leaders</span>
-    <h2 class="sh" style="color:#fff;">AirTag is the new RFID. Modular systems are the new flexibility.</h2>
-  </div>
-
-  <!-- AirTag Market -->
-  <div style="padding:40px;background:rgba(255,255,255,.04);border-radius:4px;margin-bottom:40px;">
-    <p style="font-size:13px;font-weight:700;color:rgba(255,255,255,.8);letter-spacing:.04em;text-transform:uppercase;margin-bottom:16px;">AirTag/Tile Integration (Booming Segment)</p>
-    <div class="three-col">
-      <div>
-        <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.7;"><strong>Ekster Tracker Card 3.0:</strong> $89–$119. Credit-card-sized. Solar-powered. Two-way ringing. Apple Find My integration. 2 months battery from 3 hours sunlight.</p>
-      </div>
-      <div>
-        <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.7;"><strong>Ridge MagSafe:</strong> $95–$145. Seamless AirTag nesting. Swappable plates. $25 upsell at retail drives significant margin.</p>
-      </div>
-      <div>
-        <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.7;"><strong>Amazon Sellers:</strong> $25–$40 basic AirTag wallets. Proof of mass-market demand. Opportunity: branded + material quality will command 2–3x premium.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modular Systems -->
-  <div style="padding:40px;background:rgba(255,255,255,.04);border-radius:4px;margin-bottom:40px;">
-    <p style="font-size:13px;font-weight:700;color:rgba(255,255,255,.8);letter-spacing:.04em;text-transform:uppercase;margin-bottom:20px;">Modular Wallet Systems (The New Category)</p>
-    <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:24px;">Key insight: Consumers want 3-card MagSafe for errands AND 12+ card capacity for travel from the same platform.</p>
-
-    <div class="three-col">
-      <div style="padding:20px;background:#181816;border-radius:4px;">
-        <h3 class="ssh" style="color:#fff;font-size:16px;">Axwell Mag-Lock</h3>
-        <p style="font-size:12px;color:rgba(255,255,255,.5);margin-top:8px;">Interchangeable magnetic plates. Mix-and-match leather + tech. Premium positioning.</p>
-      </div>
-      <div style="padding:20px;background:#181816;border-radius:4px;">
-        <h3 class="ssh" style="color:#fff;font-size:16px;">Distil Union Ferris</h3>
-        <p style="font-size:12px;color:rgba(255,255,255,.5);margin-top:8px;">Nesting magnets. Ultra-slim base + expansion. Genius engineering. $200+.</p>
-      </div>
-      <div style="padding:20px;background:#181816;border-radius:4px;">
-        <h3 class="ssh" style="color:#fff;font-size:16px;">Ridge 2.0</h3>
-        <p style="font-size:12px;color:rgba(255,255,255,.5);margin-top:8px;">Swappable attachments. RFID ready. MagSafe native. Ecosystem play.</p>
-      </div>
-    </div>
-    <div style="margin-top:20px;">
-      <div style="padding:20px;background:#181816;border-radius:4px;">
-        <h3 class="ssh" style="color:#fff;font-size:16px;">CODE 118</h3>
-        <p style="font-size:12px;color:rgba(255,255,255,.5);margin-top:8px;">Aerospace aluminum + carbon fiber + expansion packs. Luxury tech play. $300–$600 range. Limited but growing.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Smart Wallet Market -->
-  <div style="padding:24px;background:rgba(200,169,110,.08);border-left:3px solid var(--gold);border-radius:0 3px 3px 0;">
-    <p style="font-size:12px;color:rgba(255,255,255,.8);line-height:1.7;"><strong>Smart Wallet Market:</strong> $256M–$612M today. Projected $450M–$2.1B by 2030–2033. Compound growth 18–25% annually. Modular systems will capture 40%+ of growth. Plan for a mid-tier modular offering in 2027.</p>
-  </div>
-</section>
-
-
-<!-- ════════════════════════════════════════════
-     10 — SILHOUETTES & ARCHITECTURE
-════════════════════════════════════════════ -->
-<section class="section-wrap bg-white">
-  <div class="au" style="max-width:680px;margin-bottom:56px;">
-    <div class="gold-rule"></div>
-    <span class="tag gold">Section 10 — Silhouette Strategy: The 70/30 Rule</span>
-    <h2 class="sh">Core NOOS + seasonal trends = category growth</h2>
-  </div>
-
-  <div class="two-col" style="margin-bottom:56px;align-items:start;">
-    <div class="au">
-      <h3 class="ssh">Global Silhouette Breakdown</h3>
-      <ul style="list-style:none;margin-top:16px;">
-        <li style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-bottom:12px;"><strong>Bifold:</strong> 55% global sales, 72% male preference. NOOS anchor.</li>
-        <li style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-bottom:12px;"><strong>Trifold:</strong> ~140M units in 2023. Declining trend. Skews older/trades/blue-collar. Minimize at retail.</li>
-        <li style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-bottom:12px;"><strong>Card Case:</strong> Emerging category. 19% YoY growth. 4–6 slot minimalist. Pairs with bifold.</li>
-        <li style="font-size:13px;color:var(--mid-gray);line-height:1.7;"><strong>MagSafe Hybrid:</strong> Phone + wallet merge. 23% growth YoY. Apple Wallet integration = table stakes.</li>
-      </ul>
-
-      <h3 class="ssh" style="margin-top:32px;">The 70/30 Rule</h3>
-      <p style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-top:12px;"><strong>70% core NOOS:</strong> Bifold, black/brown/navy, consistent depth. Evergreen. No risk.</p>
-      <p style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-top:8px;"><strong>30% seasonal/trend:</strong> Teal S24, olive S25, limited colors, modular options, MagSafe variants. Drives traffic. Turns trends.</p>
-    </div>
-    <div class="au d2">
-      <h3 class="ssh">Gift Sets (High-Margin Category)</h3>
-      <ul style="list-style:none;margin-top:16px;">
-        <li style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-bottom:12px;"><strong>#1 Bundle: Wallet + Belt</strong> Fossil Saffiano $130, Polo RL, Timberland. Cross-category attach. $24.5B combined market.</li>
-        <li style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-bottom:12px;"><strong>Growing: Wallet + Card Case.</strong> Bundle margin 18–22%. Drives perceived value.</li>
-        <li style="font-size:13px;color:var(--mid-gray);line-height:1.7;">Wallet + Key Fob. Brooks Brothers $168, Lacoste $77–$110. Niche but premium.</li>
-      </ul>
-
-      <h3 class="ssh" style="margin-top:32px;">Launch Calendar</h3>
-      <ul style="list-style:none;margin-top:12px;">
-        <li style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-bottom:10px;"><strong>October:</strong> Holiday gifting. 40% of annual volume. Full slate of colors, gift sets.</li>
-        <li style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-bottom:10px;"><strong>February:</strong> Valentine's + anniversary. Mid-tier sweet spot. Limited colors.</li>
-        <li style="font-size:13px;color:var(--mid-gray);line-height:1.7;"><strong>May:</strong> Grads + Father's Day. Second peak. Monogramming push.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-
-<!-- ════════════════════════════════════════════
-     11 — CROSS-INDUSTRY LESSONS
-════════════════════════════════════════════ -->
-<section class="section-wrap bg-dark2">
-  <div class="au" style="max-width:680px;margin-bottom:56px;">
-    <div class="gold-rule"></div>
-    <span class="tag gold-lt">Section 11 — Lessons from Adjacent Categories</span>
-    <h2 class="sh" style="color:#fff;">Sneakers shifted from utility to status. Wallets are next.</h2>
-  </div>
-
-  <div class="four-col">
-    <div class="au d1">
-      <h3 class="ssh" style="color:#fff;font-size:16px;">Sneaker Industry</h3>
-      <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;"><strong>Colorway Strategy:</strong> Nike 10+ per silhouette vs wallets 3–5. Opportunity gap: SKU expansion by 200%. Brand collabs. Shift from hype to quality/story. Microbrands: 22% CAGR vs 5% established.</p>
-    </div>
-    <div class="au d2">
-      <h3 class="ssh" style="color:#fff;font-size:16px;">Phone Case Market</h3>
-      <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;"><strong>Growth Trajectory:</strong> $25.7B → $40B by 2033. Seasonal refresh norm. Social media marketing required. OtterBox, Spigen, premium brands all coexist. Wallet adoption of case-market tactics = gap.</p>
-    </div>
-    <div class="au d3">
-      <h3 class="ssh" style="color:#fff;font-size:16px;">Personalization Frontier</h3>
-      <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;"><strong>Data:</strong> 59% more likely to buy with customization. 67% pay premium. 3D configurators +50% conversion. Most wallets only offer basic color. Moat: easy.</p>
-    </div>
-    <div class="au d4">
-      <h3 class="ssh" style="color:#fff;font-size:16px;">Micro-Trend Velocity</h3>
-      <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;"><strong>TikTok + YouTube:</strong> Trend cycle: 6 weeks peak, 12 weeks decline. Wallets moving to 3-month drops vs annual lines. Content velocity required. Creator partnerships essential.</p>
-    </div>
-  </div>
-</section>
-
-
-<!-- ════════════════════════════════════════════
-     12 — AGENTIC COMMERCE FUTURE
+     COMPETITION
 ════════════════════════════════════════════ -->
 <section class="section-wrap bg-cream">
-  <div class="au" style="max-width:680px;margin-bottom:56px;">
+  <div class="au" style="max-width:700px;margin-bottom:0;">
     <div class="gold-rule"></div>
-    <span class="tag gold">Section 12 — The Agentic Commerce Frontier</span>
-    <h2 class="sh">AI agents will recommend wallets. Being "recommender-ready" is 2027 table stakes.</h2>
+    <span class="tag gold">The Competitive Landscape</span>
+    <h2 class="sh">Luxury sets the design agenda. DTC sets the feature baseline. We feel both.</h2>
   </div>
-
-  <div class="three-col" style="margin-bottom:40px;">
-    <div class="au d1">
-      <h3 class="ssh">Platform Protocols</h3>
-      <p style="font-size:13px;color:var(--mid-gray);line-height:1.7;"><strong>Google Universal Commerce Protocol:</strong> With Shopify, Walmart, Target. Structured product data = discoverability.</p>
-      <p style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-top:12px;"><strong>Mastercard Agent Pay.</strong> Visa AI-ready tokenized credentials. Real infrastructure in place.</p>
+  <div class="three-col" style="margin-top:56px;">
+    <div class="brand-card lux au d1">
+      <div class="brand-tier">Luxury Benchmark</div>
+      <div class="brand-name">Bottega Veneta</div>
+      <div class="brand-price">$690 bifold · $380 card case</div>
+      <p class="brand-body">The <strong>Intrecciato weave</strong> is the most imitated design element in the category. Their bold color choices normalized wallets beyond black and brown across the market.</p>
+      <div class="lesson">Takeaway: Woven-effect embossing and expanded color are our highest-return design moves.</div>
     </div>
-    <div class="au d2">
-      <h3 class="ssh">Market Scale</h3>
-      <p style="font-size:13px;color:var(--mid-gray);line-height:1.7;"><strong>IBM forecast:</strong> $3–5 trillion agentic commerce by 2030. Men 23% more likely to trust AI agents for purchases.</p>
-      <p style="font-size:13px;color:var(--mid-gray);line-height:1.7;margin-top:12px;">Brands with structured data, strong reviews, distinctive positioning get recommended. Others get lost.</p>
+    <div class="brand-card dtc au d2">
+      <div class="brand-tier">DTC Disruptor</div>
+      <div class="brand-name">The Ridge</div>
+      <div class="brand-price">$100M+ annual revenue</div>
+      <p class="brand-body">Proved consumers would abandon traditional bifolds for a <strong>metal card holder</strong>. Mainstreamed <span class="tip" data-tip="Radio-Frequency Identification — blocks wireless card skimming">RFID</span> blocking as a must-have feature at every price tier.</p>
+      <div class="lesson">Takeaway: RFID is table stakes. Technical language drives perceived value above cost.</div>
     </div>
-    <div class="au d3">
-      <h3 class="ssh">2027 Prep</h3>
-      <p style="font-size:13px;color:var(--mid-gray);line-height:1.7;"><strong>Required:</strong> Structured product data (material, care, warranty, tech specs). Review score 4.6+. Clear positioning. Keywords: slim, RFID, MagSafe, vegan leather, 10-year warranty.</p>
+    <div class="brand-card dtc au d3">
+      <div class="brand-tier">DTC Disruptor</div>
+      <div class="brand-name">Bellroy</div>
+      <div class="brand-price">$300M brand valuation</div>
+      <p class="brand-body"><strong>Invented the premium slim wallet category.</strong> Pull-tab hidden slots, slim engineering, and <span class="tip" data-tip="Leather Working Group — international certification for responsible leather manufacturing">LWG</span> gold-rated leather. Their MagSafe Mod Wallet is the frontier arriving in 12–18 months.</p>
+      <div class="lesson">Takeaway: Pull-tab architecture + slim engineering are now expectations, not extras.</div>
     </div>
-  </div>
-
-  <div style="padding:32px;background:var(--white);border-radius:4px;border-left:3px solid var(--gold);">
-    <p style="font-size:13px;color:var(--near-black);line-height:1.7;"><strong>Action:</strong> Audit product feeds on all platforms. Ensure consistency. Update metadata for AI readiness. Early movers (brands with clean, rich data) will dominate agent recommendations. Those without will become invisible.</p>
   </div>
 </section>
 
 
 <!-- ════════════════════════════════════════════
-     13 — FIVE STRATEGIC IMPERATIVES
+     FEATURE BASELINE — SPLIT
 ════════════════════════════════════════════ -->
-<section class="section-wrap bg-dark" id="imperatives">
-  <div class="au" style="max-width:680px;margin-bottom:56px;">
+<div class="split">
+  <div class="split-content dark au">
     <div class="gold-rule"></div>
-    <span class="tag gold-lt">The Five Strategic Imperatives</span>
-    <h2 class="sh" style="color:#fff;">What every 2027 collection must deliver.</h2>
+    <span class="tag gold-lt">The New Baseline</span>
+    <h2 class="sh" style="color:#fff;">Four features consumers now expect at every price.</h2>
+    <div class="feature-list">
+      <div class="feat">
+        <div class="feat-num">01</div>
+        <div>
+          <h3>RFID Blocking</h3>
+          <p>75M sold in 2024. At $30+, omitting it is a competitive liability visible in every review.</p>
+        </div>
+        <span class="pill req">Required</span>
+      </div>
+      <div class="feat">
+        <div class="feat-num">02</div>
+        <div>
+          <h3>Slim Profile</h3>
+          <p>From ~1" to 0.3–0.6". Front-pocket carry is the new standard.</p>
+        </div>
+        <span class="pill req">Required</span>
+      </div>
+      <div class="feat">
+        <div class="feat-num">03</div>
+        <div>
+          <h3>Quick-Access Design</h3>
+          <p>Pull-tabs, thumb notches, card ejectors. Consumers expect intentional retrieval, not fumbling.</p>
+        </div>
+        <span class="pill exp">Expected at $40+</span>
+      </div>
+      <div class="feat">
+        <div class="feat-num">04</div>
+        <div>
+          <h3>Premium Packaging</h3>
+          <p>The box is part of the product — especially when 40–60% of wallets are bought as gifts.</p>
+        </div>
+        <span class="pill exp">Expected</span>
+      </div>
+    </div>
+  </div>
+  <div class="split-img">
+    <div class="img-slot stone">
+      <img src="images/archetype-essential.jpg" alt="Slim bifold wallet detail" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" />
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     THE GIFT ECONOMY
+════════════════════════════════════════════ -->
+<section class="section-wrap bg-cream" id="gift">
+  <div class="au" style="text-align:center;margin-bottom:0;">
+    <div class="gold-rule center"></div>
+    <span class="tag gold" style="display:block;text-align:center;">The Gift Economy</span>
+    <h2 class="sh" style="max-width:700px;margin:0 auto 28px;">The most important customer isn't the man wearing the wallet.</h2>
+  </div>
+  <p class="pull-quote au d1">"An estimated <em>40–60%</em> of men's wallet purchases are gift-driven — peaking at Father's Day, the single most important selling window in the category."</p>
+  <div class="gift-grid">
+    <div class="gift-card au">
+      <div class="g-stat">40–60%</div>
+      <div class="g-lbl">Gift-Driven Purchases</div>
+      <div class="g-desc">The primary buyer is often <strong>a woman shopping for a partner, father, or son</strong>. The exterior must appeal to her aesthetic instincts while the interior satisfies his daily carry needs.</div>
+    </div>
+    <div class="gift-card au d1">
+      <div class="g-stat">55%</div>
+      <div class="g-lbl">Father's Day: Clothing & Accessories</div>
+      <div class="g-desc">Clothing and accessories is the #1 Father's Day gift category. This window plus the holidays make up the majority of wallet sales. <strong>Gift-ready packaging is integral</strong> above $30.</div>
+    </div>
+    <div class="gift-card au d2">
+      <div class="g-stat">3–5 yr</div>
+      <div class="g-lbl">Replacement Cycle</div>
+      <div class="g-desc">Men replace their wallet every 3–5 years, usually triggered by visible wear or wanting a <strong>slimmer, RFID-protected upgrade</strong>. 48% report brand loyalty driving repurchase.</div>
+    </div>
+    <div class="gift-card au d3">
+      <div class="g-stat">$35–$55</div>
+      <div class="g-lbl">Gift Set Sweet Spot</div>
+      <div class="g-desc">Gift sets (wallet + key fob or card case) <strong>expand transaction value</strong> without changing the base <span class="tip" data-tip="Stock Keeping Unit — an individual product variation">SKU</span>. Tin boxes, windowed gift boxes, and bundles are proven volume drivers.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FULL-BLEED: Gift Packaging -->
+<div class="bleed">
+  <div class="img-slot warm">
+    <img src="images/gift-packaging.jpg" alt="Premium wallet gift packaging" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" />
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     DESIGN ARCHETYPES
+════════════════════════════════════════════ -->
+<section class="section-wrap bg-white" id="archetypes">
+  <div class="au" style="max-width:680px;">
+    <div class="gold-rule"></div>
+    <span class="tag gold">The Product Vision</span>
+    <h2 class="sh">Five product archetypes for Fall 2026 and Spring 2027.</h2>
+    <p class="body">These formats are gaining share across the category. Our assortment should include a deliberate mix, calibrated to each brand's DNA.</p>
+  </div>
+  <div class="arch-grid">
+    <div class="arch-card au d1">
+      <div class="arch-img">
+        <div class="img-slot stone">
+          <img src="images/archetype-essential.jpg" alt="The New Essential slim bifold" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" />
+        </div>
+      </div>
+      <div class="arch-body">
+        <div class="arch-lbl">Archetype 01</div>
+        <div class="arch-name">The New Essential</div>
+        <div class="arch-desc">Slim bifold. The familiar fold, dramatically thinner. Pull-tab hidden slots. The one SKU every brand needs.</div>
+        <div class="arch-specs">
+          <span><strong>Price:</strong> $34–$44</span>
+          <span><strong>Must have:</strong> RFID, 6+2 slots, 0.3–0.5" profile</span>
+        </div>
+      </div>
+    </div>
+    <div class="arch-card au d2">
+      <div class="arch-img">
+        <div class="img-slot cool">
+          <img src="images/archetype-commuter.jpg" alt="The Commuter card case" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" />
+        </div>
+      </div>
+      <div class="arch-body">
+        <div class="arch-lbl">Archetype 02</div>
+        <div class="arch-name">The Commuter</div>
+        <div class="arch-desc">Minimalist card case. 4–6 cards, front-pocket, no cash. Gift-set anchor for the Gen Z buyer.</div>
+        <div class="arch-specs">
+          <span><strong>Price:</strong> $25–$34</span>
+          <span><strong>Target:</strong> Urban men 22–40, ultra-slim 0.2"</span>
+        </div>
+      </div>
+    </div>
+    <div class="arch-card au d3">
+      <div class="arch-img">
+        <div class="img-slot forest">
+          <img src="images/archetype-field.jpg" alt="The Field Wallet hybrid" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" />
+        </div>
+      </div>
+      <div class="arch-body">
+        <div class="arch-lbl">Archetype 03</div>
+        <div class="arch-name">The Field Wallet</div>
+        <div class="arch-desc">Leather + ballistic nylon. Technical heritage meets sustainability. Owns the Columbia DNA naturally.</div>
+        <div class="arch-specs">
+          <span><strong>Price:</strong> $25–$34</span>
+          <span><strong>Best for:</strong> Columbia</span>
+        </div>
+      </div>
+    </div>
   </div>
 
+  <!-- Craftsman + MagSafe — wider cards -->
+  <div class="arch-wide" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px;">
+    <div style="background:var(--cream);border-radius:4px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;min-height:300px;" class="au d4">
+      <div class="arch-img" style="height:auto;min-height:280px;">
+        <div class="img-slot warm">
+          <img src="images/archetype-craftsman.jpg" alt="The Craftsman woven wallet" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" />
+        </div>
+      </div>
+      <div class="arch-body" style="padding:36px;display:flex;flex-direction:column;justify-content:center;">
+        <div class="arch-lbl">Archetype 04</div>
+        <div class="arch-name">The Craftsman</div>
+        <div class="arch-desc">Woven-embossed or hand-stitched bifold. Luxury texture at an accessible price. Craftsmanship is the story — powerful at Father's Day.</div>
+        <div class="arch-specs" style="margin-top:16px;padding-top:16px;">
+          <span><strong>Price:</strong> $44–$54 · <strong>Best for:</strong> Calvin Klein, Cole Haan</span>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--cream);border-radius:4px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;min-height:300px;" class="au d5">
+      <div class="arch-img" style="height:auto;min-height:280px;">
+        <div class="img-slot cool">
+          <img src="images/archetype-magsafe.jpg" alt="MagSafe phone wallet" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" />
+        </div>
+      </div>
+      <div class="arch-body" style="padding:36px;display:flex;flex-direction:column;justify-content:center;">
+        <div class="arch-lbl">Archetype 05 — Fastest Growing</div>
+        <div class="arch-name">The Phone Companion</div>
+        <div class="arch-desc">MagSafe-compatible card case. Bridges physical and digital. Search volume <strong>doubled in one year</strong>. Brands that launch Fall 2026 lead the category.</div>
+        <div class="arch-specs" style="margin-top:16px;padding-top:16px;">
+          <span><strong>Price:</strong> $25–$45 · <strong>Growth:</strong> Fastest format in category</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     OUR BRANDS
+════════════════════════════════════════════ -->
+<section class="section-wrap bg-cream">
+  <div class="au" style="max-width:700px;">
+    <div class="gold-rule"></div>
+    <span class="tag gold">Our Shelf</span>
+    <h2 class="sh">Six brands. One strategy. Different personalities.</h2>
+    <p class="body">Each brand has a distinct position. The strategy is shared — the execution is tailored.</p>
+  </div>
+  <div class="bp-grid">
+    <div class="bp-card au d1"><div class="bp-brand">Calvin Klein</div><div class="bp-range">$39–$55</div><div class="bp-desc"><strong>Modern minimalist.</strong> Saffiano leather, metropolitan palette, design-forward gift buyer.</div></div>
+    <div class="bp-card au d2"><div class="bp-brand">Tommy Hilfiger</div><div class="bp-range">$25–$50</div><div class="bp-desc"><strong>All-American gift wallet.</strong> Broadest distribution, tin-box gifting, strong brand recognition.</div></div>
+    <div class="bp-card au d3"><div class="bp-brand">Levi's</div><div class="bp-range">$20–$40</div><div class="bp-desc"><strong>Heritage Americana.</strong> Cognac and brown, red tab branding. Value-oriented gift buyers.</div></div>
+    <div class="bp-card au d4"><div class="bp-brand">Columbia</div><div class="bp-range">$20–$35</div><div class="bp-desc"><strong>Outdoor durability.</strong> Leather-nylon hybrid owner. Front-pocket, built-to-last positioning.</div></div>
+    <div class="bp-card au d5"><div class="bp-brand">Tommy Bahama</div><div class="bp-range">$28–$48</div><div class="bp-desc"><strong>Resort lifestyle.</strong> Two-tone leather, relaxed aesthetic. Father's Day dominant.</div></div>
+    <div class="bp-card au d6"><div class="bp-brand">Cole Haan</div><div class="bp-range">$55–$100+</div><div class="bp-desc"><strong>Premium bridge.</strong> The aspirational ceiling. Their moves validate mid-tier 12–18 months later.</div></div>
+  </div>
+</section>
+
+
+<!-- FULL-BLEED: Lifestyle -->
+<div class="bleed">
+  <div class="img-slot stone">
+    <img src="images/lifestyle-carry.jpg" alt="Everyday carry lifestyle" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" />
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     STRATEGIC IMPERATIVES
+════════════════════════════════════════════ -->
+<section class="section-wrap bg-dark" id="imperatives">
+  <div class="au" style="max-width:680px;margin-bottom:0;">
+    <div class="gold-rule"></div>
+    <span class="tag gold-lt">The Six Moves</span>
+    <h2 class="sh" style="color:#fff;">Six moves that bridge where we are to where the market is going.</h2>
+    <p class="body on-dark">The "Now" moves protect existing business. The "Next" moves create competitive separation.</p>
+  </div>
   <div class="strat-grid">
     <div class="strat-card au d1">
-      <div class="strat-n">1</div>
-      <div class="strat-title">Slim is the New Standard</div>
-      <div class="strat-desc"><strong>Sub-10mm bifold as hero.</strong> Every collection needs a 4–6 card slim anchor, standalone card case, and MagSafe option. Not niche. Baseline.</div>
-      <span class="strat-tag now">Execute Now</span>
+      <div class="strat-n">01</div>
+      <h3 class="strat-title">Make Every Bifold Slim</h3>
+      <p class="strat-desc">Reduce thickness by 25–40%. The "Evolved Bifold" — <strong>same trusted fold, dramatically slimmer</strong> — is how we compete with DTC on every shelf.</p>
+      <span class="strat-tag now">Now</span>
     </div>
     <div class="strat-card au d2">
-      <div class="strat-n">2</div>
-      <div class="strat-title">Quiet Luxury Design Language</div>
-      <div class="strat-desc">Tonal debossed logos. Matte finishes. Full-grain leather front and center. Color expansion: cognac, navy, olive, teal aligned to WGSN. Craftsmanship > visibility.</div>
-      <span class="strat-tag now">Execute Now</span>
+      <div class="strat-n">02</div>
+      <h3 class="strat-title">RFID Across All SKUs Above $25</h3>
+      <p class="strat-desc"><strong>At $30+, omitting RFID is a competitive liability</strong> that shows up in product reviews. Baseline for 100% of the assortment.</p>
+      <span class="strat-tag now">Now</span>
     </div>
     <div class="strat-card au d3">
-      <div class="strat-n">3</div>
-      <div class="strat-title">Packaging Must Work Harder</div>
-      <div class="strat-desc">Gift-ready at all tiers. QR codes (free). Zero-plastic kraft for Walmart 2030. Functional packaging (valet trays). Unboxing = brand moment.</div>
-      <span class="strat-tag now">Execute Now</span>
+      <div class="strat-n">03</div>
+      <h3 class="strat-title">Invest in Packaging as Product</h3>
+      <p class="strat-desc">40–60% of purchases are gifts. <strong>The box is part of the product.</strong> Windowed gift boxes at $35+, gift sets, and premium tin at entry — highest-ROI improvements available.</p>
+      <span class="strat-tag now">Now</span>
     </div>
     <div class="strat-card au d4">
-      <div class="strat-n">4</div>
-      <div class="strat-title">Technology Integration Separates Leaders</div>
-      <div class="strat-desc">AirTag/MagSafe as standard, not premium. Modular systems for flexibility. Personalization 19% growth + 15% premium. Digital ID readiness by 2028.</div>
-      <span class="strat-tag next">2028 Priority</span>
+      <div class="strat-n">04</div>
+      <h3 class="strat-title">Launch Card Cases as Standalone SKUs</h3>
+      <p class="strat-desc">The Ridge built $100M+ on this format. <strong>Card cases fill gift-set needs and capture younger buyers</strong> at an accessible $20–$35 entry point.</p>
+      <span class="strat-tag now">Now</span>
     </div>
     <div class="strat-card au d5">
-      <div class="strat-n">5</div>
-      <div class="strat-title">Storytelling Must Match DTC Intensity</div>
-      <div class="strat-desc">YouTube influencer model (Ridge playbook). EDC community engagement. Artisan narratives. Sustainability woven into identity, not bolted on. Direct customer relationships.</div>
-      <span class="strat-tag next">2028 Priority</span>
+      <div class="strat-n">05</div>
+      <h3 class="strat-title">Build a Third Color Position</h3>
+      <p class="strat-desc"><strong>Navy is the strongest candidate.</strong> A sophisticated extension of black. 5.2% of reviews cite limited color — first mover captures that demand.</p>
+      <span class="strat-tag next">Next Season</span>
+    </div>
+    <div class="strat-card au d6">
+      <div class="strat-n">06</div>
+      <h3 class="strat-title">Introduce Texture as a Design Statement</h3>
+      <p class="strat-desc">Woven-effect embossing, Saffiano, carbon-fiber weave — <strong>reads as premium without premium cost</strong>. Visual advantage at shelf.</p>
+      <span class="strat-tag next">Next Season</span>
+    </div>
+  </div>
+
+  <!-- Looking Ahead -->
+  <div style="margin-top:72px;padding:48px;background:rgba(200,169,110,.08);border:1px solid rgba(200,169,110,.15);border-radius:4px;" class="au d3">
+    <span class="tag gold-lt" style="margin-bottom:14px;">Looking Ahead — 18–24 Months</span>
+    <h3 class="ssh" style="color:#fff;margin-bottom:16px;">What's next and what matters to tomorrow's consumer.</h3>
+    <div class="two-col" style="gap:48px;">
+      <div>
+        <p class="body on-dark">MagSafe phone-wallet convergence, integrated AirTag tracking, and modular add-on systems will reach mass-market within 18–24 months. <strong>Brands that begin prototyping now</strong> will be positioned when the cycle turns.</p>
+      </div>
+      <div>
+        <p class="body on-dark">Consumer interest in sustainability is growing but nuanced. Novel materials like cactus or apple leather remain niche. What matters at scale is <strong><span class="tip" data-tip="Leather Working Group — international certification for responsible leather manufacturing" style="color:rgba(255,255,255,.92);">LWG</span>-certified leather sourcing</strong> — credible, verifiable credentials that tell a real story on packaging without adding cost.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1385,25 +951,29 @@
 ════════════════════════════════════════════ -->
 <section class="closing">
   <div class="gold-rule center" style="position:relative;"></div>
-  <p class="eyebrow au" style="position:relative;">The Opportunity in Front of Us</p>
-  <h2 class="closing-h au d1">The wallet isn't going<br>anywhere.<br><em>But the status quo is.</em></h2>
-  <p class="closing-p au d2">The growth is in slim. The table stakes are RFID. The real customer is the gift buyer. The $25–$55 department store shelf is the primary competitive battleground. The brands that evolve around these truths will own the next cycle — the ones that don't will cede shelf space to DTC disruptors who already have.</p>
+  <p class="eyebrow au" style="position:relative;">The Opportunity</p>
+  <h2 class="closing-h au d1">The wallet isn't<br>going anywhere.<br><em>But the status quo is.</em></h2>
+  <p class="closing-p au d2">The growth is in slim. The table stakes are RFID. The real customer is the gift buyer. The $25–$55 department store shelf is the primary battleground. The brands that evolve around these truths will own the next cycle.</p>
   <div class="closing-kpis au d3">
     <div class="ck">
-      <div class="ck-num">$24.8–$37.1<span class="u">B</span></div>
-      <div class="ck-lbl">Projected global wallet market by 2030–2033</div>
+      <div class="ck-num">$770M</div>
+      <div class="ck-lbl">Minimalist wallet market<br>in North America</div>
     </div>
     <div class="ck">
-      <div class="ck-num">143<span class="u">M</span></div>
-      <div class="ck-lbl">Americans with mobile driver's licenses by 2030</div>
+      <div class="ck-num">6–8%</div>
+      <div class="ck-lbl">Annual segment growth vs.<br>1% overall category</div>
     </div>
     <div class="ck">
-      <div class="ck-num">68<span class="u">%</span></div>
-      <div class="ck-lbl">Consumer willingness for bio-materials at price parity (2029–2031)</div>
+      <div class="ck-num">40–60%</div>
+      <div class="ck-lbl">Gift-driven purchases —<br>she buys, he carries</div>
+    </div>
+    <div class="ck">
+      <div class="ck-num">6</div>
+      <div class="ck-lbl">Strategic moves to<br>own the next cycle</div>
     </div>
   </div>
   <div class="au d4" style="position:relative;margin-top:72px;">
-    <p style="font-size:15px;color:rgba(255,255,255,.4);text-align:center;line-height:1.7;max-width:680px;margin:0 auto;"><strong>The wallet category is not in decline — it is in transition.</strong> The brands that recognize this moment and act decisively on product, materials, packaging, and storytelling will capture disproportionate share. The time to reposition is now. Spring 2027 window is closing.</p>
+    <p style="font-size:14px;color:rgba(255,255,255,.3);letter-spacing:.06em;">Prepared by the Wallet Innovation Team · Randa Apparel &amp; Accessories · February 2026</p>
   </div>
 </section>
 
@@ -1414,78 +984,70 @@
 <footer>
   <div class="ft-brand">
     <img src="images/RAA_Logo.png" alt="Randa Apparel & Accessories" />
-    <div class="ft-div"></div>
-    <span>Wallet Strategy · 2027 & Beyond</span>
+    <span class="ft-div"></span>
+    <span>Wallet Strategy 2025–27</span>
   </div>
   <a href="#top" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:color .2s;" onmouseover="this.style.color='#C8A96E'" onmouseout="this.style.color='rgba(255,255,255,.35)'">Back to Top ↑</a>
   <div class="ft-info">Internal Strategy Document · Confidential · February 2026</div>
 </footer>
 
 
+<!-- ════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════ -->
 <script>
-  // ── NAV SCROLL LOGIC ───────────────────────────────────
+  // ── NAV scroll state + active section
   const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  });
-
-  // ── NAV LINK HIGHLIGHTING ──────────────────────────────
   const navLinks = document.querySelectorAll('.nav-links a');
-  const sections = document.querySelectorAll('section[id], div[id*="tiers"], div[id*="packaging"], div[id*="retail"]');
+  const sections = document.querySelectorAll('section[id], div.split[id]');
 
-  window.addEventListener('scroll', () => {
+  function updateNav() {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
     let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      if (pageYOffset >= sectionTop - 200) {
-        current = section.getAttribute('id');
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.getAttribute('id');
+    });
+    navLinks.forEach(a => {
+      a.classList.remove('active');
+      if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+    });
+  }
+  window.addEventListener('scroll', updateNav);
+  updateNav();
+
+  // ── Subtle hero parallax
+  const heroBg = document.querySelector('.hero-bg');
+  if (heroBg) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY < window.innerHeight) {
+        heroBg.style.transform = 'translateY(' + (window.scrollY * 0.25) + 'px) scale(1.05)';
       }
     });
+  }
 
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href').slice(1) === current) {
-        link.classList.add('active');
-      }
+  // ── Scroll-triggered fade-up
+  const fadeObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); fadeObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -48px 0px' });
+  document.querySelectorAll('.au').forEach(el => fadeObs.observe(el));
+
+  // ── Smooth-scroll nav
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
   });
 
-  // ── SCROLL ANIMATION ───────────────────────────────────
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in');
-      }
-    });
-  }, observerOptions);
-
-  document.querySelectorAll('.au').forEach(el => {
-    observer.observe(el);
-  });
-
-  // ── BAR CHART ANIMATION ────────────────────────────────
-  const barObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const fills = entry.target.querySelectorAll('.bar-fill');
-        fills.forEach(fill => fill.classList.add('go'));
-      }
-    });
-  }, observerOptions);
-
-  document.querySelectorAll('.bar-list').forEach(list => {
-    barObserver.observe(list);
+  // ── Scroll progress bar
+  const pb = document.createElement('div');
+  pb.style.cssText = 'position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-dark));z-index:300;transition:width .1s linear;width:0;';
+  document.body.appendChild(pb);
+  window.addEventListener('scroll', () => {
+    pb.style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100) + '%';
   });
 </script>
-
 </body>
 </html>
