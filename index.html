@@ -456,37 +456,53 @@
 
     /* ── RESPONSIVE ───────────────────────────────────── */
     @media (max-width: 900px) {
+      /* ── NAV: logo left, hamburger right, nothing else ── */
       nav { padding: 16px 20px; }
       .mobile-menu-btn { display: block; }
       .page-tabs { display: none !important; }
-      .nav-links { display: none; }
+      /* !important overrides the inline style="display:flex" that switchPage() sets */
+      .nav-links { display: none !important; }
       .nav-brand .nav-title, .nav-brand .nav-divider { display: none; }
+      .nav-brand img { height: 22px; }
 
-      /* Hero */
-      .hero-body { padding: 0 22px 60px; }
-      .hero-lead { font-size: 17px; line-height: 1.65; }
-      .hero-kpis { gap: 24px; flex-wrap: wrap; }
-      .scroll-cue { right: 22px; }
+      /* ── HERO ── */
+      .hero { min-height: 100svh; }          /* use small-viewport height (accounts for Safari toolbar) */
+      .hero-body { padding: 68px 24px 52px; } /* top pad keeps content below fixed nav */
+      .hero-h1 { font-size: clamp(36px,9vw,96px); margin-bottom: 20px; }
+      .eyebrow { font-size: 10px; letter-spacing: .16em; margin-bottom: 16px; }
+      .hero-lead { font-size: 16px; line-height: 1.62; margin-bottom: 36px; max-width: 100%; }
+      .hero-kpis { gap: 20px; flex-wrap: wrap; }
+      .kpi-num { font-size: 34px; }
+      .kpi-sup { font-size: 18px; }
+      .kpi-label { font-size: 13px; }
+      .scroll-cue { display: none; }         /* hide on mobile — users know to scroll */
 
-      /* Scroll-margin: stops the fixed nav from covering section headings when jumping via anchor */
-      section[id], .split[id], .section-wrap[id] { scroll-margin-top: 70px; }
+      /* ── SECTIONS ── */
+      section[id], .split[id], .section-wrap[id] { scroll-margin-top: 68px; }
+      .section-wrap { padding: 64px 22px; }
+      .sh { font-size: clamp(26px,6.5vw,52px); }            /* section headings */
+      .body, .body.on-dark { font-size: 15px; line-height: 1.68; }
 
-      .section-wrap { padding: 72px 22px; }
-      .two-col, .split { grid-template-columns: 1fr; gap: 36px; }
+      /* ── GRIDS → SINGLE COLUMN ── */
+      .two-col, .split { grid-template-columns: 1fr; gap: 32px; }
       .three-col, .bp-grid { grid-template-columns: 1fr; }
       .arch-grid { grid-template-columns: 1fr; }
+      .strat-grid { grid-template-columns: 1fr; }
+      .color-swatch-row { grid-template-columns: repeat(2,1fr); }
+      .gift-grid { grid-template-columns: 1fr; }
+      .arch-wide { grid-template-columns: 1fr !important; }
+
+      /* ── KPI BAR ── */
       .kpi-bar { grid-template-columns: 1fr 1fr; }
       .kpi-cell { border-right: none; border-bottom: 1px solid var(--light-gray); }
       .kpi-cell:nth-child(odd) { border-right: 1px solid var(--light-gray); }
       .kpi-cell:last-child { border-bottom: none; }
-      .strat-grid { grid-template-columns: 1fr; }
-      .color-swatch-row { grid-template-columns: repeat(2,1fr); }
-      .gift-grid { grid-template-columns: 1fr; }
-      .closing { padding: 90px 22px; }
+
+      /* ── MISC ── */
+      .closing { padding: 80px 22px; }
+      .split-content { padding: 48px 22px; }
       footer { flex-direction: column; align-items: center; gap: 12px; text-align: center; }
       .ft-brand { justify-content: center; flex-wrap: wrap; }
-      .split-content { padding: 52px 22px; }
-      .arch-wide { grid-template-columns: 1fr !important; }
     }
 
     /* ── PAGE TABS ────────────────────────────────────── */
@@ -576,11 +592,20 @@
     @media (max-width: 900px) {
       .tier-grid, .pillar-grid, .retail-grid { grid-template-columns: 1fr; }
       .col-feat-grid { grid-template-columns: 1fr; }
-      /* tier card: slightly tighter on mobile */
-      .tier-card { padding: 36px 22px; }
-      .tier-price-col { font-size: 42px; }
-      /* tech table: allow horizontal scroll on narrow screens */
+      .tier-card { padding: 32px 22px; }
+      .tier-price-col { font-size: 38px; }
+      .tier-name-col { font-size: 13px; }
+      .pillar-card { padding: 32px 22px; }
+      .pillar-num { font-size: 56px; }
+      .pillar-title { font-size: 19px; }
+      .pillar-desc { font-size: 14px; }
+      .col-feat-card { padding: 26px 22px; }
+      .col-feat-card h3 { font-size: 18px; }
+      .retail-card { padding: 26px 22px; }
+      .retail-name { font-size: 19px; }
       .tech-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .tech-table th { font-size: 10px; padding: 10px 12px; }
+      .tech-table td { font-size: 13px; padding: 12px 12px; }
     }
   </style>
 </head>
