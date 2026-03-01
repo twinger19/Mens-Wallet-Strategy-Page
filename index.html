@@ -40,6 +40,7 @@
     nav.scrolled {
       background: rgba(250,248,243,.96);
       backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       box-shadow: 0 1px 0 rgba(0,0,0,.07);
     }
     .nav-brand {
@@ -399,13 +400,30 @@
 
     /* ── RESPONSIVE ───────────────────────────────────── */
     @media (max-width: 900px) {
-      nav { padding: 18px 24px; }
+      /* Nav: tighter padding; always-visible backdrop prevents logo floating over page content */
+      nav { padding: 14px 20px; }
+      nav:not(.scrolled) {
+        background: rgba(12,10,8,.78);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+      /* Show page-tabs on mobile in compact form so Columbia section is reachable */
+      .page-tabs { display: flex !important; }
+      .page-tab { font-size: 9px; padding: 5px 9px; letter-spacing: .06em; }
       .nav-links { display: none; }
       .nav-brand .nav-title, .nav-brand .nav-divider { display: none; }
-      .hero-body { padding: 0 24px 64px; }
-      .hero-kpis { gap: 28px; flex-wrap: wrap; }
-      .section-wrap { padding: 80px 24px; }
-      .two-col, .split { grid-template-columns: 1fr; gap: 40px; }
+
+      /* Hero */
+      .hero-body { padding: 0 22px 60px; }
+      .hero-lead { font-size: 17px; line-height: 1.65; }
+      .hero-kpis { gap: 24px; flex-wrap: wrap; }
+      .scroll-cue { right: 22px; }
+
+      /* Scroll-margin: stops the fixed nav from covering section headings when jumping via anchor */
+      section[id], .split[id], .section-wrap[id] { scroll-margin-top: 70px; }
+
+      .section-wrap { padding: 72px 22px; }
+      .two-col, .split { grid-template-columns: 1fr; gap: 36px; }
       .three-col, .bp-grid { grid-template-columns: 1fr; }
       .arch-grid { grid-template-columns: 1fr; }
       .kpi-bar { grid-template-columns: 1fr 1fr; }
@@ -415,10 +433,10 @@
       .strat-grid { grid-template-columns: 1fr; }
       .color-swatch-row { grid-template-columns: repeat(2,1fr); }
       .gift-grid { grid-template-columns: 1fr; }
-      .closing { padding: 100px 24px; }
-      footer { flex-direction: column; gap: 10px; text-align: center; }
-      .ft-brand { justify-content: center; }
-      .split-content { padding: 60px 24px; }
+      .closing { padding: 90px 22px; }
+      footer { flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+      .ft-brand { justify-content: center; flex-wrap: wrap; }
+      .split-content { padding: 52px 22px; }
       .arch-wide { grid-template-columns: 1fr !important; }
     }
 
@@ -509,7 +527,11 @@
     @media (max-width: 900px) {
       .tier-grid, .pillar-grid, .retail-grid { grid-template-columns: 1fr; }
       .col-feat-grid { grid-template-columns: 1fr; }
-      .page-tabs { display: none; }
+      /* tier card: slightly tighter on mobile */
+      .tier-card { padding: 36px 22px; }
+      .tier-price-col { font-size: 42px; }
+      /* tech table: allow horizontal scroll on narrow screens */
+      .tech-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
     }
   </style>
 </head>
@@ -1392,6 +1414,7 @@
       <p style="font-size:13px;line-height:1.65;color:rgba(255,255,255,.6);">Technologies marked with ™ reference Columbia's proprietary innovations as <strong style="color:rgba(255,255,255,.85);">directional concepts</strong>. Final product briefs should confirm approved use for wallet applications within each sub-brand (Core Columbia, PFG, PHG). Functional equivalents are noted where applicable.</p>
     </div>
   </div>
+  <div class="tech-table-wrap">
   <table class="tech-table">
     <thead>
       <tr>
@@ -1440,6 +1463,7 @@
       </tr>
     </tbody>
   </table>
+  </div>
 </section>
 
 
