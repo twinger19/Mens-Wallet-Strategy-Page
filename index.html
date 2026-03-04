@@ -607,6 +607,181 @@
       .tech-table th { font-size: 10px; padding: 10px 12px; }
       .tech-table td { font-size: 13px; padding: 12px 12px; }
     }
+
+    /* ══════════════════════════════════════════════════
+       BRAND STRATEGY PAGE
+    ══════════════════════════════════════════════════ */
+
+    /* ── Brand Banner ─────────────────────────────── */
+    .bs-banner {
+      padding: 80px 52px 68px;
+      position: relative; overflow: hidden;
+    }
+    .bs-banner-inner { position: relative; z-index: 2; max-width: 720px; }
+    .logo-ph {
+      width: 180px; height: 54px;
+      border: 1.5px dashed rgba(255,255,255,.22);
+      border-radius: 3px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,.04);
+      margin-bottom: 28px; position: relative;
+    }
+    .logo-ph span {
+      font-size: 10px; font-weight: 700; letter-spacing: .18em;
+      text-transform: uppercase; color: rgba(255,255,255,.26);
+    }
+    .logo-ph::after {
+      content: '↑'; position: absolute; top: -16px; right: 8px;
+      font-size: 11px; color: rgba(255,255,255,.18);
+    }
+    .bs-tier-badge {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      letter-spacing: .18em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 20px; margin-bottom: 18px;
+    }
+    .bs-brand-name {
+      font-family: var(--serif); font-size: clamp(40px,5.5vw,70px);
+      font-weight: 600; line-height: 1.05; color: #fff; margin-bottom: 18px;
+    }
+    .bs-brand-name em { font-style: italic; }
+    .bs-lead {
+      font-size: 18px; line-height: 1.72;
+      color: rgba(255,255,255,.62);
+      max-width: 560px; margin-bottom: 40px;
+    }
+    .bs-stats {
+      display: flex; gap: 44px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,.1);
+    }
+    .bs-stat-num {
+      font-family: var(--serif); font-size: 26px; font-weight: 600;
+      color: #fff; line-height: 1;
+    }
+    .bs-stat-lbl {
+      font-size: 12px; color: rgba(255,255,255,.38);
+      margin-top: 5px; line-height: 1.4;
+    }
+
+    /* ── Brand Content Section ────────────────────── */
+    .bs-content {
+      background: var(--white);
+      padding: 72px 52px 80px;
+    }
+    .bs-dna-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 72px; align-items: start;
+    }
+
+    /* ── Feature Pills ────────────────────────────── */
+    .bs-pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 22px; }
+    .bs-pill {
+      font-size: 11px; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; padding: 6px 14px; border-radius: 20px;
+    }
+
+    /* ── Color Palette ────────────────────────────── */
+    .bs-palette {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      height: 90px; border-radius: 4px; overflow: hidden; margin-top: 14px;
+    }
+    .bs-swatch { position: relative; }
+    .bs-swatch-info {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 8px 8px 6px;
+      background: linear-gradient(to top, rgba(0,0,0,.52), transparent);
+    }
+    .bs-swatch-name {
+      display: block; font-size: 10px; font-weight: 700;
+      color: #fff; letter-spacing: .04em;
+    }
+
+    /* ── Image Placeholder Strip ──────────────────── */
+    .bs-img-row {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 3px; margin-top: 52px;
+    }
+    .bs-img-ph { position: relative; aspect-ratio: 4/3; overflow: hidden; }
+    .bs-img-slot {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 10px;
+    }
+    .bs-img-ph-label {
+      position: absolute; bottom: 10px; left: 0; right: 0;
+      text-align: center; font-size: 10px; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: rgba(255,255,255,.26); pointer-events: none;
+    }
+    .img-ph-hint {
+      font-size: 10px; font-weight: 700; letter-spacing: .16em;
+      text-transform: uppercase; color: rgba(255,255,255,.16);
+      text-align: center;
+    }
+    .img-ph-plus {
+      width: 32px; height: 32px; border-radius: 50%;
+      border: 1.5px dashed rgba(255,255,255,.18);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; color: rgba(255,255,255,.2); font-weight: 300;
+    }
+
+    /* ── Brand Section Separator ──────────────────── */
+    .bs-sep { height: 10px; background: var(--cream-dark); }
+
+    /* ── Columbia CTA panel ───────────────────────── */
+    .bs-columbia-cta {
+      padding: 24px 32px;
+      background: rgba(22,42,28,.06);
+      border: 1px solid rgba(22,42,28,.18);
+      border-radius: 4px; margin-top: 24px;
+      display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+    }
+    .bs-columbia-cta p { font-size: 16px; line-height: 1.65; color: var(--mid-gray); margin: 0; flex: 1; min-width: 200px; }
+    .bs-columbia-cta p strong { color: var(--near-black); }
+    .bs-cta-btn {
+      font-size: 11px; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; padding: 12px 24px;
+      background: var(--near-black); color: #fff; border: none;
+      border-radius: 3px; cursor: pointer; white-space: nowrap;
+      transition: background .2s;
+    }
+    .bs-cta-btn:hover { background: #3A3830; }
+
+    /* ── Portfolio matrix strip ───────────────────── */
+    .bs-matrix {
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 2px;
+      background: var(--light-gray); margin-top: 48px;
+    }
+    .bs-matrix-cell {
+      background: var(--white); padding: 28px 24px;
+      cursor: pointer; transition: background .25s;
+      text-decoration: none; display: block;
+    }
+    .bs-matrix-cell:hover { background: var(--cream); }
+    .bs-matrix-tier {
+      font-size: 10px; font-weight: 700; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--mid-gray); margin-bottom: 10px;
+    }
+    .bs-matrix-name {
+      font-family: var(--serif); font-size: 20px; font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .bs-matrix-range { font-size: 13px; font-weight: 600; color: var(--gold-dark); margin-bottom: 10px; }
+    .bs-matrix-desc { font-size: 13px; line-height: 1.55; color: var(--mid-gray); }
+    .bs-matrix-bar { height: 3px; border-radius: 2px; margin-top: 18px; }
+
+    /* Responsive ─────────────────────────────────── */
+    @media (max-width: 900px) {
+      .bs-banner { padding: 60px 22px 52px; }
+      .bs-content { padding: 52px 22px 60px; }
+      .bs-dna-grid { grid-template-columns: 1fr; gap: 36px; }
+      .bs-img-row { grid-template-columns: repeat(2,1fr); }
+      .bs-img-row .bs-img-ph:last-child { display: none; }
+      .bs-stats { gap: 24px; flex-wrap: wrap; }
+      .bs-brand-name { font-size: clamp(34px,8vw,70px); }
+      .bs-palette { height: 110px; grid-template-columns: repeat(2,1fr); }
+      .bs-matrix { grid-template-columns: repeat(2,1fr); }
+    }
   </style>
 </head>
 <body>
@@ -624,6 +799,7 @@
   <div class="page-tabs">
     <div class="page-tab active" id="tab-main" onclick="switchPage('main')">Market Overview</div>
     <div class="page-tab" id="tab-columbia" onclick="switchPage('columbia')">Columbia</div>
+    <div class="page-tab" id="tab-brands" onclick="switchPage('brands')">Brand Strategy</div>
   </div>
 
   <ul class="nav-links" id="main-nav-links">
@@ -641,6 +817,16 @@
     <li><a href="#col-metalwall">Metal Wallet</a></li>
     <li><a href="#col-retail">Retail</a></li>
   </ul>
+  <ul class="nav-links" id="brands-nav-links" style="display:none;">
+    <li><a href="#bs-levis">Levi's</a></li>
+    <li><a href="#bs-haggar">Haggar</a></li>
+    <li><a href="#bs-columbia">Columbia</a></li>
+    <li><a href="#bs-ck">Calvin Klein</a></li>
+    <li><a href="#bs-tommy">Tommy H.</a></li>
+    <li><a href="#bs-kc">Kenneth Cole</a></li>
+    <li><a href="#bs-ch">Cole Haan</a></li>
+    <li><a href="#bs-tb">Tommy Bahama</a></li>
+  </ul>
 
   <!-- Hamburger button (mobile only) -->
   <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu" onclick="toggleMobileMenu()">
@@ -651,9 +837,10 @@
 <!-- ── MOBILE MENU OVERLAY ───────────────────────── -->
 <div class="mobile-menu" id="mobileMenu">
   <p class="mobile-menu-label">Navigate</p>
-  <div class="mobile-page-switch">
-    <button class="mobile-page-btn active" id="mob-tab-main" onclick="switchPage('main');closeMobileMenu()">Market Overview</button>
+  <div class="mobile-page-switch" style="flex-wrap:wrap;">
+    <button class="mobile-page-btn active" id="mob-tab-main" onclick="switchPage('main');closeMobileMenu()">Market</button>
     <button class="mobile-page-btn" id="mob-tab-columbia" onclick="switchPage('columbia');closeMobileMenu()">Columbia</button>
+    <button class="mobile-page-btn" id="mob-tab-brands" onclick="switchPage('brands');closeMobileMenu()">Brands</button>
   </div>
   <p class="mobile-menu-label">Sections</p>
   <ul class="mobile-nav-links" id="mobile-section-links">
@@ -1777,6 +1964,833 @@
 
 
 <!-- ════════════════════════════════════════════
+     BRAND STRATEGY PAGE
+════════════════════════════════════════════ -->
+<div id="brands-page" style="display:none;">
+
+<!-- ── BRAND STRATEGY HERO ──────────────────────────── -->
+<section class="hero" id="bs-top">
+  <div class="hero-bg">
+    <div class="img-slot" style="background:linear-gradient(160deg,#0A0C10 0%,#12111A 20%,#0E1820 40%,#0C1410 65%,#1A120A 85%,#241A08 100%);position:relative;">
+      <img src="images/brands-hero.jpg" alt="Randa brand portfolio" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" />
+    </div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-body au">
+    <p class="eyebrow">Randa Brand Portfolio · Wallet Design Strategy 2025–2027</p>
+    <h1 class="hero-h1">Eight brands.<br><em>Eight distinct stories.</em></h1>
+    <p class="hero-lead">The portfolio only works when every brand occupies its own space on the shelf. Here's how each brand wins — on its own terms, with its own design DNA.</p>
+    <div class="hero-kpis">
+      <div>
+        <span class="kpi-num">8</span>
+        <span class="kpi-label">Licensed brands,<br>zero overlap</span>
+      </div>
+      <div>
+        <span class="kpi-num">$20<span class="kpi-sup">–95</span></span>
+        <span class="kpi-label">Full price spectrum covered<br>across every retail tier</span>
+      </div>
+      <div>
+        <span class="kpi-num">3</span>
+        <span class="kpi-label">Good–Better–Best tiers<br>at Kohl's, JCP &amp; Macy's</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue">
+    <span>Explore</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+
+<!-- ── PORTFOLIO OVERVIEW ────────────────────────────── -->
+<section class="section-wrap bg-white" id="bs-overview">
+  <div class="au" style="text-align:center;max-width:720px;margin:0 auto 16px;">
+    <div class="gold-rule center"></div>
+    <span class="tag gold">The Portfolio Philosophy</span>
+    <h2 class="sh">Every brand, a different consumer. One unified strategy.</h2>
+    <p class="body" style="text-align:center;">Levi's, Haggar, and Columbia anchor the value and casual tier. Tommy Hilfiger, Calvin Klein, and Kenneth Cole own the designer middle. Cole Haan and Tommy Bahama reach the premium ceiling. Together they cover every wallet buyer in every Randa retail door — with zero internal cannibalization.</p>
+  </div>
+
+  <div class="bs-matrix au d1">
+    <a class="bs-matrix-cell" href="#bs-levis" onclick="void(0)">
+      <div class="bs-matrix-tier">Tier 1 · Value & Casual</div>
+      <div class="bs-matrix-name">Levi's</div>
+      <div class="bs-matrix-range">$30–$45</div>
+      <div class="bs-matrix-desc">Rugged Americana — denim DNA, Two Horse patch, patina leather</div>
+      <div class="bs-matrix-bar" style="background:#1A3875;"></div>
+    </a>
+    <a class="bs-matrix-cell" href="#bs-haggar" onclick="void(0)">
+      <div class="bs-matrix-tier">Tier 1 · Value & Gifting</div>
+      <div class="bs-matrix-name">Haggar</div>
+      <div class="bs-matrix-range">$20–$35</div>
+      <div class="bs-matrix-desc">The gift economy anchor — premium packaging, gifting sets</div>
+      <div class="bs-matrix-bar" style="background:#162347;"></div>
+    </a>
+    <a class="bs-matrix-cell" href="#bs-columbia" onclick="void(0)">
+      <div class="bs-matrix-tier">Tier 1–3 · Performance</div>
+      <div class="bs-matrix-name">Columbia</div>
+      <div class="bs-matrix-range">$20–$55+</div>
+      <div class="bs-matrix-desc">Performance outdoor — gear-grade materials and tech features</div>
+      <div class="bs-matrix-bar" style="background:#1A3A1A;"></div>
+    </a>
+    <a class="bs-matrix-cell" href="#bs-ck" onclick="void(0)">
+      <div class="bs-matrix-tier">Tier 2 · Designer</div>
+      <div class="bs-matrix-name">Calvin Klein</div>
+      <div class="bs-matrix-range">$45–$65</div>
+      <div class="bs-matrix-desc">Modern minimalist — Saffiano leather, foil logo, tonal finishes</div>
+      <div class="bs-matrix-bar" style="background:#111111;"></div>
+    </a>
+    <a class="bs-matrix-cell" href="#bs-tommy" onclick="void(0)">
+      <div class="bs-matrix-tier">Tier 2 · Designer</div>
+      <div class="bs-matrix-name">Tommy Hilfiger</div>
+      <div class="bs-matrix-range">$45–$60</div>
+      <div class="bs-matrix-desc">Classic American Cool — Global Stripe, pebble grain, metal ornaments</div>
+      <div class="bs-matrix-bar" style="background:#002F6C;"></div>
+    </a>
+    <a class="bs-matrix-cell" href="#bs-kc" onclick="void(0)">
+      <div class="bs-matrix-tier">Tier 2 · Urban Pro</div>
+      <div class="bs-matrix-name">Kenneth Cole</div>
+      <div class="bs-matrix-range">$45–$55</div>
+      <div class="bs-matrix-desc">Urban professional — carbon fiber, stretch lining, Techni-Cole</div>
+      <div class="bs-matrix-bar" style="background:#2A2A2A;"></div>
+    </a>
+    <a class="bs-matrix-cell" href="#bs-ch" onclick="void(0)">
+      <div class="bs-matrix-tier">Tier 3 · Premium</div>
+      <div class="bs-matrix-name">Cole Haan</div>
+      <div class="bs-matrix-range">$60–$95</div>
+      <div class="bs-matrix-desc">Sophisticated innovation — pop-up mechanics, pebble leather, modular design</div>
+      <div class="bs-matrix-bar" style="background:#1E3A2E;"></div>
+    </a>
+    <a class="bs-matrix-cell" href="#bs-tb" onclick="void(0)">
+      <div class="bs-matrix-tier">Tier 3 · Island Luxury</div>
+      <div class="bs-matrix-name">Tommy Bahama</div>
+      <div class="bs-matrix-range">$75–$95</div>
+      <div class="bs-matrix-desc">Island luxury — woven leather signature, Marlin ornament, artisan feel</div>
+      <div class="bs-matrix-bar" style="background:#005F5E;"></div>
+    </a>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════
+     BRAND: LEVI'S
+════════════════════════════ -->
+<div id="bs-levis" class="bs-section">
+
+  <div class="bs-banner" style="background:linear-gradient(150deg,#081430 0%,#1A3875 45%,#1E468C 75%,#102050 100%);">
+    <div class="bs-banner-inner au">
+      <div class="logo-ph"><span>Brand Logo</span></div>
+      <div class="bs-tier-badge" style="background:rgba(204,0,0,.2);color:#FF8080;">Tier 1 · Value &amp; Casual · Kohl's / JCPenney</div>
+      <h2 class="bs-brand-name">Levi's<em>®</em></h2>
+      <p class="bs-lead">The most recognized name in American denim should own the wallet wall the same way it owns the jean wall. Rugged, lived-in, and unmistakably Levi's.</p>
+      <div class="bs-stats">
+        <div><div class="bs-stat-num">$30–45</div><div class="bs-stat-lbl">Retail Range</div></div>
+        <div><div class="bs-stat-num">Kohl's</div><div class="bs-stat-lbl">Primary Retailer</div></div>
+        <div><div class="bs-stat-num">18–35</div><div class="bs-stat-lbl">Core Consumer Age</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bs-content">
+    <div class="bs-dna-grid">
+      <div class="au">
+        <div class="gold-rule"></div>
+        <span class="tag gold">Design DNA</span>
+        <h3 class="ssh">Built to age, built to last — just like a great pair of 501s.</h3>
+        <p class="body">Levi's power is authentic heritage. Vegetable-tanned cowhide that develops a rugged patina over time mirrors the natural aging of broken-in denim. Heavy-gauge Western stitching and contrast thread add visual texture that reads as craftsmanship, not commodity.</p>
+        <p class="body">The <strong>denim accent panel</strong> on the exterior back is the category-exclusive story — no other brand at Kohl's can say their wallet is made with the same fabric as their jeans.</p>
+        <div class="callout" style="border-color:#1A3875;background:rgba(26,56,117,.06);">
+          <p>The <strong>Two Horse patch</strong> is Levi's most iconic branding element. Placing it prominently on the exterior brings instant recognition to the wallet wall — and tells the whole heritage story without a single word.</p>
+        </div>
+      </div>
+      <div class="au d2">
+        <span class="tag gold">Hero Product</span>
+        <h3 class="ssh">Extra-Capacity Slim Bifold with Denim Accent</h3>
+        <p class="body">A slim bifold with a denim accent panel on the exterior back. Carries more than it looks like it can — with the RFID protection and slim front-pocket profile today's consumer expects.</p>
+        <div class="bs-pill-row">
+          <span class="bs-pill" style="background:rgba(26,56,117,.1);color:#1A3875;">Veg-Tan Leather</span>
+          <span class="bs-pill" style="background:rgba(26,56,117,.1);color:#1A3875;">Two Horse Patch</span>
+          <span class="bs-pill" style="background:rgba(26,56,117,.1);color:#1A3875;">Denim Accent Panel</span>
+          <span class="bs-pill" style="background:rgba(200,169,110,.12);color:var(--gold-dark);">RFID Blocking</span>
+          <span class="bs-pill" style="background:rgba(200,169,110,.12);color:var(--gold-dark);">Western Stitching</span>
+        </div>
+        <div style="margin-top:32px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mid-gray);margin-bottom:10px;">Brand Palette</div>
+          <div class="bs-palette">
+            <div class="bs-swatch" style="background:#1A3875;"><div class="bs-swatch-info"><span class="bs-swatch-name">Levi's Indigo</span></div></div>
+            <div class="bs-swatch" style="background:#4A78BF;"><div class="bs-swatch-info"><span class="bs-swatch-name">Stonewash</span></div></div>
+            <div class="bs-swatch" style="background:#CC0000;"><div class="bs-swatch-info"><span class="bs-swatch-name">Red Tab</span></div></div>
+            <div class="bs-swatch" style="background:#C89860;"><div class="bs-swatch-info"><span class="bs-swatch-name">Natural Tan</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bs-img-row">
+      <div class="bs-img-ph">
+        <div class="bs-img-slot" style="background:linear-gradient(150deg,#081430 0%,#1A3875 100%);">
+          <div class="img-ph-plus">+</div>
+          <div class="img-ph-hint">Lifestyle Image</div>
+        </div>
+        <div class="bs-img-ph-label">levis-lifestyle.jpg</div>
+      </div>
+      <div class="bs-img-ph">
+        <div class="bs-img-slot" style="background:linear-gradient(150deg,#102050 0%,#234A9B 100%);">
+          <div class="img-ph-plus">+</div>
+          <div class="img-ph-hint">Wallet Hero Shot</div>
+        </div>
+        <div class="bs-img-ph-label">levis-wallet-hero.jpg</div>
+      </div>
+      <div class="bs-img-ph">
+        <div class="bs-img-slot" style="background:linear-gradient(150deg,#1A2030 0%,#2A3A5A 100%);">
+          <div class="img-ph-plus">+</div>
+          <div class="img-ph-hint">Denim Detail / Packaging</div>
+        </div>
+        <div class="bs-img-ph-label">levis-detail-packaging.jpg</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bs-sep"></div>
+
+
+<!-- ════════════════════════════
+     BRAND: HAGGAR
+════════════════════════════ -->
+<div id="bs-haggar" class="bs-section">
+
+  <div class="bs-banner" style="background:linear-gradient(150deg,#070C18 0%,#0E1E38 35%,#162347 65%,#0A1428 100%);">
+    <div class="bs-banner-inner au">
+      <div class="logo-ph"><span>Brand Logo</span></div>
+      <div class="bs-tier-badge" style="background:rgba(200,169,110,.18);color:var(--gold);">Tier 1 · Value &amp; Gifting · Kohl's / JCPenney</div>
+      <h2 class="bs-brand-name">Haggar</h2>
+      <p class="bs-lead">The wallet that makes the perfect gift — every time. Haggar's home turf is the gift economy, and it's time to own it completely with packaging as thoughtful as the product inside.</p>
+      <div class="bs-stats">
+        <div><div class="bs-stat-num">$20–35</div><div class="bs-stat-lbl">Retail Range</div></div>
+        <div><div class="bs-stat-num">JCP/Kohl's</div><div class="bs-stat-lbl">Primary Retailers</div></div>
+        <div><div class="bs-stat-num">35–60</div><div class="bs-stat-lbl">Core Consumer Age</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bs-content">
+    <div class="bs-dna-grid">
+      <div class="au">
+        <div class="gold-rule"></div>
+        <span class="tag gold">Design DNA</span>
+        <h3 class="ssh">Clean, dependable, and gift-ready from the moment it hits the shelf.</h3>
+        <p class="body">Haggar wins when it leans into what it does best — comfort, dependability, and value. Classic bifold and trifold silhouettes with subtle horizontal stitching and a clean embossed logo communicate "quality" without pretension.</p>
+        <p class="body">The real differentiator is the box. <strong>40–60% of wallets are bought as gifts.</strong> Haggar packaging needs to feel like a gift before it's even opened — gift sets bundled with matching belts are the highest-conversion play at Father's Day and the holidays.</p>
+        <div class="callout" style="border-color:#162347;background:rgba(22,35,71,.06);">
+          <p>The <strong>"Pocketmate" and gift bundle series</strong> are Haggar's highest-margin plays. When the packaging does the selling, the entire display becomes a gift destination — not just a wallet wall.</p>
+        </div>
+      </div>
+      <div class="au d2">
+        <span class="tag gold">Hero Product</span>
+        <h3 class="ssh">Pocketmate Bifold Gift Set with Matching Belt</h3>
+        <p class="body">A clean bifold in classic black or cognac, packaged with a matching belt in a premium gift box. The complete solution for every Father's Day, birthday, and holiday purchase decision.</p>
+        <div class="bs-pill-row">
+          <span class="bs-pill" style="background:rgba(22,35,71,.1);color:#162347;">Classic Bifold / Trifold</span>
+          <span class="bs-pill" style="background:rgba(22,35,71,.1);color:#162347;">Horizontal Stitching</span>
+          <span class="bs-pill" style="background:rgba(22,35,71,.1);color:#162347;">Embossed Logo</span>
+          <span class="bs-pill" style="background:rgba(200,169,110,.12);color:var(--gold-dark);">Premium Gift Box</span>
+          <span class="bs-pill" style="background:rgba(200,169,110,.12);color:var(--gold-dark);">Belt Bundle Option</span>
+          <span class="bs-pill" style="background:rgba(200,169,110,.12);color:var(--gold-dark);">RFID Blocking</span>
+        </div>
+        <div style="margin-top:32px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mid-gray);margin-bottom:10px;">Brand Palette</div>
+          <div class="bs-palette">
+            <div class="bs-swatch" style="background:#162347;"><div class="bs-swatch-info"><span class="bs-swatch-name">Classic Navy</span></div></div>
+            <div class="bs-swatch" style="background:#3B3B3B;"><div class="bs-swatch-info"><span class="bs-swatch-name">Charcoal</span></div></div>
+            <div class="bs-swatch" style="background:#1A1A1A;"><div class="bs-swatch-info"><span class="bs-swatch-name">Black</span></div></div>
+            <div class="bs-swatch" style="background:#8B6040;"><div class="bs-swatch-info"><span class="bs-swatch-name">Cognac</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bs-img-row">
+      <div class="bs-img-ph">
+        <div class="bs-img-slot" style="background:linear-gradient(150deg,#070C18 0%,#162347 100%);">
+          <div class="img-ph-plus">+</div>
+          <div class="img-ph-hint">Lifestyle / Gift Occasion</div>
+        </div>
+        <div class="bs-img-ph-label">haggar-lifestyle.jpg</div>
+      </div>
+      <div class="bs-img-ph">
+        <div class="bs-img-slot" style="background:linear-gradient(150deg,#0E1E38 0%,#1E3060 100%);">
+          <div class="img-ph-plus">+</div>
+          <div class="img-ph-hint">Gift Set / Packaging</div>
+        </div>
+        <div class="bs-img-ph-label">haggar-giftset.jpg</div>
+      </div>
+      <div class="bs-img-ph">
+        <div class="bs-img-slot" style="background:linear-gradient(150deg,#101828 0%,#1C2C48 100%);">
+          <div class="img-ph-plus">+</div>
+          <div class="img-ph-hint">Wallet Detail / Stitching</div>
+        </div>
+        <div class="bs-img-ph-label">haggar-wallet-detail.jpg</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bs-sep"></div>
+
+
+<!-- ════════════════════════════
+     BRAND: COLUMBIA
+════════════════════════════ -->
+<div id="bs-columbia" class="bs-section">
+
+  <div class="bs-banner" style="background:linear-gradient(150deg,#060E08 0%,#0E2014 35%,#162A1C 65%,#0A1810 100%);">
+    <div class="bs-banner-inner au">
+      <div class="logo-ph"><span>Brand Logo</span></div>
+      <div class="bs-tier-badge" style="background:rgba(45,120,62,.25);color:#7FBD9A;">Tier 1–3 · Performance Outdoor · Kohl's / Specialty</div>
+      <h2 class="bs-brand-name">Columbia<br><em>Sportswear</em></h2>
+      <p class="bs-lead">The only brand at Kohl's that can say its wallet speaks the same language as its rain shells and trail boots. The technology is already there. It's time the wallet uses it.</p>
+      <div class="bs-stats">
+        <div><div class="bs-stat-num">$20–55</div><div class="bs-stat-lbl">Retail Range</div></div>
+        <div><div class="bs-stat-num">Kohl's+</div><div class="bs-stat-lbl">Kohl's &amp; Specialty</div></div>
+        <div><div class="bs-stat-num">3 Tiers</div><div class="bs-stat-lbl">Core · PFG · Performance</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bs-content">
+    <div class="bs-dna-grid">
+      <div class="au">
+        <div class="gold-rule"></div>
+        <span class="tag gold">Design DNA</span>
+        <h3 class="ssh">Gear logic applied to the wallet — every detail earns its place.</h3>
+        <p class="body">Columbia's design language is performance first. Waterproof materials, magnetic closures, hi-vis interiors, pull-tab architecture — these aren't wallet features borrowed from fashion, they're <strong>outdoor gear features adapted for everyday carry.</strong></p>
+        <p class="body">The PFG (Performance Fishing Gear) sub-brand opens a uniquely category-exclusive story: magnetic front-pocket wallets designed for one-handed access on the water. No other brand at Kohl's can say that.</p>
+        <div class="callout" style="border-color:#1A3A1A;background:rgba(22,58,26,.06);">
+          <p>Columbia can move from a <strong>$44 commodity bifold to a $95 performance wallet</strong> without changing retail doors. The three-tier architecture — Everyday Trail, Performance Series, and Elite — lets the line grow as the consumer grows with the brand.</p>
+        </div>
+        <div class="bs-columbia-cta">
+          <p><strong>Full Columbia strategy covered in depth</strong> — three product tiers, PFG &amp; PHG sub-brands, materials technology table, and retail channel breakdown.</p>
+          <button class="bs-cta-btn" onclick="switchPage('columbia')">View Columbia Deep Dive →</button>
+        </div>
+      </div>
+      <div class="au d2">
+        <span class="tag gold">Brand Architecture</span>
+        <h3 class="ssh">Three lines. One brand. Every outdoor consumer covered.</h3>
+        <div class="bs-pill-row" style="margin-top:0;margin-bottom:24px;">
+          <span class="bs-pill" style="background:rgba(45,120,62,.15);color:#2D7A3E;">Core Columbia · $20–44</span>
+          <span class="bs-pill" style="background:rgba(28,78,138,.15);color:#1C4E8A;">PFG · $35–55</span>
+          <span class="bs-pill" style="background:rgba(200,169,110,.12);color:var(--gold-dark);">Performance Elite · $65–95</span>
+        </div>
+        <p class="body">Magnetic closures, Omni-Shield lining, pull-tab hidden slots, hi-vis orange interiors, AirTag pockets — all achievable at retail pricing that Kohl's and specialty consumers already accept from Columbia gear.</p>
+        <div class="bs-pill-row" style="margin-top:8px;">
+          <span class="bs-pill" style="background:rgba(22,42,28,.1);color:#1A3A1A;">Waterproof Materials</span>
+          <span class="bs-pill" style="background:rgba(22,42,28,.1);color:#1A3A1A;">Magnetic Closure</span>
+          <span class="bs-pill" style="background:rgba(22,42,28,.1);color:#1A3A1A;">Pull-Tab Architecture</span>
+          <span class="bs-pill" style="background:rgba(200,169,110,.12);color:var(--gold-dark);">RFID Blocking</span>
+          <span class="bs-pill" style="background:rgba(200,169,110,.12);color:var(--gold-dark);">Hi-Vis Interior</span>
+        </div>
+        <div style="margin-top:32px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mid-gray);margin-bottom:10px;">Brand Palette</div>
+          <div class="bs-palette">
+            <div class="bs-swatch" style="background:#1A3A1A;"><div class="bs-swatch-info"><span class="bs-swatch-name">Forest Green</span></div></div>
+            <div class="bs-swatch" style="background:#003DA5;"><div class="bs-swatch-info"><span class="bs-swatch-name">Columbia Blue</span></div></div>
+            <div class="bs-swatch" style="background:#C8102E;"><div class="bs-swatch-info"><span class="bs-swatch-name">Poppy Red</span></div></div>
+            <div class="bs-swatch" style="background:#4A5058;"><div class="bs-swatch-info"><span class="bs-swatch-name">Ti Grey Steel</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bs-img-row">
+      <div class="bs-img-ph">
+        <div class="bs-img-slot" style="background:linear-gradient(150deg,#060E08 0%,#162A1C 100%);">
+          <div class="img-ph-plus">+</div>
+          <div class="img-ph-hint">Outdoor Lifestyle</div>
+        </div>
+        <div class="bs-img-ph-label">columbia-lifestyle.jpg</div>
+      </div>
+      <div class="bs-img-ph">
+        <div class="bs-img-slot" style="background:linear-gradient(150deg,#081828 0%,#0D2A40 100%);">
+          <div class="img-ph-plus">+</div>
+          <div class="img-ph-hint">PFG Wallet Hero Shot</div>
+        </div>
+        <div class="bs-img-ph-label">columbia-pfg-wallet.jpg</div>
+      </div>
+      <div class="bs-img-ph">
+        <div class="bs-img-slot" style="background:linear-gradient(150deg,#0E1A10 0%,#1E3020 100%);">
+          <div class="img-ph-plus">+</div>
+          <div class="img-ph-hint">Materials / Tech Detail</div>
+        </div>
+        <div class="bs-img-ph-label">columbia-materials-detail.jpg</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bs-sep"></div>
+
+
+<!-- ════════════════════════════
+     BRAND: CALVIN KLEIN
+════════════════════════════ -->
+<div id="bs-ck" class="bs-section">
+
+  <div class="bs-banner" style="background:linear-gradient(150deg,#050505 0%,#111111 40%,#1A1A1A 70%,#080808 100%);">
+    <div class="bs-banner-inner au">
+      <div class="logo-ph"><span>Brand Logo</span></div>
+      <div class="bs-tier-badge" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.55);">Tier 2 · Designer / Lifestyle · Macy's</div>
+      <h2 class="bs-brand-name">Calvin<br><em>Klein</em></h2>
+      <p class="bs-lead">Less is more. The foil-embossed CK logo on clean Saffiano leather says everything the brand needs to say — without saying a word more.</p>
+      <div class="bs-stats">
+        <div><div class="bs-stat-num">$45–65</div><div class="bs-stat-lbl">Retail Range</div></div>
+        <div><div class="bs-stat-num">Macy's</div><div class="bs-stat-lbl">Primary Retailer</div></div>
+        <div><div class="bs-stat-num">22–38</div><div class="bs-stat-lbl">Core Consumer Age</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bs-content">
+    <div class="bs-dna-grid">
+      <div class="au">
+        <div class="gold-rule"></div>
+        <span class="tag gold">Design DNA</span>
+        <h3 class="ssh">Minimalism as a design philosophy — not just an aesthetic.</h3>
+        <p class="body">Calvin Klein's power is restraint. The wallet should feel like it was designed by removing everything unnecessary — then removing it again. Saffiano cross-hatch leather provides visual texture and durability without ornamentation. Tonal finishes — black on black, grey on grey — communicate sophistication through discipline.</p>
+        <p class="body">The <strong>foil-embossed CK logo</strong> is the only brand signal needed. Hardware, contrast stitching, and external patches are all unnecessary noise. The logo is the design.</p>
+        <div class="callout" style="border-color:#333;background:rgba(20,20,20,.04);">
+          <p><strong>Position CK wallets at Macy's alongside CK tailored clothing and denim.</strong> The wallet completes the look — and enhanced digital content showing the wallet as part of a full CK outfit is the highest-conversion play on the product detail page.</p>
+        </div>
+      </div>
+      <div class="au d2">
+        <span class="tag gold">Hero Product</span>
+        <h3 class="ssh">Saffiano Slim Bifold — Accessible Luxury at Macy's</h3>
+        <p class="body">A precision-slim bifold in Saffiano leather. One foil CK logo on the front. Zero hardware. Everything intentional, nothing extra. This is the wallet that completes a Calvin Klein outfit.</p>
+        <div class="bs-pill-row">
+          <span class="bs-pill" style="background:rgba(20,20,20,.08);color:#222;">Saffiano Leather</span>
+          <span class="bs-pill" style="background:rgba(20,20,20,.08);color:#222;">Foil-Embossed Logo</span>
+          <span class="bs-pill" style="background:rgba(20,20,20,.08);color:#222;">Tonal Finishes</span>
+          <span class="bs-pill" style="background:rgba(20,20,20,.08);color:#222;">Slim Profile</span>
+          <span class="bs-pill" style="background:rgba(200,169,110,.12);color:var(--gold-dark);">RFID Blocking</span>
+        </div>
+        <div style="margin-top:32px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mid-gray);margin-bottom:10px;">Brand Palette</div>
+          <div class="bs-palette">
+            <div class="bs-swatch" style="background:#0A0A0A;"><div class="bs-swatch-info"><span class="bs-swatch-name">CK Black</span></div></div>
+            <div class="bs-swatch" style="background:#3A3A3A;"><div class="bs-swatch-info"><span class="bs-swatch-name">Carbon Grey</span></div></div>
+            <div class="bs-swatch" style="background:#1A1A2A;"><div class="bs-swatch-info"><span class="bs-swatch-name">Dark Navy</span></div></div>
+            <div class="bs-swatch" style="background:#E8E4DC;"><div class="bs-swatch-info"><span class="bs-swatch-name" style="color:rgba(0,0,0,.5);">Ivory White</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bs-img-row">
+      <div class="bs-img-ph">
+        <div class="bs-img-slot" style="background:linear-gradient(150deg,#050505 0%,#1A1A1A 100%);">
+          <div class="img-ph-plus">+</div>
+          <div class="img-ph-hint">CK Lifestyle / Editorial</div>
+        </div>
+        <div class="bs-img-ph-label">ck-lifestyle.jpg</div>
+      </div>
+      <div class="bs-img-ph">
+        <div class="bs-img-slot" style="background:linear-gradient(150deg,#111111 0%,#242424 100%);">
+          <div class="img-ph-plus">+</div>
+          <div class="img-ph-hint">Wallet Hero Shot</div>
+        </div>
+        <div class="bs-img-ph-label">ck-wallet-hero.jpg</div>
+      </div>
+      <div class="bs-img-ph">
+        <div class="bs-img-slot" style="background:linear-gradient(150deg,#0D0D0D 0%,#1E1E1E 100%);">
+          <div class="img-ph-plus">+</div>
+          <div class="img-ph-hint">Saffiano Texture / Logo Detail</div>
+        </div>
+        <div class="bs-img-ph-label">ck-saffiano-detail.jpg</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bs-sep"></div>
+
+
+<!-- ════════════════════════════
+     BRAND: TOMMY HILFIGER
+════════════════════════════ -->
+<div id="bs-tommy" class="bs-section">
+
+  <div class="bs-banner" style="background:linear-gradient(150deg,#000F2E 0%,#001D50 40%,#002F6C 70%,#000C24 100%);">
+    <div class="bs-banner-inner au">
+      <div class="logo-ph"><span>Brand Logo</span></div>
+      <div class="bs-tier-badge" style="background:rgba(204,0,1,.2);color:#FF7070;">Tier 2 · Classic American Cool · Macy's</div>
+      <h2 class="bs-brand-name">Tommy<br><em>Hilfiger</em></h2>
+      <p class="bs-lead">The red-white-and-blue Global Stripe has dressed generations of Americans. It belongs on the wallet — as a lining, an edge detail, or a pull-tab — unmistakably Tommy.</p>
+      <div class="bs-stats">
+        <div><div class="bs-stat-num">$45–60</div><div class="bs-stat-lbl">Retail Range</div></div>
+        <div><div class="bs-stat-num">Macy's</div><div class="bs-stat-lbl">Primary Retailer</div></div>
+        <div><div class="bs-stat-num">25–55</div><div class="bs-stat-lbl">Core Consumer Age</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bs-content">
+    <div class="bs-dna-grid">
+      <div class="au">
+        <div class="gold-rule"></div>
+        <span class="tag gold">Design DNA</span>
+        <h3 class="ssh">Preppy, polished, and unmistakably American — the stripe is the signal.</h3>
+        <p class="body">Tommy Hilfiger's visual identity is one of the clearest in fashion. The Global Stripe — red, white, and navy — is a design shorthand that consumers recognize instantly. Pebble-grain leather gives a more traditional "designer" tactile feel compared to Calvin Klein's Saffiano, making it warmer and more approachable.</p>
+        <p class="body"><strong>Metal ornaments and hardware</strong> on the exterior or at the gusset communicate quality-at-a-glance for the shopper making a gift purchase in a department store aisle.</p>
+        <div class="callout" style="border-color:#002F6C;background:rgba(0,47,108,.06);">
+          <p>Tommy and Calvin Klein can coexist at Macy's because they represent <strong>completely different worldviews</strong>. Tommy is preppy and warm. CK is minimal and cool. Together they capture two loyal, non-overlapping demographics at the same price tier.</p>
+        </div>
+      </div>
+      <div class="au d2">
+        <span class="tag gold">Hero Product</span>
+        <h3 class="ssh">Pebble Grain Bifold with Global Stripe Interior Lining</h3>
+        <p class="body">A classic pebble-grain bifold with the Global Stripe running as an interior lining. Every time the wallet opens, the stripe tells the story — subtle from the outside, a brand moment inside.</p>
+        <div class="bs-pill-row">
+          <span class="bs-pill" style="background:rgba(0,47,108,.1);color:#002F6C;">Pebble Grain Leather</span>
+          <span class="bs-pill" style="background:rgba(0,47,108,.1);color:#002F6C;">Global Stripe Interior</span>
+          <span class="bs-pill" style="background:rgba(0,47,108,.1);color:#002F6C;">Metal Ornaments</span>
+          <span class="bs-pill" style="background:rgba(200,169,110,.12);color:var(--gold-dark);">RFID Blocking</span>
+          <span class="bs-pill" style="background:rgba(200,169,110,.12);color:var(--gold-dark);">Gift Ready</span>
+        </div>
+        <div style="margin-top:32px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mid-gray);margin-bottom:10px;">Brand Palette</div>
+          <div class="bs-palette">
+            <div class="bs-swatch" style="background:#002F6C;"><div class="bs-swatch-info"><span class="bs-swatch-name">Tommy Navy</span></div></div>
+            <div class="bs-swatch" style="background:#CC0001;"><div class="bs-swatch-info"><span class="bs-swatch-name">Tommy Red</span></div></div>
+            <div class="bs-swatch" style="background:#D8D4C8;"><div class="bs-swatch-info"><span class="bs-swatch-name" style="color:rgba(0,0,0,.5);">Crisp White</span></div></div>
+            <div class="bs-swatch" style="background:#C8986A;"><div class="bs-swatch-info"><span class="bs-swatch-name">Camel Tan</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bs-img-row">
+      <div class="bs-img-ph">
+        <div class="bs-img-slot" style="background:linear-gradient(150deg,#000F2E 0%,#002F6C 100%);">
+          <div class="img-ph-plus">+</div>
+          <div class="img-ph-hint">Preppy Lifestyle</div>
+        </div>
+        <div class="bs-img-ph-label">tommy-h-lifestyle.jpg</div>
+      </div>
+      <div class="bs-img-ph">
+        <div class="bs-img-slot" style="background:linear-gradient(150deg,#001844 0%,#003580 100%);">
+          <div class="img-ph-plus">+</div>
+          <div class="img-ph-hint">Wallet Hero / Stripe Detail</div>
+        </div>
+        <div class="bs-img-ph-label">tommy-h-wallet-hero.jpg</div>
+      </div>
+      <div class="bs-img-ph">
+        <div class="bs-img-slot" style="background:linear-gradient(150deg,#00122A 0%,#002050 100%);">
+          <div class="img-ph-plus">+</div>
+          <div class="img-ph-hint">Interior Lining / Packaging</div>
+        </div>
+        <div class="bs-img-ph-label">tommy-h-stripe-interior.jpg</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bs-sep"></div>
+
+
+<!-- ════════════════════════════
+     BRAND: KENNETH COLE
+════════════════════════════ -->
+<div id="bs-kc" class="bs-section">
+
+  <div class="bs-banner" style="background:linear-gradient(150deg,#080808 0%,#141414 35%,#1E1E1E 65%,#0C0C0C 100%);">
+    <div class="bs-banner-inner au">
+      <div class="logo-ph"><span>Brand Logo</span></div>
+      <div class="bs-tier-badge" style="background:rgba(200,169,110,.15);color:var(--gold);">Tier 2 · Urban Professional · Macy's / Urban</div>
+      <h2 class="bs-brand-name">Kenneth<br><em>Cole</em></h2>
+      <p class="bs-lead">For the professional who moves fast, looks sharp, and wants their gear to keep up. Carbon fiber and stretch-interior engineering for the Techni-Cole generation.</p>
+      <div class="bs-stats">
+        <div><div class="bs-stat-num">$45–55</div><div class="bs-stat-lbl">Retail Range</div></div>
+        <div><div class="bs-stat-num">Macy's</div><div class="bs-stat-lbl">Primary Retailer</div></div>
+        <div><div class="bs-stat-num">28–40</div><div class="bs-stat-lbl">Core Consumer Age</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bs-content">
+    <div class="bs-dna-grid">
+      <div class="au">
+        <div class="gold-rule"></div>
+        <span class="tag gold">Design DNA</span>
+        <h3 class="ssh">The tech-forward wallet for the city that never stops moving.</h3>
+        <p class="body">Kenneth Cole Reaction and the Techni-Cole line speak to the metropolitan consumer who needs gear as smart as they are. Carbon fiber exterior panels deliver a unique visual texture that no leather-only wallet on the wall can match — and they tell a durability story that justifies a premium over basic bifolds.</p>
+        <p class="body">The <strong>stretch interior lining</strong> is the functional hero: it expands when needed for bulkier carry, then returns slim when empty. Form follows function — and both look intentional.</p>
+        <div class="callout" style="border-color:#333;background:rgba(25,25,25,.05);">
+          <p><strong>Carbon fiber is the design signal that separates Kenneth Cole from every other brand on the wall.</strong> It's a tech story that earns a premium without requiring premium leather — and it photographs exceptionally well for digital product content.</p>
+        </div>
+      </div>
+      <div class="au d2">
+        <span class="tag gold">Hero Product</span>
+        <h3 class="ssh">Techni-Cole Carbon Fiber Slim Bifold</h3>
+        <p class="body">A slim bifold with carbon fiber exterior panels and a stretch interior lining. It bridges formal business attire and contemporary street style with a single product — and stands out instantly on a wall of traditional leather.</p>
+        <div class="bs-pill-row">
+          <span class="bs-pill" style="background:rgba(30,30,30,.1);color:#222;">Carbon Fiber Exterior</span>
+          <span class="bs-pill" style="background:rgba(30,30,30,.1);color:#222;">Stretch Interior Lining</span>
+          <span class="bs-pill" style="background:rgba(30,30,30,.1);color:#222;">Modern Silhouette</span>
+          <span class="bs-pill" style="background:rgba(200,169,110,.12);color:var(--gold-dark);">RFID Blocking</span>
+          <span class="bs-pill" style="background:rgba(200,169,110,.12);color:var(--gold-dark);">Slim Profile</span>
+        </div>
+        <div style="margin-top:32px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mid-gray);margin-bottom:10px;">Brand Palette</div>
+          <div class="bs-palette">
+            <div class="bs-swatch" style="background:#111111;"><div class="bs-swatch-info"><span class="bs-swatch-name">Carbon Black</span></div></div>
+            <div class="bs-swatch" style="background:#3A3A3A;"><div class="bs-swatch-info"><span class="bs-swatch-name">Charcoal</span></div></div>
+            <div class="bs-swatch" style="background:#606060;"><div class="bs-swatch-info"><span class="bs-swatch-name">Gunmetal</span></div></div>
+            <div class="bs-swatch" style="background:#1A2B45;"><div class="bs-swatch-info"><span class="bs-swatch-name">Deep Navy</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bs-img-row">
+      <div class="bs-img-ph">
+        <div class="bs-img-slot" style="background:linear-gradient(150deg,#080808 0%,#1E1E1E 100%);">
+          <div class="img-ph-plus">+</div>
+          <div class="img-ph-hint">Urban Lifestyle</div>
+        </div>
+        <div class="bs-img-ph-label">kc-lifestyle.jpg</div>
+      </div>
+      <div class="bs-img-ph">
+        <div class="bs-img-slot" style="background:linear-gradient(150deg,#101010 0%,#282828 100%);">
+          <div class="img-ph-plus">+</div>
+          <div class="img-ph-hint">Carbon Fiber Wallet Hero</div>
+        </div>
+        <div class="bs-img-ph-label">kc-carbon-wallet.jpg</div>
+      </div>
+      <div class="bs-img-ph">
+        <div class="bs-img-slot" style="background:linear-gradient(150deg,#0C0C0C 0%,#202020 100%);">
+          <div class="img-ph-plus">+</div>
+          <div class="img-ph-hint">Carbon Texture / Interior Detail</div>
+        </div>
+        <div class="bs-img-ph-label">kc-carbon-detail.jpg</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bs-sep"></div>
+
+
+<!-- ════════════════════════════
+     BRAND: COLE HAAN
+════════════════════════════ -->
+<div id="bs-ch" class="bs-section">
+
+  <div class="bs-banner" style="background:linear-gradient(150deg,#050E08 0%,#0E2018 35%,#1E3A2E 65%,#0A1810 100%);">
+    <div class="bs-banner-inner au">
+      <div class="logo-ph"><span>Brand Logo</span></div>
+      <div class="bs-tier-badge" style="background:rgba(200,169,110,.18);color:var(--gold);">Tier 3 · Sophisticated Innovation · Macy's Premium</div>
+      <h2 class="bs-brand-name">Cole<br><em>Haan</em></h2>
+      <p class="bs-lead">The most innovative leather wallet in the aisle — and it's not close. Pop-up card mechanics, premium pebble grain, and modular removable design at a price that still feels earned.</p>
+      <div class="bs-stats">
+        <div><div class="bs-stat-num">$60–95</div><div class="bs-stat-lbl">Retail Range</div></div>
+        <div><div class="bs-stat-num">Macy's</div><div class="bs-stat-lbl">Primary Retailer</div></div>
+        <div><div class="bs-stat-num">30–50</div><div class="bs-stat-lbl">Core Consumer Age</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bs-content">
+    <div class="bs-dna-grid">
+      <div class="au">
+        <div class="gold-rule"></div>
+        <span class="tag gold">Design DNA</span>
+        <h3 class="ssh">Craftsmanship you can feel. Innovation you can see every time it opens.</h3>
+        <p class="body">Cole Haan earns the premium tier through product moments — the satisfying pop of a card ejector, the supple give of pebble-grain leather, the surprise of a Boxshine finish catching the light. Every detail communicates the care of a brand that takes accessories seriously.</p>
+        <p class="body">The <strong>removable card case billfold</strong> is the key versatility story: a full wallet for travel, a slim card case for an evening out. It's the one wallet that adapts — and at Macy's, that story is worth $75.</p>
+        <div class="callout" style="border-color:#1E3A2E;background:rgba(30,58,46,.06);">
+          <p>The <strong>pop-up card mechanism is Cole Haan's point of difference</strong> — the feature that creates a delight moment every time the wallet opens. That story should lead on packaging, in-store fixtures, and on the product detail page. It's worth the premium.</p>
+        </div>
+      </div>
+      <div class="au d2">
+        <span class="tag gold">Hero Product</span>
+        <h3 class="ssh">Minimalist Pop-Up Card Holder &amp; Removable Card Case Billfold</h3>
+        <p class="body">A precision-built bifold with a built-in pop-up card ejector and a removable slim card case. One press fans the cards for easy selection. One pull removes the slim case for a night out. The most intelligent wallet in the portfolio.</p>
+        <div class="bs-pill-row">
+          <span class="bs-pill" style="background:rgba(30,58,46,.1);color:#1E3A2E;">Pebble Grain Leather</span>
+          <span class="bs-pill" style="background:rgba(30,58,46,.1);color:#1E3A2E;">Pop-Up Mechanism</span>
+          <span class="bs-pill" style="background:rgba(30,58,46,.1);color:#1E3A2E;">Removable Card Case</span>
+          <span class="bs-pill" style="background:rgba(30,58,46,.1);color:#1E3A2E;">Boxshine Finish</span>
+          <span class="bs-pill" style="background:rgba(200,169,110,.12);color:var(--gold-dark);">RFID Blocking</span>
+          <span class="bs-pill" style="background:rgba(200,169,110,.12);color:var(--gold-dark);">Two-Tone Options</span>
+        </div>
+        <div style="margin-top:32px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mid-gray);margin-bottom:10px;">Brand Palette</div>
+          <div class="bs-palette">
+            <div class="bs-swatch" style="background:#1A1A1A;"><div class="bs-swatch-info"><span class="bs-swatch-name">Classic Black</span></div></div>
+            <div class="bs-swatch" style="background:#7B5432;"><div class="bs-swatch-info"><span class="bs-swatch-name">Cognac</span></div></div>
+            <div class="bs-swatch" style="background:#3D2E20;"><div class="bs-swatch-info"><span class="bs-swatch-name">Pinecone</span></div></div>
+            <div class="bs-swatch" style="background:#1E3A2E;"><div class="bs-swatch-info"><span class="bs-swatch-name">Graphite Pine</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bs-img-row">
+      <div class="bs-img-ph">
+        <div class="bs-img-slot" style="background:linear-gradient(150deg,#050E08 0%,#1E3A2E 100%);">
+          <div class="img-ph-plus">+</div>
+          <div class="img-ph-hint">Professional Lifestyle</div>
+        </div>
+        <div class="bs-img-ph-label">cole-haan-lifestyle.jpg</div>
+      </div>
+      <div class="bs-img-ph">
+        <div class="bs-img-slot" style="background:linear-gradient(150deg,#0E1E16 0%,#2A4838 100%);">
+          <div class="img-ph-plus">+</div>
+          <div class="img-ph-hint">Pop-Up Mechanism Detail</div>
+        </div>
+        <div class="bs-img-ph-label">cole-haan-popup-detail.jpg</div>
+      </div>
+      <div class="bs-img-ph">
+        <div class="bs-img-slot" style="background:linear-gradient(150deg,#0A1410 0%,#1E3028 100%);">
+          <div class="img-ph-plus">+</div>
+          <div class="img-ph-hint">Removable Card Case / Packaging</div>
+        </div>
+        <div class="bs-img-ph-label">cole-haan-packaging.jpg</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bs-sep"></div>
+
+
+<!-- ════════════════════════════
+     BRAND: TOMMY BAHAMA
+════════════════════════════ -->
+<div id="bs-tb" class="bs-section">
+
+  <div class="bs-banner" style="background:linear-gradient(150deg,#011A1A 0%,#023A3A 35%,#005F5E 65%,#012828 100%);">
+    <div class="bs-banner-inner au">
+      <div class="logo-ph"><span>Brand Logo</span></div>
+      <div class="bs-tier-badge" style="background:rgba(212,160,85,.2);color:#D4A055;">Tier 3 · Island Luxury · Premium Dept. &amp; TB Boutiques</div>
+      <h2 class="bs-brand-name">Tommy<br><em>Bahama</em></h2>
+      <p class="bs-lead">Life is too short for an ordinary wallet. The woven leather signature and Marlin metal ornament make this wallet feel like it arrived on a boat from somewhere better.</p>
+      <div class="bs-stats">
+        <div><div class="bs-stat-num">$75–95</div><div class="bs-stat-lbl">Retail Range</div></div>
+        <div><div class="bs-stat-num">TB Boutiques</div><div class="bs-stat-lbl">Primary Channel</div></div>
+        <div><div class="bs-stat-num">35–60</div><div class="bs-stat-lbl">Core Consumer Age</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bs-content">
+    <div class="bs-dna-grid">
+      <div class="au">
+        <div class="gold-rule"></div>
+        <span class="tag gold">Design DNA</span>
+        <h3 class="ssh">A wallet that sells a feeling — sun, leisure, and the good life.</h3>
+        <p class="body">Tommy Bahama isn't selling a product — it's selling a vacation state of mind. Woven leather is the material expression of that idea: handcrafted, textural, and unlike anything else in the category. It evokes basket weave, beach chairs, and artisan craft.</p>
+        <p class="body">The <strong>Marlin metal ornament</strong> on the exterior closure is the brand's signature detail — a small but unmistakable signal to anyone who knows the brand. For the consumer who owns Tommy Bahama shirts, this is a natural extension of their lifestyle identity.</p>
+        <div class="callout" style="border-color:#005F5E;background:rgba(0,95,94,.06);">
+          <p>Tommy Bahama is the <strong>only brand in the portfolio commanding $75–$95 on lifestyle aspiration alone</strong>. The woven leather is category-exclusive — there's nothing else like it at Macy's or Dillard's. That's a story worth telling loudly on every fixture and product page.</p>
+        </div>
+      </div>
+      <div class="au d2">
+        <span class="tag gold">Hero Product</span>
+        <h3 class="ssh">Woven Leather Traveler Bifold with Marlin Ornament</h3>
+        <p class="body">A bifold in signature woven leather with a Marlin metal closure ornament. Coastal colorways — teal, sandy tan, natural — give the buyer a choice that feels like picking an outfit for a vacation. Premium packaging that feels like a boutique gift.</p>
+        <div class="bs-pill-row">
+          <span class="bs-pill" style="background:rgba(0,95,94,.1);color:#005F5E;">Woven Leather</span>
+          <span class="bs-pill" style="background:rgba(0,95,94,.1);color:#005F5E;">Marlin Ornament</span>
+          <span class="bs-pill" style="background:rgba(0,95,94,.1);color:#005F5E;">Coastal Colorways</span>
+          <span class="bs-pill" style="background:rgba(0,95,94,.1);color:#005F5E;">Artisan Detailing</span>
+          <span class="bs-pill" style="background:rgba(200,169,110,.12);color:var(--gold-dark);">Premium Gift Box</span>
+          <span class="bs-pill" style="background:rgba(200,169,110,.12);color:var(--gold-dark);">RFID Blocking</span>
+        </div>
+        <div style="margin-top:32px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mid-gray);margin-bottom:10px;">Brand Palette</div>
+          <div class="bs-palette">
+            <div class="bs-swatch" style="background:#005F5E;"><div class="bs-swatch-info"><span class="bs-swatch-name">Paradise Teal</span></div></div>
+            <div class="bs-swatch" style="background:#D4A055;"><div class="bs-swatch-info"><span class="bs-swatch-name">Sandy Gold</span></div></div>
+            <div class="bs-swatch" style="background:#E8DCC8;"><div class="bs-swatch-info"><span class="bs-swatch-name" style="color:rgba(0,0,0,.45);">Coconut White</span></div></div>
+            <div class="bs-swatch" style="background:#1A3A5C;"><div class="bs-swatch-info"><span class="bs-swatch-name">Navy Deep</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bs-img-row">
+      <div class="bs-img-ph">
+        <div class="bs-img-slot" style="background:linear-gradient(150deg,#011A1A 0%,#005F5E 100%);">
+          <div class="img-ph-plus">+</div>
+          <div class="img-ph-hint">Island Lifestyle</div>
+        </div>
+        <div class="bs-img-ph-label">tommy-b-lifestyle.jpg</div>
+      </div>
+      <div class="bs-img-ph">
+        <div class="bs-img-slot" style="background:linear-gradient(150deg,#022828 0%,#004848 100%);">
+          <div class="img-ph-plus">+</div>
+          <div class="img-ph-hint">Woven Leather Wallet Hero</div>
+        </div>
+        <div class="bs-img-ph-label">tommy-b-woven-wallet.jpg</div>
+      </div>
+      <div class="bs-img-ph">
+        <div class="bs-img-slot" style="background:linear-gradient(150deg,#012020 0%,#003838 100%);">
+          <div class="img-ph-plus">+</div>
+          <div class="img-ph-hint">Marlin Detail / Gift Packaging</div>
+        </div>
+        <div class="bs-img-ph-label">tommy-b-marlin-packaging.jpg</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── BRANDS CLOSING ─────────────────────────────── -->
+<section class="closing">
+  <div class="gold-rule center" style="position:relative;"></div>
+  <p class="eyebrow au" style="position:relative;">The Portfolio Advantage</p>
+  <h2 class="closing-h au d1">Eight brands. <em>No overlap.</em><br>Every consumer covered.</h2>
+  <p class="closing-p au d2">From a $21 Haggar gift set to a $95 Tommy Bahama woven leather traveler — each brand occupies its own shelf space, speaks to its own consumer, and tells its own design story. That's the competitive moat no single brand can replicate.</p>
+  <div class="closing-kpis au d3">
+    <div class="ck">
+      <div class="ck-num">$75</div>
+      <div class="ck-lbl">Premium ceiling —<br>Tommy Bahama &amp; Cole Haan</div>
+    </div>
+    <div class="ck">
+      <div class="ck-num">3 Tiers</div>
+      <div class="ck-lbl">Value · Designer · Premium<br>across all major retailers</div>
+    </div>
+    <div class="ck">
+      <div class="ck-num">40–60%</div>
+      <div class="ck-lbl">Gift-driven purchases —<br>packaging matters everywhere</div>
+    </div>
+    <div class="ck">
+      <div class="ck-num">8</div>
+      <div class="ck-lbl">Distinct design anchors —<br>zero internal cannibalization</div>
+    </div>
+  </div>
+  <div class="au d4" style="position:relative;margin-top:72px;">
+    <p style="font-size:14px;color:rgba(255,255,255,.3);letter-spacing:.06em;">Brand Portfolio Strategy · Randa Apparel &amp; Accessories · 2025–2027</p>
+  </div>
+</section>
+
+
+<!-- ── BRANDS FOOTER ──────────────────────────────── -->
+<footer>
+  <div class="ft-brand">
+    <img src="images/RAA_Logo.png" alt="Randa Apparel & Accessories" />
+    <span class="ft-div"></span>
+    <span>Brand Strategy 2025–27</span>
+  </div>
+  <button onclick="switchPage('main')" style="font-size:11px;color:rgba(255,255,255,.35);background:none;border:none;cursor:pointer;letter-spacing:.1em;text-transform:uppercase;transition:color .2s;" onmouseover="this.style.color='#C8A96E'" onmouseout="this.style.color='rgba(255,255,255,.35)'">← Market Overview</button>
+  <div class="ft-info">Internal Strategy Document · Confidential · 2025–2027</div>
+</footer>
+
+</div><!-- /brands-page -->
+
+
+<!-- ════════════════════════════════════════════
      JAVASCRIPT
 ════════════════════════════════════════════ -->
 <script>
@@ -1869,36 +2883,59 @@
     { href: '#col-metalwall', label: 'Metal Wallet' },
     { href: '#col-retail', label: 'Retail' }
   ];
+  var brandsSectionLinks = [
+    { href: '#bs-levis', label: "Levi's" },
+    { href: '#bs-haggar', label: 'Haggar' },
+    { href: '#bs-columbia', label: 'Columbia' },
+    { href: '#bs-ck', label: 'Calvin Klein' },
+    { href: '#bs-tommy', label: 'Tommy H.' },
+    { href: '#bs-kc', label: 'Kenneth Cole' },
+    { href: '#bs-ch', label: 'Cole Haan' },
+    { href: '#bs-tb', label: 'Tommy Bahama' }
+  ];
 
   function updateMobileSectionLinks(page) {
     var linksEl = document.getElementById('mobile-section-links');
-    var links = page === 'columbia' ? colSectionLinks : mainSectionLinks;
+    var links = page === 'columbia' ? colSectionLinks : (page === 'brands' ? brandsSectionLinks : mainSectionLinks);
     linksEl.innerHTML = links.map(function(l) {
       return '<li><a href="' + l.href + '" onclick="closeMobileMenu()">' + l.label + '</a></li>';
     }).join('');
     // Update mobile page-switch buttons
-    document.getElementById('mob-tab-main').classList.toggle('active', page !== 'columbia');
+    document.getElementById('mob-tab-main').classList.toggle('active', page === 'main');
     document.getElementById('mob-tab-columbia').classList.toggle('active', page === 'columbia');
+    document.getElementById('mob-tab-brands').classList.toggle('active', page === 'brands');
   }
 
-  // ── Page switching (Market Overview ↔ Columbia) ─────
+  // ── Page switching ─────────────────────────────────
   let colFadeObserver = null;
+  let brandsFadeObserver = null;
 
   function switchPage(page) {
-    const mainPage  = document.getElementById('main-page');
-    const colPage   = document.getElementById('columbia-page');
-    const mainNav   = document.getElementById('main-nav-links');
-    const colNav    = document.getElementById('col-nav-links');
-    const tabMain   = document.getElementById('tab-main');
-    const tabCol    = document.getElementById('tab-columbia');
-    const homeLink  = document.getElementById('nav-home-link');
+    const mainPage    = document.getElementById('main-page');
+    const colPage     = document.getElementById('columbia-page');
+    const brandsPage  = document.getElementById('brands-page');
+    const mainNav     = document.getElementById('main-nav-links');
+    const colNav      = document.getElementById('col-nav-links');
+    const brandsNav   = document.getElementById('brands-nav-links');
+    const tabMain     = document.getElementById('tab-main');
+    const tabCol      = document.getElementById('tab-columbia');
+    const tabBrands   = document.getElementById('tab-brands');
+    const homeLink    = document.getElementById('nav-home-link');
+
+    // Hide all pages + navs; clear all active tabs
+    mainPage.style.display    = 'none';
+    colPage.style.display     = 'none';
+    brandsPage.style.display  = 'none';
+    mainNav.style.display     = 'none';
+    colNav.style.display      = 'none';
+    brandsNav.style.display   = 'none';
+    tabMain.classList.remove('active');
+    tabCol.classList.remove('active');
+    tabBrands.classList.remove('active');
 
     if (page === 'columbia') {
-      mainPage.style.display  = 'none';
       colPage.style.display   = 'block';
-      mainNav.style.display   = 'none';
       colNav.style.display    = 'flex';
-      tabMain.classList.remove('active');
       tabCol.classList.add('active');
       homeLink.href = '#col-top';
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1915,7 +2952,6 @@
         document.querySelectorAll('#columbia-page .au').forEach(el => colFadeObserver.observe(el));
       }, 120);
 
-      // Update nav scroll active links for Columbia sections
       const colSections = document.querySelectorAll('#columbia-page section[id], #columbia-page div.split[id]');
       function updateColNav() {
         nav.classList.toggle('scrolled', window.scrollY > 60);
@@ -1928,13 +2964,43 @@
       }
       window.addEventListener('scroll', updateColNav);
 
+    } else if (page === 'brands') {
+      brandsPage.style.display  = 'block';
+      brandsNav.style.display   = 'flex';
+      tabBrands.classList.add('active');
+      homeLink.href = '#bs-top';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Re-run fade-up animations for brands page elements
+      document.querySelectorAll('#brands-page .au').forEach(el => el.classList.remove('in'));
+      if (brandsFadeObserver) brandsFadeObserver.disconnect();
+      setTimeout(() => {
+        brandsFadeObserver = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('in'); brandsFadeObserver.unobserve(e.target); }
+          });
+        }, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('#brands-page .au').forEach(el => brandsFadeObserver.observe(el));
+      }, 120);
+
+      // Update nav scroll active links for brands sections
+      const bSections = document.querySelectorAll('#brands-page section[id], #brands-page div[id]');
+      function updateBrandsNav() {
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+        let current = '';
+        bSections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.getAttribute('id'); });
+        document.querySelectorAll('#brands-nav-links a').forEach(a => {
+          a.classList.remove('active');
+          if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+        });
+      }
+      window.addEventListener('scroll', updateBrandsNav);
+
     } else {
-      colPage.style.display   = 'none';
+      // main
       mainPage.style.display  = 'block';
-      colNav.style.display    = 'none';
       mainNav.style.display   = 'flex';
       tabMain.classList.add('active');
-      tabCol.classList.remove('active');
       homeLink.href = '#top';
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
